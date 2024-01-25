@@ -2,6 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://blog.asjijiasdecree.com/leisure/</loc>
+    <lastmod>2024-01-24T17:10:39+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.asjijiasdecree.com/</loc>
+    <lastmod>2024-01-24T17:10:39+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.asjijiasdecree.com/travel/</loc>
+    <lastmod>2024-01-24T17:10:30+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.asjijiasdecree.com/note/</loc>
+    <lastmod>2024-01-24T17:09:48+08:00</lastmod>
+  </url><url>
     <loc>https://blog.asjijiasdecree.com/aboutme/</loc>
     <lastmod>2024-01-24T14:43:38+08:00</lastmod>
   </url><url>
@@ -10,7 +22,5 @@
     <loc>https://blog.asjijiasdecree.com/sections/</loc>
   </url><url>
     <loc>https://blog.asjijiasdecree.com/tags/</loc>
-  </url><url>
-    <loc>https://blog.asjijiasdecree.com/</loc>
   </url>
 </urlset>
