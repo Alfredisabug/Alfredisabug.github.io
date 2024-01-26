@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Categories - 佶佶如律令</title>
+	<title>OpenCV 簡介 - 佶佶如律令</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,7 +13,6 @@
 
 	<link rel="stylesheet" href="/css/style.css">
 	
-	<link rel="alternate" type="application/rss+xml" href="/categories/index.xml" title="佶佶如律令">
 
 	<link rel="shortcut icon" href="/favicon.ico">
 		
@@ -44,7 +43,7 @@
 				
 			</a>
 		</li>
-		<li class="menu__item">
+		<li class="menu__item menu__item--active">
 			<a class="menu__link" href="/note/">
 				
 				<span class="menu__text">挖掘手扎</span>
@@ -87,29 +86,88 @@
 		<div class="wrapper flex">
 			<div class="primary">
 			
-<main class="main list" role="main">
-	<header class="main__header">
-		<h1 class="main__title">Categories</h1>
-	</header><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/categories/C-language/" rel="bookmark">
-			C language
-			</a>
-		</h2>
-		
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		
-	</div>
-</article>
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">OpenCV 簡介</h1>
+			
+		</header>
+		<div class="content post__content clearfix">
+			<p>上一篇說到我會重新開始學習OpenCV<br>
+並且學習使用Mat的資料結構</p>
+<p>現在就讓我重新認識OpenCV</p>
+<p>include 的函式檔中</p>
+<ul>
+<li>cv – 核心函數庫                                 在OpenCV2，為opencv.hpp，每次使用CV一定會先include</li>
+<li>core – 數據結構與線性代數庫                      在OpenCV2，為core.hpp</li>
+<li>highgui – GUI函數庫                             在OpenCV2，為highgui.hpp</li>
+</ul>
+<p>目前這三個是我比較常用到的</p>
+<p>OpenCV中有Mat、cvMat、IplImage這三種資料結構，都可以表示為圖像<br>
+Mat重於數學矩陣的運算<br>
+而cvMat跟IplImage則是重於&quot;圖像&quot;上的計算</p>
+<p>目前著重於Mat上<br>
+所以就挑著Mat來說吧<br>
+Mat是OpenCV2提出的新的資料結構，Mat比較方便記憶體的存取，會自動釋放記憶體，不用像IplImage要手動釋放。Mat可以用來處理向量、矩陣、圖像等多維的數據</p>
+<p>一開始當然是include</p>
+<pre tabindex="0"><code>#include &lt;iostream&gt;
+#include &lt;opencv2\opencv.hpp&gt;
+#include &lt;opencv2\core\core.hpp&gt;
+#include &lt;opencv2\highgui\highgui.hpp&gt;
+using namespace std;
+</code></pre><p>之後就可以開始宣告矩陣(圖像)<br>
+創造一個名為 src 的 Mat 矩陣</p>
+<pre tabindex="0"><code>Mat src;
+</code></pre><p>假設為640*480 三通道影像</p>
+<pre tabindex="0"><code>src.create(480, 640, CV_8UC3);
+</code></pre><p>當然一開始也可以直接宣告</p>
+<pre tabindex="0"><code>Mat src(480, 640, CV_8UC3);
+</code></pre><p>宣告函式為 ( rows, cols , channels)<br>
+rows是矩陣的高度(height)<br>
+colsr是矩陣的寬度(width)<br>
+channels 是矩陣的資料結構</p>
+<p><img src="../001.png" alt=""><br>
+通常影像處理左上角為原點( 0 , 0 )<br>
+cols 為 j, rows 為 i<br>
+以後要處理矩陣的數值的時候會用到</p>
+<p>而channels 有很多種<br>
+CV_8UC1 CV_8SC1 CV_16UC1 CV_16SC1 CV_32SC1 CV_32FC1 CV_64FC1<br>
+CV_8UC2 CV_8SC2 CV_16UC2 CV_16SC2 CV_32SC2 CV_32FC2 CV_64FC2<br>
+CV_8UC3 CV_8SC3 CV_16UC3 CV_16SC3 CV_32SC3 CV_32FC3 CV_64FC3<br>
+CV_8UC4 CV_8SC4 CV_16UC4 CV_16SC4 CV_32SC4 CV_32FC4 CV_64FC4</p>
+<p><strong>8U</strong>   8位元無符號<br>
+<strong>16U</strong>  16位元無符號<br>
+<strong>32F</strong>  32位元浮點數<br>
+後面的C為通道數<br>
+數據可以直接跟uchar,short,int,float,double型別通用</p>
+<p>也可以在創建矩陣時，就賦予矩陣初始值</p>
+<pre tabindex="0"><code>Mat src(240,320,32FC1, Scalar(5));  
+</code></pre><p>讀取名為Lena的圖片</p>
+<pre tabindex="0"><code>src = imread(&#34;Lena&#34;, 1);  
+</code></pre><p>顯示出圖案<br>
+先創建顯示視窗</p>
+<pre tabindex="0"><code>cvNamedWindow(&#34;Lena&#34;,1);  
+imShow(&#34;Lena&#34;, src);  
+</code></pre><p>最後加上</p>
+<pre tabindex="0"><code>waitKey(0);  
+</code></pre><p>可以在顯示圖案後，等待有按鍵鍵入才結束<br>
+最後記得釋放視窗</p>
+<pre tabindex="0"><code>destroyWindow(&#34;Lena&#34;);
+</code></pre><p>如圖所示:<br>
+<img src="../002.jpg" alt=""></p>
+<p>今天就先複習到這<br>
+希望自己的程式能力越來越好<br>
+just keep my road.</p>
+
+		</div>
+	</article>
 </main>
 
 
+
+
 			</div>
-			
-<aside class="sidebar">
+			<aside class="sidebar">
 <div class="widget-recent widget">
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
