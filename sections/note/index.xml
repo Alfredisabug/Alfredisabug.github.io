@@ -6,12 +6,12 @@
     <description>Recent content in note on 佶佶如律令</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 26 Jan 2024 09:19:24 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 28 Mar 2016 00:22:00 +0800</lastBuildDate>
     <atom:link href="https://blog.asjijiasdecree.com/sections/note/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>OpenCV 簡介</title>
       <link>https://blog.asjijiasdecree.com/note/2016/03/opencv-introduce/opencv-introduce/</link>
-      <pubDate>Fri, 26 Jan 2024 09:19:24 +0800</pubDate>
+      <pubDate>Mon, 28 Mar 2016 00:22:00 +0800</pubDate>
       <guid>https://blog.asjijiasdecree.com/note/2016/03/opencv-introduce/opencv-introduce/</guid>
       <description>上一篇說到我會重新開始學習OpenCV 並且學習使用Mat的資料結構 現在就讓我重新認識OpenCV include 的函式檔中 cv – 核心函數庫 在OpenCV2，</description>
     </item>
