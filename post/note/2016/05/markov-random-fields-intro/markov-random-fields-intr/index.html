@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>馬可夫隨機場 - 佶佶如律令</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="佶佶如律令" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">佶佶如律令</div>
+					
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">Home</span>
+				
+			</a>
+		</li>
+		<li class="menu__item menu__item--active">
+			<a class="menu__link" href="/post/note/">
+				
+				<span class="menu__text">挖掘手扎</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/travel/">
+				
+				<span class="menu__text">探險足跡</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/leisure/">
+				
+				<span class="menu__text">悠悠揚揚</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/aboutme/">
+				
+				<span class="menu__text">About Me</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/history/">
+				
+				<span class="menu__text">History</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">馬可夫隨機場</h1>
+			
+		</header>
+		<div class="content post__content clearfix">
+			<p>有一陣子沒有更新了<br>
+在於很多事情集於一身<br>
+沒有時間紀錄<br>
+在於影像處理<br>
+太多的觀念沒有搞懂<br>
+包括很多基礎的知識<br>
+來了研究所<br>
+就必須要去搞懂其核心<br>
+不能像大學一樣的只懂使用工具</p>
+<p>慢慢的累積<br>
+等畢業一定會用到</p>
+<pre tabindex="0"><code>現在所學的也許不夠流行
+等有一天需要這個技術時
+你就會是被需要的
+-章定遠
+</code></pre><p>最近研究在於修補深度圖<br>
+看到了一篇許多論文都會參考到的</p>
+<p><em>&ldquo;An Application of Markov Random Fields to Range&rdquo;
+James Diebel and Sebastian Thrun
+Stanford AI Lab
+Stanford University, Stanford, CA 94305</em></p>
+<p>有些論文也可以做出其效果<br>
+其中講到了 <strong>Markov Random Fields(馬可夫隨機場)</strong></p>
+<p>將影像的性質, 例如亮度、 顏色等, 看成是圖 (graph) 的位置 (site) 上的隨機狀態; 而位置間的關係則由圖的邊 (edge) 來表示。 馬可夫隨機場 (Markov random field) 提供這種空間(spatial) 過程一個自然的架構。 它和 Gibbs分布的等價性不但使得在模型建構和統計推論時更具彈性 ,且可和統計物理關聯起來。 而利用馬可夫性質和隨機 relaxation (或蒙地卡羅方法) 可以部分地解決此類模式先天上的解析困難。<br>
+&ndash;<a href="http://w3.math.sinica.edu.tw/math_media/d164/16402.pdf">http://w3.math.sinica.edu.tw/math_media/d164/16402.pdf</a></p>
+<p>目前的深度影像的解析度都達不到彩圖的高解析度<br>
+必須要透過內插等方式來填補<br>
+但是又不能亂填<br>
+會導致觀看立體影像的不適<br>
+像是平面在彩圖上明明是同個深度值<br>
+但卻因為直接內插的關係<br>
+導致平面邊緣可能會不准</p>
+<p>這篇論文使用到了彩圖的梯度、深度資訊<br>
+去定義出一個新的平面(高解析度的深度圖)<br>
+這新的一個平面可以說是一個馬可夫隨機場<br>
+新的深度圖將可以讓所有彩色pixel都有其深度資訊<br>
+無深度的深度pixel<br>
+利用彩圖的梯度加上edge的限制<br>
+還有參考附近的深度資訊去填補</p>
+<p>馬爾可夫一般是馬爾可夫性質的簡稱。如果一個過程的「將來」僅依賴「現在」而不依賴「過去」，則此過程具有馬爾可夫性,或稱此過程為馬爾可夫過程。<br>
+-有對應深度pixel<br>
+隨機場包含兩個要素：位置（site），相空間（phase space）。當給每一個位置中按照某種分佈隨機賦予相空間的一個值之後，其全體就叫做隨機場。<br>
+-無對應深度pixel</p>
+<p>也就是說<br>
+整個馬可夫隨機場<br>
+其某一點的位置<br>
+只受鄰近像素的影響</p>
+<p><a href="http://www.twword.com/wiki/%E9%A6%AC%E7%88%BE%E5%8F%AF%E5%A4%AB%E9%9A%A8%E6%A9%9F%E5%A0%B4">http://www.twword.com/wiki/%E9%A6%AC%E7%88%BE%E5%8F%AF%E5%A4%AB%E9%9A%A8%E6%A9%9F%E5%A0%B4</a></p>
+<p><a href="http://alex-phd.blogspot.tw/2014/03/2d3d.html">http://alex-phd.blogspot.tw/2014/03/2d3d.html</a></p>
+<p>只能說自己還學得太少<br>
+只懂得點皮毛<br>
+還得繼續學習</p>
+<p>但此論文<br>
+有極高的參考價值<br>
+將對未來一定有幫助</p>
+
+		</div>
+	</article>
+</main>
+
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/travel/2016/06/conference-hongkong-1/conference-hongkong-1/">香港研討會之旅(一)</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/note/2016/05/markov-random-fields-intro/markov-random-fields-intr/">馬可夫隨機場</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/note/2016/03/opencv-introduce/opencv-introduce/">OpenCV 簡介</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/note/2016/03/opencv-learn-from-mat-struct/opencv-learn-from-mat-struct/">OpenCV 從mat結構學起</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/Computer-science/">Computer science</a></li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/HongKong/">HongKong</a></li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/Programming-language/">Programming language</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="LinkedIn" rel="noopener noreferrer" href="https://linkedin.com/in/ji-rong-wu-a06601135/" target="_blank">
+				<svg class="widget-social__link-icon icon icon-linkedin" width="24" height="24" viewBox="0 0 352 352"><path d="M0,40v272c0,21.9,18.1,40,40,40h272c21.9,0,40-18.1,40-40V40c0-21.9-18.1-40-40-40H40C18.1,0,0,18.1,0,40z M312,32 c4.6,0,8,3.4,8,8v272c0,4.6-3.4,8-8,8H40c-4.6,0-8-3.4-8-8V40c0-4.6,3.4-8,8-8H312z M59.5,87c0,15.2,12.3,27.5,27.5,27.5 c15.2,0,27.5-12.3,27.5-27.5c0-15.2-12.3-27.5-27.5-27.5C71.8,59.5,59.5,71.8,59.5,87z M187,157h-1v-21h-45v152h47v-75 c0-19.8,3.9-39,28.5-39c24.2,0,24.5,22.4,24.5,40v74h47v-83.5c0-40.9-8.7-72-56.5-72C208.5,132.5,193.3,145.1,187,157z M64,288h47.5 V136H64V288z"/></svg>
+				<span>LinkedIn</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/Alfredisabug" target="_blank">
+				<svg class="widget-social__link-icon icon icon-github" width="24" height="24" viewBox="0 0 384 374"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Email" href="mailto:jirongwu81@gmail.com">
+				<svg class="widget-social__link-icon icon icon-mail" width="24" height="24" viewBox="0 0 416 288"><path d="m0 16v256 16h16 384 16v-16-256-16h-16-384-16zm347 16-139 92.5-139-92.5zm-148 125.5 9 5.5 9-5.5 167-111.5v210h-352v-210z"/></svg>
+				<span>jirongwu81@gmail.com</span>
+			</a>
+		</div>
+
+		
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2024 佶佶如律令.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>OpenCV 簡介 - 佶佶如律令</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="佶佶如律令" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">佶佶如律令</div>
+					
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">Home</span>
+				
+			</a>
+		</li>
+		<li class="menu__item menu__item--active">
+			<a class="menu__link" href="/post/note/">
+				
+				<span class="menu__text">挖掘手扎</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/travel/">
+				
+				<span class="menu__text">探險足跡</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/leisure/">
+				
+				<span class="menu__text">悠悠揚揚</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/aboutme/">
+				
+				<span class="menu__text">About Me</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/history/">
+				
+				<span class="menu__text">History</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">OpenCV 簡介</h1>
+			
+		</header>
+		<div class="content post__content clearfix">
+			<p>上一篇說到我會重新開始學習OpenCV<br>
+並且學習使用Mat的資料結構</p>
+<p>現在就讓我重新認識OpenCV</p>
+<p>include 的函式檔中</p>
+<ul>
+<li>cv – 核心函數庫                                 在OpenCV2，為opencv.hpp，每次使用CV一定會先include</li>
+<li>core – 數據結構與線性代數庫                      在OpenCV2，為core.hpp</li>
+<li>highgui – GUI函數庫                             在OpenCV2，為highgui.hpp</li>
+</ul>
+<p>目前這三個是我比較常用到的</p>
+<p>OpenCV中有Mat、cvMat、IplImage這三種資料結構，都可以表示為圖像<br>
+Mat重於數學矩陣的運算<br>
+而cvMat跟IplImage則是重於&quot;圖像&quot;上的計算</p>
+<p>目前著重於Mat上<br>
+所以就挑著Mat來說吧<br>
+Mat是OpenCV2提出的新的資料結構，Mat比較方便記憶體的存取，會自動釋放記憶體，不用像IplImage要手動釋放。Mat可以用來處理向量、矩陣、圖像等多維的數據</p>
+<p>一開始當然是include</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;opencv2\opencv.hpp&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;opencv2\core\core.hpp&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;opencv2\highgui\highgui.hpp&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>using namespace std;
+</span></span></code></pre></div><p>之後就可以開始宣告矩陣(圖像)<br>
+創造一個名為 src 的 Mat 矩陣</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>Mat src;
+</span></span></code></pre></div><p>假設為640*480 三通道影像</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>src.<span style="color:#a6e22e">create</span>(<span style="color:#ae81ff">480</span>, <span style="color:#ae81ff">640</span>, CV_8UC3);
+</span></span></code></pre></div><p>當然一開始也可以直接宣告</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>Mat <span style="color:#a6e22e">src</span>(<span style="color:#ae81ff">480</span>, <span style="color:#ae81ff">640</span>, CV_8UC3);
+</span></span></code></pre></div><p>宣告函式為 ( rows, cols , channels)<br>
+rows是矩陣的高度(height)<br>
+colsr是矩陣的寬度(width)<br>
+channels 是矩陣的資料結構</p>
+<p><img src="../001.png" alt=""><br>
+通常影像處理左上角為原點( 0 , 0 )<br>
+cols 為 j, rows 為 i<br>
+以後要處理矩陣的數值的時候會用到</p>
+<p>而channels 有很多種<br>
+CV_8UC1 CV_8SC1 CV_16UC1 CV_16SC1 CV_32SC1 CV_32FC1 CV_64FC1<br>
+CV_8UC2 CV_8SC2 CV_16UC2 CV_16SC2 CV_32SC2 CV_32FC2 CV_64FC2<br>
+CV_8UC3 CV_8SC3 CV_16UC3 CV_16SC3 CV_32SC3 CV_32FC3 CV_64FC3<br>
+CV_8UC4 CV_8SC4 CV_16UC4 CV_16SC4 CV_32SC4 CV_32FC4 CV_64FC4</p>
+<p><strong>8U</strong>   8位元無符號<br>
+<strong>16U</strong>  16位元無符號<br>
+<strong>32F</strong>  32位元浮點數<br>
+後面的C為通道數<br>
+數據可以直接跟uchar,short,int,float,double型別通用</p>
+<p>也可以在創建矩陣時，就賦予矩陣初始值</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>Mat <span style="color:#a6e22e">src</span>(<span style="color:#ae81ff">240</span>,<span style="color:#ae81ff">320</span>,<span style="color:#ae81ff">32F</span>C1, <span style="color:#a6e22e">Scalar</span>(<span style="color:#ae81ff">5</span>));  
+</span></span></code></pre></div><p>讀取名為Lena的圖片</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>src <span style="color:#f92672">=</span> <span style="color:#a6e22e">imread</span>(<span style="color:#e6db74">&#34;Lena&#34;</span>, <span style="color:#ae81ff">1</span>);  
+</span></span></code></pre></div><p>顯示出圖案<br>
+先創建顯示視窗</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#a6e22e">cvNamedWindow</span>(<span style="color:#e6db74">&#34;Lena&#34;</span>,<span style="color:#ae81ff">1</span>);  
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">imShow</span>(<span style="color:#e6db74">&#34;Lena&#34;</span>, src);  
+</span></span></code></pre></div><p>最後加上</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#a6e22e">waitKey</span>(<span style="color:#ae81ff">0</span>);  
+</span></span></code></pre></div><p>可以在顯示圖案後，等待有按鍵鍵入才結束<br>
+最後記得釋放視窗</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#a6e22e">destroyWindow</span>(<span style="color:#e6db74">&#34;Lena&#34;</span>);
+</span></span></code></pre></div><p>如圖所示:<br>
+<img src="../002.jpg" alt=""></p>
+<p>今天就先複習到這<br>
+希望自己的程式能力越來越好<br>
+just keep my road.</p>
+
+		</div>
+	</article>
+</main>
+
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/travel/2016/06/conference-hongkong-1/conference-hongkong-1/">香港研討會之旅(一)</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/note/2016/05/markov-random-fields-intro/markov-random-fields-intr/">馬可夫隨機場</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/note/2016/03/opencv-introduce/opencv-introduce/">OpenCV 簡介</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/note/2016/03/opencv-learn-from-mat-struct/opencv-learn-from-mat-struct/">OpenCV 從mat結構學起</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/Computer-science/">Computer science</a></li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/HongKong/">HongKong</a></li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/Programming-language/">Programming language</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="LinkedIn" rel="noopener noreferrer" href="https://linkedin.com/in/ji-rong-wu-a06601135/" target="_blank">
+				<svg class="widget-social__link-icon icon icon-linkedin" width="24" height="24" viewBox="0 0 352 352"><path d="M0,40v272c0,21.9,18.1,40,40,40h272c21.9,0,40-18.1,40-40V40c0-21.9-18.1-40-40-40H40C18.1,0,0,18.1,0,40z M312,32 c4.6,0,8,3.4,8,8v272c0,4.6-3.4,8-8,8H40c-4.6,0-8-3.4-8-8V40c0-4.6,3.4-8,8-8H312z M59.5,87c0,15.2,12.3,27.5,27.5,27.5 c15.2,0,27.5-12.3,27.5-27.5c0-15.2-12.3-27.5-27.5-27.5C71.8,59.5,59.5,71.8,59.5,87z M187,157h-1v-21h-45v152h47v-75 c0-19.8,3.9-39,28.5-39c24.2,0,24.5,22.4,24.5,40v74h47v-83.5c0-40.9-8.7-72-56.5-72C208.5,132.5,193.3,145.1,187,157z M64,288h47.5 V136H64V288z"/></svg>
+				<span>LinkedIn</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/Alfredisabug" target="_blank">
+				<svg class="widget-social__link-icon icon icon-github" width="24" height="24" viewBox="0 0 384 374"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Email" href="mailto:jirongwu81@gmail.com">
+				<svg class="widget-social__link-icon icon icon-mail" width="24" height="24" viewBox="0 0 416 288"><path d="m0 16v256 16h16 384 16v-16-256-16h-16-384-16zm347 16-139 92.5-139-92.5zm-148 125.5 9 5.5 9-5.5 167-111.5v210h-352v-210z"/></svg>
+				<span>jirongwu81@gmail.com</span>
+			</a>
+		</div>
+
+		
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2024 佶佶如律令.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>

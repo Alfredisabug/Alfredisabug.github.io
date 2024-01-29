@@ -6,13 +6,27 @@
     <description>Recent content in Categories on 佶佶如律令</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Mon, 28 Mar 2016 00:22:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 14 Jun 2016 00:06:00 +0800</lastBuildDate>
     <atom:link href="https://blog.asjijiasdecree.com/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>C language</title>
-      <link>https://blog.asjijiasdecree.com/categories/C-language/</link>
+      <title>HongKong</title>
+      <link>https://blog.asjijiasdecree.com/categories/HongKong/</link>
+      <pubDate>Tue, 14 Jun 2016 00:06:00 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/categories/HongKong/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Computer science</title>
+      <link>https://blog.asjijiasdecree.com/categories/Computer-science/</link>
+      <pubDate>Sat, 21 May 2016 22:47:00 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/categories/Computer-science/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Programming language</title>
+      <link>https://blog.asjijiasdecree.com/categories/Programming-language/</link>
       <pubDate>Mon, 28 Mar 2016 00:22:00 +0800</pubDate>
-      <guid>https://blog.asjijiasdecree.com/categories/C-language/</guid>
+      <guid>https://blog.asjijiasdecree.com/categories/Programming-language/</guid>
       <description></description>
     </item>
   </channel>
