@@ -6,8 +6,29 @@
     <description>Recent content in Programming language on 佶佶如律令</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 27 Sep 2016 13:19:33 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 22 May 2017 10:46:47 +0800</lastBuildDate>
     <atom:link href="https://blog.asjijiasdecree.com/categories/Programming-language/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>影像拓展邊界</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2017/05/image-extend-border/image-extend-border/</link>
+      <pubDate>Mon, 22 May 2017 10:46:47 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2017/05/image-extend-border/image-extend-border/</guid>
+      <description>Publish Date : 2017-05-22 10:46 在影像處理中 經常會需要用到濾波器(卷積處理) 但在邊界 中心沒有足夠像素做運算 也就是說濾波器在圖像邊界上時 需要的像素大於原始圖像的邊界</description>
+    </item>
+    <item>
+      <title>OpenCV轉換色彩空間及邊緣偵測</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2017/03/opencv-color-train-edge-det/opencv-color-train-edge-det/</link>
+      <pubDate>Fri, 31 Mar 2017 15:25:54 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2017/03/opencv-color-train-edge-det/opencv-color-train-edge-det/</guid>
+      <description>Publish Date : 2017-03-31 15:25 是的 有好一陣子沒有更新了 原因很多 面試阿，碩士研究，出國阿 最近自己也轉換了未來目標 希望自己能變得越來越厲害 在開始之前 須講一下之前的寫</description>
+    </item>
+    <item>
+      <title>Windows 資料類型</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2016/10/data-type-of-windows/data-type-of-windows/</link>
+      <pubDate>Mon, 03 Oct 2016 09:15:42 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2016/10/data-type-of-windows/data-type-of-windows/</guid>
+      <description>Publish Date : 2016-10-03 09:15 Windows API函數、資料結構等都是採用Windows 資料類型。 比如入口參數、返回值等都是 因此學習Windows API程式設計必須要了解W</description>
+    </item>
     <item>
       <title>圖片相似度----SSIM以及PSNR</title>
       <link>https://blog.asjijiasdecree.com/post/note/2016/09/ssim-and-psnr/ssim-and-psnr/</link>

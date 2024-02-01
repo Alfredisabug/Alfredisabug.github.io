@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>想要咬一口蘋果:黑蘋果教程--製作USB開機碟 - 佶佶如律令</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="佶佶如律令" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">佶佶如律令</div>
+					
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">Home</span>
+				
+			</a>
+		</li>
+		<li class="menu__item menu__item--active">
+			<a class="menu__link" href="/post/note/">
+				
+				<span class="menu__text">挖掘手扎</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/travel/">
+				
+				<span class="menu__text">探險足跡</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/leisure/">
+				
+				<span class="menu__text">悠悠揚揚</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/aboutme/">
+				
+				<span class="menu__text">About Me</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/history/">
+				
+				<span class="menu__text">History</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">想要咬一口蘋果:黑蘋果教程--製作USB開機碟</h1>
+			
+		</header>
+		<div class="content post__content clearfix">
+			
+<style type='text/css'>
+.pub_label_color {
+    color: #BDBDBF;
+}
+</style>
+
+
+<div>
+	<p class="pub_label_color">Publish Date :  2017-04-07 14:30 </p>
+</div>
+
+<p>一台MAC對於我來說<br>
+是有點貴的<br>
+但我還是想試用看看<br>
+apple的魅力阿~</p>
+<p>MAC OS現在對於硬體有比較大的相容性了<br>
+也就是 <strong>黑蘋果</strong><br>
+基本上Intel skylake之後的CPU都可以原生支援<br>
+主機板就得看各家廠牌了</p>
+<p>那因為我本身沒有桌電<br>
+所以我拿筆電來試<br>
+那灌系統基本上是沒差別<br>
+驅動部分還是有點困難<br>
+所以應該只是先灌來玩玩<br>
+之後還是會改回用其他Linux distributions吧</p>
+<p>在開始之前<br>
+必須先了解你的硬體<br>
+以及<br>
+白蘋果<br>
+USB隨身碟(至少8G以上)<br>
+Clover(最新版本)<br>
+efi Mounter<br>
+以及必要的驅動<br>
+(驅動只能自己找，畢竟每台電腦硬體都不一樣)</p>
+<p>如果沒有白蘋果<br>
+像我一樣<br>
+那就是用虛擬機吧<br>
+網路上都有教學</p>
+<p>先使用APP store 下載最新版本的Mac OS<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../001.PNG" width="100%" height="100%"></img>
+</div>
+<br>
+接下來 準備好隨身碟<br>
+將最新版本的Mac OS 放進USB隨身碟<br>
+先將隨身碟格式化<br>
+格式選 擴充格式(日誌式)<br>
+架構選 GUID分割表<br>
+因MAC OS 是以EFI+GPT啟動的<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../002.PNG" width="100%" height="100%"></img>
+</div>
+<br>
+選擇清除後<br>
+隨身碟就已經格式化完成<br>
+開啟終端機<br>
+以及Finder<br>
+在Finder中找到安裝Sierra<br>
+並按下右鍵選擇【顯示套件內容】<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../003.PNG" width="100%" height="100%"></img>
+</div>
+<br>
+進入 Contents &gt; Resources，找到 createinstallmedia<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../004.PNG" width="100%" height="100%"></img>
+</div>
+<br>
+之後在 終端機 中輸入 sudo 加上空白鍵<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../005.PNG" width="100%" height="100%"></img>
+</div>
+<br>
+將 剛剛的createinstallmedia 拖移至終端機<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../006.PNG" width="100%" height="100%"></img>
+</div>
+<br>
+輸入 &ndash;volume 加上空白鍵<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../007.PNG" width="100%" height="100%"></img>
+</div>
+<br>
+將隨身碟圖示直接拖拉至終端機中<br>
+產生的路徑會隨著隨身碟名稱而不同哦<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../008.PNG" width="100%" height="100%"></img>
+</div>
+<br>
+輸入 &ndash;applicationpath 加上空白鍵<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../009.PNG" width="100%" height="100%"></img>
+</div>
+<br>
+打開 Finder &gt; 應用程式，將  &ldquo;安裝 macOS Sierra&rdquo; 直接拖移至終端機<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../010.PNG" width="100%" height="100%"></img>
+</div>
+<br>
+按下 Enter 並輸入 本機密碼<br>
+之後就等一下<br>
+等待把mac os放進隨身碟<br>
+完成後桌上就會出現圖示<br>
+打開就可以看到隨身碟裡面出現了 安裝macOS Sierra<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../011.PNG" width="100%" height="100%"></img>
+</div>
+<br>
+到這邊為止<br>
+就是<br>
+mac OS的開機碟</p>
+<p>但這樣是不能在EFI中啟動的<br>
+所以需要一個引導安裝程式<br>
+這裡我選擇clover<br>
+比較可以接近原生efi<br>
+Windows 下也能修改這EFI磁區<br>
+代表你可以在Windows底下修改Clover EFI設定檔</p>
+<p>那麼就先下載好clover 以及驅動<br>
+驅動在osx底下是 kext檔案名稱哦</p>
+<p>先啟動clover<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../012.PNG" width="100%" height="100%"></img>
+</div>
+<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../013.PNG" width="100%" height="100%"></img>
+</div>
+<br>
+選擇繼續<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../014.PNG" width="100%" height="100%"></img>
+</div>
+<br>
+一樣選擇繼續<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../015.PNG" width="100%" height="100%"></img>
+</div>
+<br>
+選擇安裝位置，然後選擇你的USB隨身碟<br>
+之後按左下角的自訂<br>
+勾選<br>
+僅安裝UEFI開機版本<br>
+安裝clover到EFI系統區<br>
+開機主題看自己喜歡 想選哪個就選哪個<br>
+Drivers64EFI則是要看需求勾選<br>
+最後勾選<br>
+安裝RC scripts到目標磁區<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../016.PNG" width="100%" height="100%"></img>
+</div>
+<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../017.PNG" width="100%" height="100%"></img>
+</div>
+<br>
+這裡貼上我選擇的，當作參考吧<br>
+選擇安裝後<br>
+隨身碟內就會出現<br>
+EFI分割區<br>
+打開之後有EFI的資料夾<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../018.PNG" width="100%" height="100%"></img>
+</div>
+<br>
+裡面包含著開機要啟動的必要資訊及驅動<br>
+先到<br>
+到 EFI/CLOVER/Kexts/Other<br>
+還有 EFI/CLOVER/Kexts/10.12 (這裡是sierra版本，之後如果還有更新要記得改位置)<br>
+放上驅動<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../019.PNG" width="100%" height="100%"></img>
+</div>
+<br>
+其中<br>
+FakeSMC以及NullCPUPowerManagement是必要的<br>
+其他則是看你的硬體需求而定<br>
+驅動以及clover等必要工具<br>
+都可以在 國外黑蘋果的專業論壇裡面下載到<br>
+<a href="https://www.tonymacx86.com/">tonymacx86</a></p>
+<p>放完驅動後<br>
+記得先下載好 Clover Configurator-2<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../020.PNG" width="100%" height="100%"></img>
+</div>
+<br>
+到 EFI/CLOVER/下找到config.plist<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../021.PNG" width="100%" height="100%"></img>
+</div>
+<br>
+用Configurator打開 就可編輯開機選項<br>
+通常都用預設，以及打開-v 以查看開機錯誤訊息<br>
+讓Clover有最大相容性<br>
+但因為我的是筆電<br>
+有比較多選項需要勾選<br>
+但還是端看個人電腦需求下去做勾選<br>
+這邊只做參考用哦<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../032.PNG" width="100%" height="100%"></img>
+</div>
+<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../022.PNG" width="100%" height="100%"></img>
+</div>
+<br>
+通常這裡的 -v會開啟，以查看錯誤訊息<br>
+如果之後灌系統時有錯誤<br>
+都可以用這些錯誤訊息去找出問題<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../023.PNG" width="100%" height="100%"></img>
+</div>
+<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../024.PNG" width="100%" height="100%"></img>
+</div>
+<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../025.PNG" width="100%" height="100%"></img>
+</div>
+<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../026.PNG" width="100%" height="100%"></img>
+</div>
+<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../027.PNG" width="100%" height="100%"></img>
+</div>
+<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../028.PNG" width="100%" height="100%"></img>
+</div>
+<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../029.PNG" width="100%" height="100%"></img>
+</div>
+<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../030.PNG" width="100%" height="100%"></img>
+</div>
+<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../031.PNG" width="100%" height="100%"></img>
+</div>
+</p>
+<p>這裡貼上來的原因也有一部分原因是想要備份一下可以穩定開機的設定<br>
+為了這些設定也是搞了我很久</p>
+<p>設定完成後<br>
+按下左下角的save<br>
+就完成了開機碟設定<br>
+就可以拿這支隨身碟去其他電腦安裝OSX<br>
+安裝過程我有空再寫吧</p>
+<p>想要搞定黑蘋果<br>
+最重要的還是要有耐心<br>
+有耐心重灌個幾十次吧<br>
+最大的問題還是在於驅動部分<br>
+即使我已經安裝成功了<br>
+我目前也沒聲音QQ<br>
+HDMI孔還在尋找可以用的驅動<br>
+然後自己本身開機的問題也還沒解決</p>
+<p>真的要有極大的耐心<br>
+也許桌機會比較輕鬆<br>
+原價屋有黑蘋果菜單<br>
+可以自己尋找哦</p>
+<p>以下是我參考的網站</p>
+<p><a href="https://www.tonymacx86.com/">tonymac86</a>(極度推薦這個網站，發文幾乎都會有解答，國外很多大神啊)<br>
+<a href="http://www.jianshu.com/p/b156b0177a24">黑苹果引导工具 Clover 配置详解</a><br>
+<a href="https://clover-wiki.zetam.org/Home">Clover Wiki</a></p>
+
+		</div>
+	</article>
+</main>
+
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/note/2017/05/image-extend-border/image-extend-border/">影像拓展邊界</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/note/2017/04/hackintosh-make-usb-boot/hackintosh-make-usb-boot/">想要咬一口蘋果:黑蘋果教程--製作USB開機碟</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/note/2017/03/opencv-color-train-edge-det/opencv-color-train-edge-det/">OpenCV轉換色彩空間及邊緣偵測</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/note/2016/10/data-type-of-windows/data-type-of-windows/">Windows 資料類型</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/note/2016/09/ssim-and-psnr/ssim-and-psnr/">圖片相似度----SSIM以及PSNR</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/Computer-science/">Computer science</a></li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/HongKong/">HongKong</a></li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/Image-Processing/">Image Processing</a></li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/Programming-language/">Programming language</a></li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/Shopping/">Shopping</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="LinkedIn" rel="noopener noreferrer" href="https://linkedin.com/in/ji-rong-wu-a06601135/" target="_blank">
+				<svg class="widget-social__link-icon icon icon-linkedin" width="24" height="24" viewBox="0 0 352 352"><path d="M0,40v272c0,21.9,18.1,40,40,40h272c21.9,0,40-18.1,40-40V40c0-21.9-18.1-40-40-40H40C18.1,0,0,18.1,0,40z M312,32 c4.6,0,8,3.4,8,8v272c0,4.6-3.4,8-8,8H40c-4.6,0-8-3.4-8-8V40c0-4.6,3.4-8,8-8H312z M59.5,87c0,15.2,12.3,27.5,27.5,27.5 c15.2,0,27.5-12.3,27.5-27.5c0-15.2-12.3-27.5-27.5-27.5C71.8,59.5,59.5,71.8,59.5,87z M187,157h-1v-21h-45v152h47v-75 c0-19.8,3.9-39,28.5-39c24.2,0,24.5,22.4,24.5,40v74h47v-83.5c0-40.9-8.7-72-56.5-72C208.5,132.5,193.3,145.1,187,157z M64,288h47.5 V136H64V288z"/></svg>
+				<span>LinkedIn</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/Alfredisabug" target="_blank">
+				<svg class="widget-social__link-icon icon icon-github" width="24" height="24" viewBox="0 0 384 374"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Email" href="mailto:jirongwu81@gmail.com">
+				<svg class="widget-social__link-icon icon icon-mail" width="24" height="24" viewBox="0 0 416 288"><path d="m0 16v256 16h16 384 16v-16-256-16h-16-384-16zm347 16-139 92.5-139-92.5zm-148 125.5 9 5.5 9-5.5 167-111.5v210h-352v-210z"/></svg>
+				<span>jirongwu81@gmail.com</span>
+			</a>
+		</div>
+
+		
+	</div>
+</div>
+</aside>
+		</div>
+		<!DOCTYPE html>
+<html>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</html>
+
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>

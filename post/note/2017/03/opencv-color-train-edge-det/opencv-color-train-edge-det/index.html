@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>OpenCV轉換色彩空間及邊緣偵測 - 佶佶如律令</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="佶佶如律令" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">佶佶如律令</div>
+					
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">Home</span>
+				
+			</a>
+		</li>
+		<li class="menu__item menu__item--active">
+			<a class="menu__link" href="/post/note/">
+				
+				<span class="menu__text">挖掘手扎</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/travel/">
+				
+				<span class="menu__text">探險足跡</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/leisure/">
+				
+				<span class="menu__text">悠悠揚揚</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/aboutme/">
+				
+				<span class="menu__text">About Me</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/history/">
+				
+				<span class="menu__text">History</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">OpenCV轉換色彩空間及邊緣偵測</h1>
+			
+		</header>
+		<div class="content post__content clearfix">
+			
+<style type='text/css'>
+.pub_label_color {
+    color: #BDBDBF;
+}
+</style>
+
+
+<div>
+	<p class="pub_label_color">Publish Date :  2017-03-31 15:25 </p>
+</div>
+
+<p>是的<br>
+有好一陣子沒有更新了<br>
+原因很多<br>
+面試阿，碩士研究，出國阿<br>
+最近自己也轉換了未來目標<br>
+希望自己能變得越來越厲害</p>
+<p>在開始之前<br>
+須講一下之前的寫入影像<br>
+當時的函數是這樣的</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>VideoWriter <span style="color:#a6e22e">writer</span>(<span style="color:#e6db74">&#34;test.avi&#34;</span>, <span style="color:#a6e22e">CV_FOURCC</span>(<span style="color:#e6db74">&#39;D&#39;</span>, <span style="color:#e6db74">&#39;I&#39;</span>, <span style="color:#e6db74">&#39;V&#39;</span>, <span style="color:#e6db74">&#39;X&#39;</span>), <span style="color:#ae81ff">30.0</span>, <span style="color:#a6e22e">cvSize</span>(<span style="color:#ae81ff">640</span>, <span style="color:#ae81ff">480</span>));
+</span></span></code></pre></div><p>後來因為研究只需要寫入單通道影像<br>
+也因為需要記憶體控制不能儲存太多數據<br>
+也才發現，其實是可以直接寫入單通道影像的</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>VideoWriter <span style="color:#a6e22e">writer</span>(<span style="color:#e6db74">&#34;test.avi&#34;</span>, <span style="color:#a6e22e">CV_FOURCC</span>(<span style="color:#e6db74">&#39;D&#39;</span>, <span style="color:#e6db74">&#39;I&#39;</span>, <span style="color:#e6db74">&#39;V&#39;</span>, <span style="color:#e6db74">&#39;X&#39;</span>), <span style="color:#ae81ff">30.0</span>, <span style="color:#a6e22e">cvSize</span>(<span style="color:#ae81ff">640</span>, <span style="color:#ae81ff">480</span>), <span style="color:#ae81ff">1</span>);
+</span></span></code></pre></div><p>最後面參數，0代表寫入單通道影像，大於0則是多通道</p>
+<p>接下來開始今天的主題拉<br>
+在影像&quot;前處理&quot;<br>
+通常不一定是使用RGB色彩空間<br>
+常見的還有YCbCr，HSI等等<br>
+不同的應用，會轉換到不同的色彩空間<br>
+像是之前我處理膚色問題時<br>
+就會用到<strong>YCbCr</strong></p>
+<p>轉換色彩空間<br>
+就可以使用cvtColor這個函式<br>
+其用法如下</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#a6e22e">cvtColor</span>(src, dst, code);
+</span></span></code></pre></div><p>src為來源圖像<br>
+dst為儲存圖像<br>
+code為轉換方式<br>
+如果彩圖要轉灰階<br>
+就是使用<strong>CV_BGR2GRAY</strong><br>
+在opencv中，圖像的通道是用BGR的方式儲存的!<br>
+那其實網路上都有色彩空間中轉換的方式<br>
+要自己寫也不成問題哦<br>
+其他還有像是<br>
+CV_BGR2HSV、CV_BGR2YCrCb、CV_BGR2Lab等等<br>
+那記得在轉換時，要搞清楚儲存的位元跟通道數量哦<br>
+最後若要顯示，都必須轉成8位元的方式儲存<br>
+不然圖片會顯示不出來</p>
+<p>另外前處理或許還有個重要的過程<br>
+就是找edge<br>
+邊緣資訊在影像處理中扮演非常重要的腳色<br>
+但也因為邊緣資訊的方法<br>
+目前都沒有個定論<br>
+所以還是要看個人所需處理的目標所決定<br>
+在這舉三個例子<br>
+最常用的<strong>sobel</strong>及<strong>canny</strong><br>
+還有Laplacian<br>
+sobel其實就是梯度的運算<br>
+梯度的解釋可在 <a href="https://zh.wikipedia.org/wiki/%E6%A2%AF%E5%BA%A6">維基</a>找到<br>
+簡單來說可以找出其像素點跟周圍的變化量<br>
+在使用sobel時<br>
+會需要對x跟y方向作微分<br>
+這時會儲存為16S的格式<br>
+做完微分之後<br>
+再把x跟y方向加起來以及變正數<br>
+此時就會儲存為8U的型態<br>
+就可以顯示了<br>
+這通常還會搭配到thresh hold使用來尋找所需要的邊緣</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#a6e22e">Sobel</span>(src, dst_16s, CV_16S, x_order, y_order, scale, delta, BORDER_DEFAULT)
+</span></span></code></pre></div><p>src為來源<br>
+dst儲存圖像記得要用16S的儲存<br>
+x_order跟y_order則是用來選擇要對哪個方向作微分<br>
+x的話<br>
+就會是</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#a6e22e">Sobel</span>(src, dst_16s, CV_16S, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, scale, delta, BORDER_DEFAULT)
+</span></span></code></pre></div><p>scale則為sobel運算子的kernel大小<br>
+delta,BORDER_DEFAULT則使用預設則可</p>
+<p>canny對我來說則是比較有效的方法<br>
+因為弱小的edge有可能只是紋理而已<br>
+canny對此有增加了設定<br>
+弱小的edge附近如有強的edge<br>
+才會保留下來<br>
+而對我來說會比較有用的原因是<br>
+我只需要強大的edge點<br>
+且場景變化太大，使用sobel會不好控制thresh hold</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#a6e22e">Canny</span>(src, dst, lowThreshold , lowThreshold<span style="color:#f92672">*</span>ratio,  kernel_size );
+</span></span></code></pre></div><p>src為來源<br>
+dst儲存圖像<br>
+lowThreshold是第一閾值<br>
+lowThreshold*ratio是第二閥值，通常為3倍的lowThreshold<br>
+kernel_size為sobel運算子的kernel大小</p>
+<p>Laplace對我來說則比較陌生也比較少用到<br>
+有興趣的人自己去看吧<br>
+<a href="https://zh.wikipedia.org/wiki/%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E7%AE%97%E5%AD%90">維基</a>~</p>
+<p>以下為程式碼</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;opencv2\opencv.hpp&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;opencv2\core\core.hpp&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;opencv2\highgui\highgui.hpp&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>using namespace std;
+</span></span><span style="display:flex;"><span>using namespace cv;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">char</span> FileName[] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;lena.jpg&#34;</span>;
+</span></span><span style="display:flex;"><span>    Mat Src;
+</span></span><span style="display:flex;"><span>    Mat Gray;
+</span></span><span style="display:flex;"><span>    Mat sobel;
+</span></span><span style="display:flex;"><span>    Mat canny;
+</span></span><span style="display:flex;"><span>    Mat laplacian;
+</span></span><span style="display:flex;"><span>    Src <span style="color:#f92672">=</span> <span style="color:#a6e22e">imread</span>(FileName, <span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//轉灰階
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">cvtColor</span>(Src, Gray, CV_BGR2GRAY);
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//sobel
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    Mat grad_x, grad_y;
+</span></span><span style="display:flex;"><span>    Mat abs_grad_x, abs_grad_y;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">Sobel</span>(Gray, grad_x, CV_16S, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, BORDER_DEFAULT);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">convertScaleAbs</span>(grad_x, abs_grad_x);  <span style="color:#75715e">//轉成CV_8U
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">Sobel</span>(Gray, grad_y, CV_16S, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, BORDER_DEFAULT);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">convertScaleAbs</span>(grad_y, abs_grad_y);
+</span></span><span style="display:flex;"><span>    Mat dst1;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">addWeighted</span>(abs_grad_x, <span style="color:#ae81ff">0.5</span>, abs_grad_y, <span style="color:#ae81ff">0.5</span>, <span style="color:#ae81ff">0</span>, dst1);<span style="color:#75715e">//x,y方向加在一起
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">threshold</span>(dst1, sobel, <span style="color:#ae81ff">80</span>, <span style="color:#ae81ff">255</span>, THRESH_BINARY <span style="color:#f92672">|</span> THRESH_OTSU);
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//Canny
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">Canny</span>(Gray, canny, <span style="color:#ae81ff">60</span>, <span style="color:#ae81ff">120</span>, <span style="color:#ae81ff">3</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//Laplacian
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">Laplacian</span>(Gray, laplacian, CV_16S, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, BORDER_DEFAULT);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">convertScaleAbs</span>(laplacian, laplacian);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">imshow</span>(<span style="color:#e6db74">&#34;Src&#34;</span>, Src);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">imshow</span>(<span style="color:#e6db74">&#34;Gray&#34;</span>, Gray);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">imshow</span>(<span style="color:#e6db74">&#34;Sobel&#34;</span>, sobel);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">imshow</span>(<span style="color:#e6db74">&#34;Canny&#34;</span>, canny);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">imshow</span>(<span style="color:#e6db74">&#34;Laplacian&#34;</span>, laplacian);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">cvWaitKey</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>} 
+</span></span></code></pre></div><p>以及結果
+來源<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../lena.png" width="50%" height="50%"></img>
+</div>
+<br>
+灰階<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../gray.png" width="50%" height="50%"></img>
+</div>
+<br>
+sobel<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../sobel.png" width="50%" height="50%"></img>
+</div>
+<br>
+canny<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../canny.png" width="50%" height="50%"></img>
+</div>
+<br>
+laplace<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../laplacian.png" width="50%" height="50%"></img>
+</div>
+</p>
+
+		</div>
+	</article>
+</main>
+
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/note/2017/05/image-extend-border/image-extend-border/">影像拓展邊界</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/note/2017/04/hackintosh-make-usb-boot/hackintosh-make-usb-boot/">想要咬一口蘋果:黑蘋果教程--製作USB開機碟</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/note/2017/03/opencv-color-train-edge-det/opencv-color-train-edge-det/">OpenCV轉換色彩空間及邊緣偵測</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/note/2016/10/data-type-of-windows/data-type-of-windows/">Windows 資料類型</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/note/2016/09/ssim-and-psnr/ssim-and-psnr/">圖片相似度----SSIM以及PSNR</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/Computer-science/">Computer science</a></li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/HongKong/">HongKong</a></li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/Image-Processing/">Image Processing</a></li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/Programming-language/">Programming language</a></li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/Shopping/">Shopping</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="LinkedIn" rel="noopener noreferrer" href="https://linkedin.com/in/ji-rong-wu-a06601135/" target="_blank">
+				<svg class="widget-social__link-icon icon icon-linkedin" width="24" height="24" viewBox="0 0 352 352"><path d="M0,40v272c0,21.9,18.1,40,40,40h272c21.9,0,40-18.1,40-40V40c0-21.9-18.1-40-40-40H40C18.1,0,0,18.1,0,40z M312,32 c4.6,0,8,3.4,8,8v272c0,4.6-3.4,8-8,8H40c-4.6,0-8-3.4-8-8V40c0-4.6,3.4-8,8-8H312z M59.5,87c0,15.2,12.3,27.5,27.5,27.5 c15.2,0,27.5-12.3,27.5-27.5c0-15.2-12.3-27.5-27.5-27.5C71.8,59.5,59.5,71.8,59.5,87z M187,157h-1v-21h-45v152h47v-75 c0-19.8,3.9-39,28.5-39c24.2,0,24.5,22.4,24.5,40v74h47v-83.5c0-40.9-8.7-72-56.5-72C208.5,132.5,193.3,145.1,187,157z M64,288h47.5 V136H64V288z"/></svg>
+				<span>LinkedIn</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/Alfredisabug" target="_blank">
+				<svg class="widget-social__link-icon icon icon-github" width="24" height="24" viewBox="0 0 384 374"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Email" href="mailto:jirongwu81@gmail.com">
+				<svg class="widget-social__link-icon icon icon-mail" width="24" height="24" viewBox="0 0 416 288"><path d="m0 16v256 16h16 384 16v-16-256-16h-16-384-16zm347 16-139 92.5-139-92.5zm-148 125.5 9 5.5 9-5.5 167-111.5v210h-352v-210z"/></svg>
+				<span>jirongwu81@gmail.com</span>
+			</a>
+		</div>
+
+		
+	</div>
+</div>
+</aside>
+		</div>
+		<!DOCTYPE html>
+<html>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</html>
+
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>

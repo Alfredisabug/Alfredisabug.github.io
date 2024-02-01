@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Windows 資料類型 - 佶佶如律令</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="佶佶如律令" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">佶佶如律令</div>
+					
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">Home</span>
+				
+			</a>
+		</li>
+		<li class="menu__item menu__item--active">
+			<a class="menu__link" href="/post/note/">
+				
+				<span class="menu__text">挖掘手扎</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/travel/">
+				
+				<span class="menu__text">探險足跡</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/leisure/">
+				
+				<span class="menu__text">悠悠揚揚</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/aboutme/">
+				
+				<span class="menu__text">About Me</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/history/">
+				
+				<span class="menu__text">History</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Windows 資料類型</h1>
+			
+		</header>
+		<div class="content post__content clearfix">
+			
+<style type='text/css'>
+.pub_label_color {
+    color: #BDBDBF;
+}
+</style>
+
+
+<div>
+	<p class="pub_label_color">Publish Date :  2016-10-03 09:15 </p>
+</div>
+
+<p>Windows API函數、資料結構等都是採用Windows 資料類型。<br>
+比如入口參數、返回值等都是<br>
+因此學習Windows API程式設計必須要了解Windows資料類型</p>
+<p>在Visual Stdio中可以查看資料類型的定義<br>
+在資料類型的類型名上按右鍵，可以選擇&quot;定義&quot;<br>
+可以從SDK的標頭檔中看到各類型的定義<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../%e6%9c%aa%e5%91%bd%e5%90%8d.png" width="100%" height="100%"></img>
+</div>
+<br>
+LPSTR的定義為:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">typedef</span> _Null_terminated_ CHAR <span style="color:#f92672">*</span>NPSTR, <span style="color:#f92672">*</span>LPSTR, <span style="color:#f92672">*</span>PSTR;
+</span></span></code></pre></div><p>Windows 資料類型的命名都有規律<br>
+基底資料型別包括BYTE、CHAR、WORD、SHORT、DOWRD、INT等<br>
+指標類型的命令方式一般是在其指向的資料類型前加&quot;LP&quot;或是&quot;P&quot;<br>
+控制碼類型一般都是加&quot;H&quot;，比如點陣圖(BITMAP)對應的控制碼類行為&quot;HBITMAP&quot;，選單(MENU)為&quot;HMENU&quot;，視窗(WINDOW)則是&quot;HWND&quot;</p>
+<p>其實所有的Windows 資料類型都是由C資料類型經過類型重定義得到的，如DWORD實質上就是unsigned   long資料類型，32位元的無符號整數型</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;Windows.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">WinMain</span>(
+</span></span><span style="display:flex;"><span>    HINSTANCE hInstance,
+</span></span><span style="display:flex;"><span>    HINSTANCE hPrevInstance,
+</span></span><span style="display:flex;"><span>    LPSTR lpCmdLine,
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> nCmdShow
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//定義字串
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    LPSTR szString <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Windows data type, string.&#34;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//定義字元陣列
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    CHAR lpString[<span style="color:#ae81ff">120</span>];
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//定義DWORD類型資料
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    DWORD dwMax <span style="color:#f92672">=</span> <span style="color:#ae81ff">0xffffffff</span>;
+</span></span><span style="display:flex;"><span>    DWORD dwOne <span style="color:#f92672">=</span> <span style="color:#ae81ff">0x1</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//定義INT類型資料
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    INT iMax <span style="color:#f92672">=</span> <span style="color:#ae81ff">0xffffffff</span>;
+</span></span><span style="display:flex;"><span>    INT iOne <span style="color:#f92672">=</span> <span style="color:#ae81ff">0x1</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//顯示字串
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">MessageBox</span>(NULL, szString, <span style="color:#e6db74">&#34;LPSTR&#34;</span>, MB_OK);
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//複製記憶體，將字串複製到陣列中(包括NULL)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">CopyMemory</span>(lpString, szString, <span style="color:#a6e22e">lstrlen</span>(szString) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//顯示複製的字串
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">MessageBox</span>(NULL, lpString, <span style="color:#e6db74">&#34;CHAR[]&#34;</span>, MB_OK);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//比較DWORD並顯示結果
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (dwMax <span style="color:#f92672">&gt;</span> dwOne)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">MessageBox</span>(NULL, <span style="color:#e6db74">&#34;DWORD類型的資料&#34;&#34;DWORD 0xFFFFFFFF &gt; 0x1&#34;</span>,<span style="color:#e6db74">&#34;DWORD&#34;</span>, MB_OK);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//比較INT並顯示結果
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (iMax <span style="color:#f92672">&lt;</span> iOne)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">MessageBox</span>(NULL, <span style="color:#e6db74">&#34;INT類型的資料 0xFFFFFFFF &lt; 0x1&#34;</span>, <span style="color:#e6db74">&#34;INT&#34;</span>, MB_OK);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>WinMain是程式的入口點，相當於C語言的main函數<br>
+定義為:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">WinMain</span>(
+</span></span><span style="display:flex;"><span>    HINSTANCE hInstance,
+</span></span><span style="display:flex;"><span>    HINSTANCE hPrevInstance,
+</span></span><span style="display:flex;"><span>    LPSTR lpCmdLine,
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> nCmdShow
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><p>第一個參數hinstance，資料類型是HINSTANCE，此參數表示應用程式本次執行實例的控制碼<br>
+第二個參數hPrevInstance，資料類型是HINSTANCE，表示應用程式之前執行實例的控制碼，但是在實際應用中，此參數始終為NULL<br>
+第三個參數lpCmdLine是執行時參數。如在cmd命令列中執行&quot;start.exe Command Arguments&quot;，那麼lpCmdLine就指向字串&quot;Command Arguments&quot;，作用與C語言中的main函數的參數作用類似。資料類型LPSTR是Windows API中常用的字串類型<br>
+最後一個參數是nCmdShow，資料類型是int，表示應用程式視窗(如果有)的顯示狀態<br>
+WinMain函數的返回類型是int。</p>
+<p>MessageBox函數原型:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">MessageBox</span>(HWND hWnd , LPCTSTR lpText , LPCTSTR lpCaption , UINT uType);
+</span></span></code></pre></div><p>第一個參數hWnd是訊息方塊所屬的視窗的控制碼，可以設定為NULL<br>
+第二個參數lpText是字串，表示訊息方塊所顯示的訊息<br>
+第三個參數lpCaption是字串，表示訊息方塊的標題<br>
+第四個參數uType是訊息方塊的類型，這裡設定為&quot;MB_OK&quot;，表示訊息方塊包含一個&quot;確定&quot;按鈕</p>
+<p>上面算是一個小範例<br>
+但是在執行的時候卻發現一個問題<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../%e6%9c%aa%e5%91%bd%e5%90%8d%20%281%29.png" width="100%" height="100%"></img>
+</div>
+<br>
+為什麼會有這個問題呢?</p>
+<p>重點在於編碼方式</p>
+<p>lPTSTR，LPTSTR，PCTSTR，LPCTSTR<br>
+在ANSI編譯方式下，PTSTR和LPTSTR等價於LPSTR，在Unicode下等價於LPWSTR。<br>
+在ANSI編譯方式下，PCTSTR和LPCTSTR等價於LPCSTR，在Unicode下等價於LPCWSTR。</p>
+<p>我的解決方法是<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../%e6%9c%aa%e5%91%bd%e5%90%8d%20%282%29.png" width="100%" height="100%"></img>
+</div>
+<br>
+把原本的Unicode字元集改成多位元的字元集<br>
+就可以成功執行了</p>
+<p>總共會出現4個對話方塊<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../%e6%9c%aa%e5%91%bd%e5%90%8d%20%283%29.png" width="50%" height="50%"></img>
+</div>
+<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../%e6%9c%aa%e5%91%bd%e5%90%8d%20%284%29.png" width="50%" height="50%"></img>
+</div>
+<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../%e6%9c%aa%e5%91%bd%e5%90%8d%20%285%29.png" width="50%" height="50%"></img>
+</div>
+<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../%e6%9c%aa%e5%91%bd%e5%90%8d%20%286%29.png" width="50%" height="50%"></img>
+</div>
+</p>
+
+		</div>
+	</article>
+</main>
+
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/note/2017/05/image-extend-border/image-extend-border/">影像拓展邊界</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/note/2017/04/hackintosh-make-usb-boot/hackintosh-make-usb-boot/">想要咬一口蘋果:黑蘋果教程--製作USB開機碟</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/note/2017/03/opencv-color-train-edge-det/opencv-color-train-edge-det/">OpenCV轉換色彩空間及邊緣偵測</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/note/2016/10/data-type-of-windows/data-type-of-windows/">Windows 資料類型</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/note/2016/09/ssim-and-psnr/ssim-and-psnr/">圖片相似度----SSIM以及PSNR</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/Computer-science/">Computer science</a></li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/HongKong/">HongKong</a></li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/Image-Processing/">Image Processing</a></li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/Programming-language/">Programming language</a></li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/Shopping/">Shopping</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="LinkedIn" rel="noopener noreferrer" href="https://linkedin.com/in/ji-rong-wu-a06601135/" target="_blank">
+				<svg class="widget-social__link-icon icon icon-linkedin" width="24" height="24" viewBox="0 0 352 352"><path d="M0,40v272c0,21.9,18.1,40,40,40h272c21.9,0,40-18.1,40-40V40c0-21.9-18.1-40-40-40H40C18.1,0,0,18.1,0,40z M312,32 c4.6,0,8,3.4,8,8v272c0,4.6-3.4,8-8,8H40c-4.6,0-8-3.4-8-8V40c0-4.6,3.4-8,8-8H312z M59.5,87c0,15.2,12.3,27.5,27.5,27.5 c15.2,0,27.5-12.3,27.5-27.5c0-15.2-12.3-27.5-27.5-27.5C71.8,59.5,59.5,71.8,59.5,87z M187,157h-1v-21h-45v152h47v-75 c0-19.8,3.9-39,28.5-39c24.2,0,24.5,22.4,24.5,40v74h47v-83.5c0-40.9-8.7-72-56.5-72C208.5,132.5,193.3,145.1,187,157z M64,288h47.5 V136H64V288z"/></svg>
+				<span>LinkedIn</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/Alfredisabug" target="_blank">
+				<svg class="widget-social__link-icon icon icon-github" width="24" height="24" viewBox="0 0 384 374"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Email" href="mailto:jirongwu81@gmail.com">
+				<svg class="widget-social__link-icon icon icon-mail" width="24" height="24" viewBox="0 0 416 288"><path d="m0 16v256 16h16 384 16v-16-256-16h-16-384-16zm347 16-139 92.5-139-92.5zm-148 125.5 9 5.5 9-5.5 167-111.5v210h-352v-210z"/></svg>
+				<span>jirongwu81@gmail.com</span>
+			</a>
+		</div>
+
+		
+	</div>
+</div>
+</aside>
+		</div>
+		<!DOCTYPE html>
+<html>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</html>
+
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>
