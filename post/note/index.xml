@@ -11,16 +11,16 @@
     <item>
       <title>圖片相似度----SSIM以及PSNR</title>
       <link>https://blog.asjijiasdecree.com/post/note/2016/09/ssim-and-psnr/ssim-and-psnr/</link>
-      <pubDate>Thu, 01 Feb 2024 15:22:33 +0800</pubDate>
+      <pubDate>Tue, 27 Sep 2016 13:19:33 +0800</pubDate>
       <guid>https://blog.asjijiasdecree.com/post/note/2016/09/ssim-and-psnr/ssim-and-psnr/</guid>
-      <description>Publish Date : 2024-02-01 15:22 對於兩張圖片到底有沒有相似 相似度多少 客觀的評量方法有很多種 MSE、SNR、PSNR、SSIM等等 而今天要講的是PSNR 跟 SSIM 至於為什</description>
+      <description>Publish Date : 2016-09-27 13:19 對於兩張圖片到底有沒有相似 相似度多少 客觀的評量方法有很多種 MSE、SNR、PSNR、SSIM等等 而今天要講的是PSNR 跟 SSIM 至於為什</description>
     </item>
     <item>
       <title>OpenCV影像開啟、儲存</title>
       <link>https://blog.asjijiasdecree.com/post/note/2016/09/image-open-save-in-opencv/image-open-save-in-opencv/</link>
-      <pubDate>Thu, 01 Feb 2024 14:50:01 +0800</pubDate>
+      <pubDate>Tue, 20 Sep 2016 13:28:01 +0800</pubDate>
       <guid>https://blog.asjijiasdecree.com/post/note/2016/09/image-open-save-in-opencv/image-open-save-in-opencv/</guid>
-      <description>Publish Date : 2024-02-01 14:50 在做影像處理的時候 常常是連續的影像處理 這時候除了開啟影像檔之外 也要寫入影像 剛讀研究所的時候 都只會用IPL存影像檔 所以網路上看到的程</description>
+      <description>Publish Date : 2016-09-20 13:28 在做影像處理的時候 常常是連續的影像處理 這時候除了開啟影像檔之外 也要寫入影像 剛讀研究所的時候 都只會用IPL存影像檔 所以網路上看到的程</description>
     </item>
     <item>
       <title>認識Qt控件 (Input Widgets) (Display Widgets) (Layouts)</title>
