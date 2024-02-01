@@ -6,8 +6,15 @@
     <description>Recent content in Image Processing on 佶佶如律令</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Thu, 01 Feb 2024 14:50:01 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 01 Feb 2024 15:22:33 +0800</lastBuildDate>
     <atom:link href="https://blog.asjijiasdecree.com/categories/Image-Processing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>圖片相似度----SSIM以及PSNR</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2016/09/ssim-and-psnr/ssim-and-psnr/</link>
+      <pubDate>Thu, 01 Feb 2024 15:22:33 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2016/09/ssim-and-psnr/ssim-and-psnr/</guid>
+      <description>Publish Date : 2024-02-01 15:22 對於兩張圖片到底有沒有相似 相似度多少 客觀的評量方法有很多種 MSE、SNR、PSNR、SSIM等等 而今天要講的是PSNR 跟 SSIM 至於為什</description>
+    </item>
     <item>
       <title>OpenCV影像開啟、儲存</title>
       <link>https://blog.asjijiasdecree.com/post/note/2016/09/image-open-save-in-opencv/image-open-save-in-opencv/</link>

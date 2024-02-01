@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>圖片相似度----SSIM以及PSNR - 佶佶如律令</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="佶佶如律令" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">佶佶如律令</div>
+					
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">Home</span>
+				
+			</a>
+		</li>
+		<li class="menu__item menu__item--active">
+			<a class="menu__link" href="/post/note/">
+				
+				<span class="menu__text">挖掘手扎</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/travel/">
+				
+				<span class="menu__text">探險足跡</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/leisure/">
+				
+				<span class="menu__text">悠悠揚揚</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/aboutme/">
+				
+				<span class="menu__text">About Me</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/history/">
+				
+				<span class="menu__text">History</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">圖片相似度----SSIM以及PSNR</h1>
+			
+		</header>
+		<div class="content post__content clearfix">
+			
+<style type='text/css'>
+.pub_label_color {
+    color: #BDBDBF;
+}
+</style>
+
+
+<div>
+	<p class="pub_label_color">Publish Date :  2024-02-01 15:22 </p>
+</div>
+
+<p>對於兩張圖片到底有沒有相似<br>
+相似度多少<br>
+客觀的評量方法有很多種<br>
+MSE、SNR、PSNR、SSIM等等</p>
+<p>而今天要講的是PSNR 跟 SSIM<br>
+至於為什麼?<br>
+因為碩論有用到<br>
+但並不代表我其他沒看啦<br>
+從幾個方法裡面挑對自己有利的</p>
+<p>PSNR的定義<br>
+在<a href="https://zh.wikipedia.org/wiki/%E5%B3%B0%E5%80%BC%E4%BF%A1%E5%99%AA%E6%AF%94">維基</a>裡有提到</p>
+<p>峰值信噪比（經常縮寫為<strong>PSNR</strong>）是一個表示信號最大可能功率和影響它的表示精度的破壞性雜訊功率的比值的工程術語。由於許多信號都有非常寬的動態範圍，峰值信噪比常用對數分貝單位來表示。<br>
+峰值信噪比經常用作圖像壓縮等領域中信號重建質量的測量方法，它常簡單地通過均方差（<strong>MSE</strong>）進行定義。兩個m×n單色圖像I和K，如果一個為另外一個的噪聲近似，那麼它們的的均方差定義為：<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../0e85feb3a073b4f2c48b22ce2f0c30d8e327369b.svg" width="100%" height="100%"></img>
+</div>
+<br>
+峰值信噪比定義為：<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../875652c56fc3da38de8b3990d46ed9de9d464125.svg" width="100%" height="100%"></img>
+</div>
+<br>
+其中，MAXI是表示圖像點顏色的最大數值，如果每個採樣點用 8 位表示，那麼就是 255。更為通用的表示是，如果每個採樣點用 B 位線性脈衝編碼調製表示，那麼
+$$ MAX_I = 2^B - 1 $$</p>
+<p>對於每點有RGB三個值的彩色圖像來說峰值信噪比的定義類似，只是均方差是所有方差之和除以圖像尺寸再除以 3。<br>
+圖像壓縮中典型的峰值信噪比值在 30 到 40dB 之間，愈高愈好。</p>
+<p><strong>峰值信噪比（PSNR），是一種評價圖像的客觀標準。PSNR是「Peak Signal to Noise Ratio」的縮寫。</strong><br>
+但是PSNR的分數無法和人眼看到的視覺品質完全一致，有可能PSNR較高者看起來反而比PSNR較低者差。這是因為人眼的視覺對於誤差的敏感度並不是絕對的，其感知結果會受到許多因素的影響而產生變化（例如：人眼對空間頻率較低的對比差異敏感度較高，人眼對亮度對比差異的敏感度較色度高，人眼對一個區域的感知結果會受到其周圍鄰近區域的影響）。<br>
+一般而言30db以下人眼看就不能容忍了。</p>
+<p>PSNR在OpenCV裡面可以直接叫出</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;opencv2\opencv.hpp&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;opencv2\highgui\highgui.hpp&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;opencv2\imgproc\imgproc.hpp&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>using namespace std;
+</span></span><span style="display:flex;"><span>using namespace cv;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    Mat mat_1, mat_2;
+</span></span><span style="display:flex;"><span>    mat_1 <span style="color:#f92672">=</span> <span style="color:#a6e22e">imread</span>(<span style="color:#e6db74">&#34;Lena.jpg&#34;</span>,<span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>    mat_2 <span style="color:#f92672">=</span> <span style="color:#a6e22e">imread</span>(<span style="color:#e6db74">&#34;Lena.jpg&#34;</span>,<span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (mat_1.<span style="color:#a6e22e">empty</span>() <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (mat_2.<span style="color:#a6e22e">empty</span>() <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">GaussianBlur</span>(mat_2, mat_2, <span style="color:#a6e22e">Size</span>(<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">5</span>), <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">imshow</span>(<span style="color:#e6db74">&#34;Src&#34;</span>, mat_1);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">imshow</span>(<span style="color:#e6db74">&#34;Dst&#34;</span>, mat_2);
+</span></span><span style="display:flex;"><span>    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#a6e22e">PSNR</span>(mat_1, mat_2) <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;db&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">cvWaitKey</span>(<span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../001.PNG" width="100%" height="100%"></img>
+</div>
+<br>
+右邊那張是高斯模糊過後的圖片<br>
+PSNR值為28，可以很明顯看出有啥不同</p>
+<p>PSNR也可以自己寫<br>
+但值是一樣的</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">double</span> <span style="color:#a6e22e">getPSNR</span>(<span style="color:#66d9ef">const</span> Mat<span style="color:#f92672">&amp;</span> I1, <span style="color:#66d9ef">const</span> Mat<span style="color:#f92672">&amp;</span> I2)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    Mat s1;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">absdiff</span>(I1, I2, s1);       <span style="color:#75715e">// |I1 - I2|
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    s1.<span style="color:#a6e22e">convertTo</span>(s1, CV_32F);  <span style="color:#75715e">// cannot make a square on 8 bits
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    s1 <span style="color:#f92672">=</span> s1.<span style="color:#a6e22e">mul</span>(s1);           <span style="color:#75715e">// |I1 - I2|^2
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    Scalar s <span style="color:#f92672">=</span> <span style="color:#a6e22e">sum</span>(s1);        <span style="color:#75715e">// sum elements per channel
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">double</span> sse <span style="color:#f92672">=</span> s.val[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">+</span> s.val[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">+</span> s.val[<span style="color:#ae81ff">2</span>]; <span style="color:#75715e">// sum channels
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (sse <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">1e-10</span>) <span style="color:#75715e">// for small values return zero
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">double</span> mse <span style="color:#f92672">=</span> sse <span style="color:#f92672">/</span> (<span style="color:#66d9ef">double</span>)(I1.<span style="color:#a6e22e">channels</span>() <span style="color:#f92672">*</span> I1.<span style="color:#a6e22e">total</span>());
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">double</span> psnr <span style="color:#f92672">=</span> <span style="color:#ae81ff">10.0</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">log10</span>((<span style="color:#ae81ff">255</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">255</span>) <span style="color:#f92672">/</span> mse);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> psnr;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>剛剛有提到PSNR的缺點，而SSIM剛好可以彌補這項缺點<br>
+<a href="https://zh.wikipedia.org/wiki/%E7%B5%90%E6%A7%8B%E7%9B%B8%E4%BC%BC%E6%80%A7">定義</a>:
+**結構相似性指標（英文：structural similarity index，SSIM index）是一種用以衡量兩張數位影像相似程度的指標。**當兩張影像其中一張為無失真影像，另一張為失真後的影像，二者的結構相似性可以看成是失真影像的影像品質衡量指標。相較於傳統所使用的影像品質衡量指標，像是峰值信噪比（英文：<strong>PSNR</strong>），結構相似性在影像品質的衡量上更能符合人眼對影像品質的判斷。<br>
+而在使用上呢<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../002.PNG" width="100%" height="100%"></img>
+</div>
+</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">double</span> <span style="color:#a6e22e">getMSSIM</span>(<span style="color:#66d9ef">const</span> Mat<span style="color:#f92672">&amp;</span> i1, <span style="color:#66d9ef">const</span> Mat<span style="color:#f92672">&amp;</span> i2)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">double</span> C1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">6.5025</span>, C2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">58.5225</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/***************************** INITS **********************************/</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> d <span style="color:#f92672">=</span> CV_32F;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Mat I1, I2;
+</span></span><span style="display:flex;"><span>    i1.<span style="color:#a6e22e">convertTo</span>(I1, d);           <span style="color:#75715e">// cannot calculate on one byte large values
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    i2.<span style="color:#a6e22e">convertTo</span>(I2, d);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Mat I2_2 <span style="color:#f92672">=</span> I2.<span style="color:#a6e22e">mul</span>(I2);        <span style="color:#75715e">// I2^2
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    Mat I1_2 <span style="color:#f92672">=</span> I1.<span style="color:#a6e22e">mul</span>(I1);        <span style="color:#75715e">// I1^2
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    Mat I1_I2 <span style="color:#f92672">=</span> I1.<span style="color:#a6e22e">mul</span>(I2);        <span style="color:#75715e">// I1 * I2
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/*************************** END INITS **********************************/</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Mat mu1, mu2;   <span style="color:#75715e">// PRELIMINARY COMPUTING
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">GaussianBlur</span>(I1, mu1, <span style="color:#a6e22e">Size</span>(<span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">11</span>), <span style="color:#ae81ff">1.5</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">GaussianBlur</span>(I2, mu2, <span style="color:#a6e22e">Size</span>(<span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">11</span>), <span style="color:#ae81ff">1.5</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Mat mu1_2 <span style="color:#f92672">=</span> mu1.<span style="color:#a6e22e">mul</span>(mu1);
+</span></span><span style="display:flex;"><span>    Mat mu2_2 <span style="color:#f92672">=</span> mu2.<span style="color:#a6e22e">mul</span>(mu2);
+</span></span><span style="display:flex;"><span>    Mat mu1_mu2 <span style="color:#f92672">=</span> mu1.<span style="color:#a6e22e">mul</span>(mu2);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Mat sigma1_2, sigma2_2, sigma12;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">GaussianBlur</span>(I1_2, sigma1_2, <span style="color:#a6e22e">Size</span>(<span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">11</span>), <span style="color:#ae81ff">1.5</span>);
+</span></span><span style="display:flex;"><span>    sigma1_2 <span style="color:#f92672">-=</span> mu1_2;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">GaussianBlur</span>(I2_2, sigma2_2, <span style="color:#a6e22e">Size</span>(<span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">11</span>), <span style="color:#ae81ff">1.5</span>);
+</span></span><span style="display:flex;"><span>    sigma2_2 <span style="color:#f92672">-=</span> mu2_2;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">GaussianBlur</span>(I1_I2, sigma12, <span style="color:#a6e22e">Size</span>(<span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">11</span>), <span style="color:#ae81ff">1.5</span>);
+</span></span><span style="display:flex;"><span>    sigma12 <span style="color:#f92672">-=</span> mu1_mu2;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">///////////////////////////////// FORMULA ////////////////////////////////
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    Mat t1, t2, t3;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    t1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> mu1_mu2 <span style="color:#f92672">+</span> C1;
+</span></span><span style="display:flex;"><span>    t2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> sigma12 <span style="color:#f92672">+</span> C2;
+</span></span><span style="display:flex;"><span>    t3 <span style="color:#f92672">=</span> t1.<span style="color:#a6e22e">mul</span>(t2);              <span style="color:#75715e">// t3 = ((2*mu1_mu2 + C1).*(2*sigma12 + C2))
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    t1 <span style="color:#f92672">=</span> mu1_2 <span style="color:#f92672">+</span> mu2_2 <span style="color:#f92672">+</span> C1;
+</span></span><span style="display:flex;"><span>    t2 <span style="color:#f92672">=</span> sigma1_2 <span style="color:#f92672">+</span> sigma2_2 <span style="color:#f92672">+</span> C2;
+</span></span><span style="display:flex;"><span>    t1 <span style="color:#f92672">=</span> t1.<span style="color:#a6e22e">mul</span>(t2);               <span style="color:#75715e">// t1 =((mu1_2 + mu2_2 + C1).*(sigma1_2 + sigma2_2 + C2))
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    Mat ssim_map;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">divide</span>(t3, t1, ssim_map);      <span style="color:#75715e">// ssim_map =  t3./t1;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    Scalar mssim <span style="color:#f92672">=</span> <span style="color:#a6e22e">mean</span>(ssim_map); <span style="color:#75715e">// mssim = average of ssim map
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">double</span> ssim_rate <span style="color:#f92672">=</span> (mssim.val[<span style="color:#ae81ff">2</span>] <span style="color:#f92672">*</span> <span style="color:#ae81ff">100</span> <span style="color:#f92672">+</span> mssim.val[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">*</span> <span style="color:#ae81ff">100</span> <span style="color:#f92672">+</span> mssim.val[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">*</span> <span style="color:#ae81ff">100</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">3</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> ssim_rate;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../004.PNG" width="100%" height="100%"></img>
+</div>
+<br>
+可以看到值為87%<br>
+通常在95%以下人眼就可以感覺得出來</p>
+<p>這樣比較PSNR跟SSIM似乎沒什麼感覺<br>
+拿我的碩論中的比較就可以很明顯感覺的到<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../005.PNG" width="100%" height="100%"></img>
+</div>
+<br>
+就是這樣<br>
+SSIM結構相似度很高<br>
+可是PSNR卻很低阿&hellip;<br>
+大家看的出來圖片上的差異嗎?</p>
+
+		</div>
+	</article>
+</main>
+
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/note/2016/09/ssim-and-psnr/ssim-and-psnr/">圖片相似度----SSIM以及PSNR</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/note/2016/09/image-open-save-in-opencv/image-open-save-in-opencv/">OpenCV影像開啟、儲存</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/note/2016/08/qt-components-intro/qt-components-intro/">認識Qt控件 (Input Widgets) (Display Widgets) (Layouts)</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/note/2016/08/the-solution-of-qt-chinese-garbled/the-solution-of-qt-chinese-garbled/">Qt會中文亂碼問題(解決)</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/note/2016/08/qt-button-intro/qt-button-intro/">認識Qt 控件(QButton)</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/Computer-science/">Computer science</a></li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/HongKong/">HongKong</a></li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/Image-Processing/">Image Processing</a></li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/Programming-language/">Programming language</a></li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/Shopping/">Shopping</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="LinkedIn" rel="noopener noreferrer" href="https://linkedin.com/in/ji-rong-wu-a06601135/" target="_blank">
+				<svg class="widget-social__link-icon icon icon-linkedin" width="24" height="24" viewBox="0 0 352 352"><path d="M0,40v272c0,21.9,18.1,40,40,40h272c21.9,0,40-18.1,40-40V40c0-21.9-18.1-40-40-40H40C18.1,0,0,18.1,0,40z M312,32 c4.6,0,8,3.4,8,8v272c0,4.6-3.4,8-8,8H40c-4.6,0-8-3.4-8-8V40c0-4.6,3.4-8,8-8H312z M59.5,87c0,15.2,12.3,27.5,27.5,27.5 c15.2,0,27.5-12.3,27.5-27.5c0-15.2-12.3-27.5-27.5-27.5C71.8,59.5,59.5,71.8,59.5,87z M187,157h-1v-21h-45v152h47v-75 c0-19.8,3.9-39,28.5-39c24.2,0,24.5,22.4,24.5,40v74h47v-83.5c0-40.9-8.7-72-56.5-72C208.5,132.5,193.3,145.1,187,157z M64,288h47.5 V136H64V288z"/></svg>
+				<span>LinkedIn</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/Alfredisabug" target="_blank">
+				<svg class="widget-social__link-icon icon icon-github" width="24" height="24" viewBox="0 0 384 374"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Email" href="mailto:jirongwu81@gmail.com">
+				<svg class="widget-social__link-icon icon icon-mail" width="24" height="24" viewBox="0 0 416 288"><path d="m0 16v256 16h16 384 16v-16-256-16h-16-384-16zm347 16-139 92.5-139-92.5zm-148 125.5 9 5.5 9-5.5 167-111.5v210h-352v-210z"/></svg>
+				<span>jirongwu81@gmail.com</span>
+			</a>
+		</div>
+
+		
+	</div>
+</div>
+</aside>
+		</div>
+		&lt;<!DOCTYPE html>
+<html>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</html>
+
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>
