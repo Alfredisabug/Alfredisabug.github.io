@@ -6,8 +6,15 @@
     <description>Recent content in Computer science on 佶佶如律令</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 14 Jun 2016 14:12:48 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 27 Jun 2016 16:09:54 +0800</lastBuildDate>
     <atom:link href="https://blog.asjijiasdecree.com/categories/Computer-science/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Qt的開頭--Hello world</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2016/06/the-start-of-qt-hello-world/the-start-of-qt-hello-world/</link>
+      <pubDate>Mon, 27 Jun 2016 16:09:54 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2016/06/the-start-of-qt-hello-world/the-start-of-qt-hello-world/</guid>
+      <description>Publish Date : 2016-06-27 16:09:54 &amp;#43;0800 CST 書來了~ 其實還有想買另外一本 不過缺貨 這本是補習班老師推薦的 不然我對android也不熟 使用Qt需要什麼技術基礎? Qt是以C++</description>
+    </item>
     <item>
       <title>我的第一個Qt專案(加上opencv低階處理完成</title>
       <link>https://blog.asjijiasdecree.com/post/note/2016/06/my-first-qt-project-with-opencv/my-first-qt-projcet-with-opencv/</link>

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>OpenCV 簡介 - 佶佶如律令</title>
+	<title>Qt的開頭--Hello world - 佶佶如律令</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -89,7 +89,7 @@
 <main class="main" role="main">
 	<article class="post">
 		<header class="post__header">
-			<h1 class="post__title">OpenCV 簡介</h1>
+			<h1 class="post__title">Qt的開頭--Hello world</h1>
 			
 		</header>
 		<div class="content post__content clearfix">
@@ -101,74 +101,229 @@
 </style>
 
 <div>
-	<p class="pub_label_color">Publish Date : 2016-03-28 00:22:00 &#43;0800 CST</p>
+	<p class="pub_label_color">Publish Date : 2016-06-27 16:09:54 &#43;0800 CST</p>
 </div>
 
-<p>上一篇說到我會重新開始學習OpenCV<br>
-並且學習使用Mat的資料結構</p>
-<p>現在就讓我重新認識OpenCV</p>
-<p>include 的函式檔中</p>
+<p>書來了~<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../IMAG1410.jpg" width="100%" height="100%"></img>
+</div>
+</p>
+<p>其實還有想買另外一本<br>
+不過缺貨<br>
+這本是補習班老師推薦的<br>
+不然我對android也不熟</p>
+<p>使用Qt需要什麼技術基礎?<br>
+Qt是以C++為基礎的開發框架，大量使用物件導向概念，諸如繼承、虛擬函數、多載、純虛擬類別等。所以遇到不明的地方，可以參考C++相關書籍就好</p>
+<p>實際上很多企業有使用到Qt<br>
+ASUS EeePc(Linux version KDE)、BlackBerry、Samsung SPF-105V Ddigital Photo Frame等等<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../IMAG1412.jpg" width="100%" height="100%"></img>
+</div>
+ <br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../IMAG1411.jpg" width="100%" height="100%"></img>
+</div>
+<br>
+書裡所說的是Qt5.2 跟5.3版本 而我現在使用的是5.6</p>
+<p>首先<br>
+需到Qt官網下載最新版本<br>
+<a href="https://www.qt.io/download/">https://www.qt.io/download/</a><br>
+安裝過程就不贅述了<br>
+安裝完成後<br>
+Qt Creator的歡迎介面<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../002.PNG" width="100%" height="100%"></img>
+</div>
+<br>
+通常來說<br>
+第一個程式範例<br>
+都會是Hello World!<br>
+所以不免俗的也來一下吧<br>
+建立新的專案<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../firstqt001.png" width="100%" height="100%"></img>
+</div>
+
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../firstqt002.png" width="100%" height="100%"></img>
+</div>
+
+設定好後選擇下面的choose<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../firstqt003.png" width="100%" height="100%"></img>
+</div>
+<br>
+打上名稱跟儲存位置<br>
+這裡要提醒一點<br>
+盡量不要用中文路徑跟檔名<br>
+我也不知道為什麼<br>
+上次寫搭配OpenCV時<br>
+連讀取中文檔名都會出錯<br>
+目前看到網路上也都盡量避開中文</p>
+<p>點選下一個之後<br>
+建置套件選擇<br>
+因為沒有安裝其他的建置套件<br>
+預設只有Desktop套件<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../firstqt004.png" width="100%" height="100%"></img>
+</div>
+<br>
+點擊下一步<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../firstqt005.png" width="100%" height="100%"></img>
+</div>
+<br>
+把產生表單的選項勾選去掉，Hello World介面不需要太進階<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../firstqt006.png" width="100%" height="100%"></img>
+</div>
+<br>
+到了這一步，我們就要完成專案的建立過程<br>
+Qt Creator編輯介面如下<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../firstqt007.png" width="100%" height="100%"></img>
+</div>
+<br>
+接下來只需要改寫~<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../firstqt008.png" width="100%" height="100%"></img>
+</div>
+<br>
+在main.cpp裡修改</p>
 <ul>
-<li>cv – 核心函數庫                                 在OpenCV2，為opencv.hpp，每次使用CV一定會先include</li>
-<li>core – 數據結構與線性代數庫                      在OpenCV2，為core.hpp</li>
-<li>highgui – GUI函數庫                             在OpenCV2，為highgui.hpp</li>
+<li>增加 #include <!-- raw HTML omitted --></li>
+<li>把main裏頭的程式碼改成</li>
 </ul>
-<p>目前這三個是我比較常用到的</p>
-<p>OpenCV中有Mat、cvMat、IplImage這三種資料結構，都可以表示為圖像<br>
-Mat重於數學矩陣的運算<br>
-而cvMat跟IplImage則是重於&quot;圖像&quot;上的計算</p>
-<p>目前著重於Mat上<br>
-所以就挑著Mat來說吧<br>
-Mat是OpenCV2提出的新的資料結構，Mat比較方便記憶體的存取，會自動釋放記憶體，不用像IplImage要手動釋放。Mat可以用來處理向量、矩陣、圖像等多維的數據</p>
-<p>一開始當然是include</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;opencv2\opencv.hpp&gt;</span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;opencv2\core\core.hpp&gt;</span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;opencv2\highgui\highgui.hpp&gt;</span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>using namespace std;
-</span></span></code></pre></div><p>之後就可以開始宣告矩陣(圖像)<br>
-創造一個名為 src 的 Mat 矩陣</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>Mat src;
-</span></span></code></pre></div><p>假設為640*480 三通道影像</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>src.<span style="color:#a6e22e">create</span>(<span style="color:#ae81ff">480</span>, <span style="color:#ae81ff">640</span>, CV_8UC3);
-</span></span></code></pre></div><p>當然一開始也可以直接宣告</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>Mat <span style="color:#a6e22e">src</span>(<span style="color:#ae81ff">480</span>, <span style="color:#ae81ff">640</span>, CV_8UC3);
-</span></span></code></pre></div><p>宣告函式為 ( rows, cols , channels)<br>
-rows是矩陣的高度(height)<br>
-colsr是矩陣的寬度(width)<br>
-channels 是矩陣的資料結構</p>
-<p><img src="../001.png" alt=""><br>
-通常影像處理左上角為原點( 0 , 0 )<br>
-cols 為 j, rows 為 i<br>
-以後要處理矩陣的數值的時候會用到</p>
-<p>而channels 有很多種<br>
-CV_8UC1 CV_8SC1 CV_16UC1 CV_16SC1 CV_32SC1 CV_32FC1 CV_64FC1<br>
-CV_8UC2 CV_8SC2 CV_16UC2 CV_16SC2 CV_32SC2 CV_32FC2 CV_64FC2<br>
-CV_8UC3 CV_8SC3 CV_16UC3 CV_16SC3 CV_32SC3 CV_32FC3 CV_64FC3<br>
-CV_8UC4 CV_8SC4 CV_16UC4 CV_16SC4 CV_32SC4 CV_32FC4 CV_64FC4</p>
-<p><strong>8U</strong>   8位元無符號<br>
-<strong>16U</strong>  16位元無符號<br>
-<strong>32F</strong>  32位元浮點數<br>
-後面的C為通道數<br>
-數據可以直接跟uchar,short,int,float,double型別通用</p>
-<p>也可以在創建矩陣時，就賦予矩陣初始值</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>Mat <span style="color:#a6e22e">src</span>(<span style="color:#ae81ff">240</span>,<span style="color:#ae81ff">320</span>,<span style="color:#ae81ff">32F</span>C1, <span style="color:#a6e22e">Scalar</span>(<span style="color:#ae81ff">5</span>));  
-</span></span></code></pre></div><p>讀取名為Lena的圖片</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>src <span style="color:#f92672">=</span> <span style="color:#a6e22e">imread</span>(<span style="color:#e6db74">&#34;Lena&#34;</span>, <span style="color:#ae81ff">1</span>);  
-</span></span></code></pre></div><p>顯示出圖案<br>
-先創建顯示視窗</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#a6e22e">cvNamedWindow</span>(<span style="color:#e6db74">&#34;Lena&#34;</span>,<span style="color:#ae81ff">1</span>);  
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">imShow</span>(<span style="color:#e6db74">&#34;Lena&#34;</span>, src);  
-</span></span></code></pre></div><p>最後加上</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#a6e22e">waitKey</span>(<span style="color:#ae81ff">0</span>);  
-</span></span></code></pre></div><p>可以在顯示圖案後，等待有按鍵鍵入才結束<br>
-最後記得釋放視窗</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#a6e22e">destroyWindow</span>(<span style="color:#e6db74">&#34;Lena&#34;</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>QApplication <span style="color:#a6e22e">a</span>(argc, argv);
+</span></span><span style="display:flex;"><span>QLabel <span style="color:#a6e22e">label</span>(<span style="color:#e6db74">&#34;Hello World!&#34;</span>);
+</span></span><span style="display:flex;"><span>label.<span style="color:#a6e22e">show</span>();
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">return</span> a.<span style="color:#a6e22e">exec</span>();
 </span></span></code></pre></div><p>如圖所示:<br>
-<img src="../002.jpg" alt=""></p>
-<p>今天就先複習到這<br>
-希望自己的程式能力越來越好<br>
-just keep my road.</p>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../firstqt009.png" width="100%" height="100%"></img>
+</div>
+<br>
+按下左下角的執行即可<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../firstqt010.png" width="100%" height="100%"></img>
+</div>
+<br>
+完成囉~<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../firstqt011.png" width="100%" height="100%"></img>
+</div>
+<br>
+第一個GUI應用! GET!</p>
+<p>其實Qt Creator有很多功能讓我們使用<br>
+除了方便使用以外<br>
+設計也很漂亮~<br>
+我會繼續加油~</p>
 
 		</div>
 	</article>

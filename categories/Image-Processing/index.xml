@@ -15,5 +15,12 @@
       <guid>https://blog.asjijiasdecree.com/post/note/2016/06/my-first-qt-project-with-opencv/my-first-qt-projcet-with-opencv/</guid>
       <description>Publish Date : 2016-06-14 14:12:48 &amp;#43;0800 CST 這學期修的課程 &amp;ldquo;影像辨識技術&amp;rdquo; 有用到opencv處理影像 但是老師對於我們每一次換圖片處理時 就要修改一次</description>
     </item>
+    <item>
+      <title>OpenCV 簡介</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2016/03/opencv-introduce/opencv-introduce/</link>
+      <pubDate>Mon, 28 Mar 2016 00:22:00 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2016/03/opencv-introduce/opencv-introduce/</guid>
+      <description>Publish Date : 2016-03-28 00:22:00 &amp;#43;0800 CST 上一篇說到我會重新開始學習OpenCV 並且學習使用Mat的資料結構 現在就讓我重新認識OpenCV include 的函式檔中 cv – 核心函數庫 在O</description>
+    </item>
   </channel>
 </rss>
