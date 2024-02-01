@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>認識Qt 控件(QButton) - 佶佶如律令</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="佶佶如律令" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">佶佶如律令</div>
+					
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">Home</span>
+				
+			</a>
+		</li>
+		<li class="menu__item menu__item--active">
+			<a class="menu__link" href="/post/note/">
+				
+				<span class="menu__text">挖掘手扎</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/travel/">
+				
+				<span class="menu__text">探險足跡</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/leisure/">
+				
+				<span class="menu__text">悠悠揚揚</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/aboutme/">
+				
+				<span class="menu__text">About Me</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/history/">
+				
+				<span class="menu__text">History</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">認識Qt 控件(QButton)</h1>
+			
+		</header>
+		<div class="content post__content clearfix">
+			
+<style type='text/css'>
+.pub_label_color {
+    color: #BDBDBF;
+}
+</style>
+
+
+<div>
+	<p class="pub_label_color">Publish Date :  2016-08-10 17:40 </p>
+</div>
+
+<p>Qt designer 提供了許多控件提供開發者使用<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../001.JPG" width="50%" height="50%"></img>
+</div>
+<br>
+控件裡面分很多<br>
+像是Buttons</p>
+<ul>
+<li>Push Button : 按鈕</li>
+<li>Tool Button : 工具按鈕</li>
+<li>Radio Button : 單選按鈕</li>
+<li>Check Box : 複選框</li>
+<li>Command Link Button : 命令練皆按紐</li>
+<li>Button Box : 按鈕盒</li>
+</ul>
+<p>簡單講解一下QPushButton的用法</p>
+<p>新建一個專案 &quot; QButton&quot;<br>
+記得創建專案時，把創建介面的複選框取消掉</p>
+<p>在mainwindow.h裡</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#ifndef MAINWINDOW_H
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define MAINWINDOW_H
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;QMainWindow&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;QWidget&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>class MainWindow : public QMainWindow
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    Q_OBJECT
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>public:
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">MainWindow</span>(QWidget <span style="color:#f92672">*</span>parent <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">~</span><span style="color:#a6e22e">MainWindow</span>();
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#endif </span><span style="color:#75715e">// MAINWINDOW_H
+</span></span></span></code></pre></div><p>在mainwindow.cpp裡</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;mainwindow.h&#34;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;qapplication.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;qpushbutton.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;qfont.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>MainWindow<span style="color:#f92672">::</span><span style="color:#a6e22e">MainWindow</span>(QWidget <span style="color:#f92672">*</span>parent)
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">:</span> <span style="color:#a6e22e">QMainWindow</span>(parent)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">setMinimumSize</span>(<span style="color:#ae81ff">200</span>,<span style="color:#ae81ff">120</span>);
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">setMaximumSize</span>(<span style="color:#ae81ff">200</span>,<span style="color:#ae81ff">120</span>);
+</span></span><span style="display:flex;"><span>	QPushButton <span style="color:#f92672">*</span> quit <span style="color:#f92672">=</span> new <span style="color:#a6e22e">QPushButton</span> (<span style="color:#e6db74">&#34;Quit&#34;</span>,this);
+</span></span><span style="display:flex;"><span>	quit<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setGeometry</span>(<span style="color:#ae81ff">62</span>,<span style="color:#ae81ff">40</span>,<span style="color:#ae81ff">75</span>,<span style="color:#ae81ff">30</span>);
+</span></span><span style="display:flex;"><span>	quit<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setFont</span>( <span style="color:#a6e22e">QFont</span>(<span style="color:#e6db74">&#34;Times&#34;</span>,<span style="color:#ae81ff">18</span>,QFont<span style="color:#f92672">::</span>Bold) );
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">connect</span> (quit,<span style="color:#a6e22e">SIGNAL</span>(<span style="color:#a6e22e">clicked</span>()),qApp,<span style="color:#a6e22e">SLOT</span>(<span style="color:#a6e22e">quit</span>()));
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>MainWindow<span style="color:#f92672">::~</span><span style="color:#a6e22e">MainWindow</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>在main.cpp裡</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;mainwindow.h&#34;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;QApplication&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>argv[])
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    QApplication <span style="color:#a6e22e">a</span>(argc, argv);
+</span></span><span style="display:flex;"><span>    MainWindow w;
+</span></span><span style="display:flex;"><span>    w.<span style="color:#a6e22e">setGeometry</span>(<span style="color:#ae81ff">100</span>,<span style="color:#ae81ff">100</span>,<span style="color:#ae81ff">200</span>,<span style="color:#ae81ff">120</span>);
+</span></span><span style="display:flex;"><span>    w.<span style="color:#a6e22e">show</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> a.<span style="color:#a6e22e">exec</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>執行結果<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../002.JPG" width="100%" height="100%"></img>
+</div>
+</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#a6e22e">setMinimumSize</span>(<span style="color:#ae81ff">200</span>,<span style="color:#ae81ff">120</span>);  <span style="color:#75715e">//設定視窗窗口最大值
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">setMaximumSize</span>(<span style="color:#ae81ff">200</span>,<span style="color:#ae81ff">120</span>);  <span style="color:#75715e">//設定視窗窗口最小值
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>QPushButton <span style="color:#f92672">*</span> quit <span style="color:#f92672">=</span> new <span style="color:#a6e22e">QPushButton</span> (<span style="color:#e6db74">&#34;Quit&#34;</span>,this);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//創建一個QButton 名稱為quit
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>quit<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setGeometry</span>(<span style="color:#ae81ff">62</span>,<span style="color:#ae81ff">40</span>,<span style="color:#ae81ff">75</span>,<span style="color:#ae81ff">30</span>);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//設定Button出現在窗口的大小 (62,40) 左上位置 (75,30) 右下位置
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>quit<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setFont</span>( <span style="color:#a6e22e">QFont</span>(<span style="color:#e6db74">&#34;Times&#34;</span>,<span style="color:#ae81ff">18</span>,QFont<span style="color:#f92672">::</span>Bold) );
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//設定Button的字體及字體大小
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">connect</span> (quit,<span style="color:#a6e22e">SIGNAL</span>(<span style="color:#a6e22e">clicked</span>()),qApp,<span style="color:#a6e22e">SLOT</span>(<span style="color:#a6e22e">quit</span>()));
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//設定按下按鈕之後要執行的訊號
+</span></span></span></code></pre></div>
+		</div>
+	</article>
+</main>
+
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/note/2016/09/image-open-save-in-opencv/image-open-save-in-opencv/">OpenCV影像開啟、儲存</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/note/2016/08/qt-components-intro/qt-components-intro/">認識Qt控件 (Input Widgets) (Display Widgets) (Layouts)</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/note/2016/08/the-solution-of-qt-chinese-garbled/the-solution-of-qt-chinese-garbled/">Qt會中文亂碼問題(解決)</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/note/2016/08/qt-button-intro/qt-button-intro/">認識Qt 控件(QButton)</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/leisure/2016/07/ducky-d2108/ducky-d2108/">絕對不是業配文----Ducky D2108 青軸 入門款機械式鍵盤入手</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/Computer-science/">Computer science</a></li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/HongKong/">HongKong</a></li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/Image-Processing/">Image Processing</a></li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/Programming-language/">Programming language</a></li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/Shopping/">Shopping</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="LinkedIn" rel="noopener noreferrer" href="https://linkedin.com/in/ji-rong-wu-a06601135/" target="_blank">
+				<svg class="widget-social__link-icon icon icon-linkedin" width="24" height="24" viewBox="0 0 352 352"><path d="M0,40v272c0,21.9,18.1,40,40,40h272c21.9,0,40-18.1,40-40V40c0-21.9-18.1-40-40-40H40C18.1,0,0,18.1,0,40z M312,32 c4.6,0,8,3.4,8,8v272c0,4.6-3.4,8-8,8H40c-4.6,0-8-3.4-8-8V40c0-4.6,3.4-8,8-8H312z M59.5,87c0,15.2,12.3,27.5,27.5,27.5 c15.2,0,27.5-12.3,27.5-27.5c0-15.2-12.3-27.5-27.5-27.5C71.8,59.5,59.5,71.8,59.5,87z M187,157h-1v-21h-45v152h47v-75 c0-19.8,3.9-39,28.5-39c24.2,0,24.5,22.4,24.5,40v74h47v-83.5c0-40.9-8.7-72-56.5-72C208.5,132.5,193.3,145.1,187,157z M64,288h47.5 V136H64V288z"/></svg>
+				<span>LinkedIn</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/Alfredisabug" target="_blank">
+				<svg class="widget-social__link-icon icon icon-github" width="24" height="24" viewBox="0 0 384 374"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Email" href="mailto:jirongwu81@gmail.com">
+				<svg class="widget-social__link-icon icon icon-mail" width="24" height="24" viewBox="0 0 416 288"><path d="m0 16v256 16h16 384 16v-16-256-16h-16-384-16zm347 16-139 92.5-139-92.5zm-148 125.5 9 5.5 9-5.5 167-111.5v210h-352v-210z"/></svg>
+				<span>jirongwu81@gmail.com</span>
+			</a>
+		</div>
+
+		
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2024 佶佶如律令.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>QT專案檔案 - 佶佶如律令</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="佶佶如律令" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">佶佶如律令</div>
+					
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">Home</span>
+				
+			</a>
+		</li>
+		<li class="menu__item menu__item--active">
+			<a class="menu__link" href="/post/note/">
+				
+				<span class="menu__text">挖掘手扎</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/travel/">
+				
+				<span class="menu__text">探險足跡</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/leisure/">
+				
+				<span class="menu__text">悠悠揚揚</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/aboutme/">
+				
+				<span class="menu__text">About Me</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/history/">
+				
+				<span class="menu__text">History</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">QT專案檔案</h1>
+			
+		</header>
+		<div class="content post__content clearfix">
+			
+<style type='text/css'>
+.pub_label_color {
+    color: #BDBDBF;
+}
+</style>
+
+
+<div>
+	<p class="pub_label_color">Publish Date :  2016-07-22 16:25 </p>
+</div>
+
+<p>最近一堆事情<br>
+因應老師想轉換目標<br>
+所以又開始尋找新的論文開始研讀</p>
+<p>每天必做的事情<br>
+讀英文一小時還有程式概念持續看<br>
+不然會少了敏銳性</p>
+<p>最近方向在於Stereo matching<br>
+但是Qt 依然要繼續學習的<br>
+之前那本書前面講了很多有關android的概念<br>
+但因為我對手機app實在沒什麼興趣<br>
+所以只有看過而已</p>
+<p>這篇要說的是<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../001.png" width="100%" height="100%"></img>
+</div>
+
+建置專案後，Qt裡的pro 檔案</p>
+<p>為了多點參考<br>
+所以我用了<a href="/post/note/2016/06/my-first-qt-project-with-opencv/my-first-qt-projcet-with-opencv/">這篇</a>的當作例子</p>
+<p>開始囉~</p>
+<p>專案檔案(.pro)包含了使用qmake建立應用、函數庫、外掛程式的所有資訊<br>
+大部分的情況下，只需要在專案檔案中使用一系列的宣告來指定資源<br>
+圖裡可以看到，test裡總共有4個檔案，其實還有一些檔案，在這裡是看不到的<br>
+例如使用者專案設定的pro.user(與pro檔案同目錄)，編譯中產生的makefile檔案(在建置所在目錄中)</p>
+<p>.pro檔案:<br>
+第七行</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>QT       <span style="color:#f92672">+=</span> core gui
+</span></span></code></pre></div><p>指名我們的專案需要Qt 和 QtCore 兩個模組，QT 是qmake支援的內建變數<br>
+在專案檔案中，變數一般用來儲存一個字串清單。<br>
+第九行</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#a6e22e">greaterThan</span>(QT_MAJOR_VERSION, <span style="color:#ae81ff">4</span>)<span style="color:#f92672">:</span> QT <span style="color:#f92672">+=</span> widgets
+</span></span></code></pre></div><p>後面這裡指名我們要QtWidgets這個模組<br>
+前半部分則是 greaterThan是qmake所支援的內建函數，QT_MAJOR_  VERSON則是qmke的內建變數。而這行的意思是說Qt的主版本大於4時，替專案增加QtWidgets這個模組。</p>
+<p>在Qt 5 之前，沒有獨立的QtWidgets模組，是包含在QtGui模組中</p>
+<p>現在知道:<br>
+QT 就是用來宣告Qt函數庫的。預設中包含了core 和 gui。<br>
+想要其他模組的宣告方式就是<br>
+QT += 模組縮寫<br>
+可以透過QT變數增加的模組套件有:widgets、network、xml、quick、multimedia、webkit等</p>
+<p>書裡有提到一個特殊的用法<br>
+就是<br>
+QT -= 模組縮寫<br>
+這樣的語法，以便開發者能夠去掉專案不要的模組</p>
+<p>第11行</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>TARGET <span style="color:#f92672">=</span> test
+</span></span></code></pre></div><p>TARGET變數用來設定專案的目的檔案名稱<br>
+如果不設定，會被自動設定為跟專案檔案一樣的名稱</p>
+<p>這可以用在<br>
+假設想給Debug 跟 Release 版本取不同的名字(這樣比較好區分)<br>
+可以使用這個變數<br>
+像是這樣:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#a6e22e">CONFIG</span>(debug, debug<span style="color:#f92672">|</span>release)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    TARGET <span style="color:#f92672">=</span> test_d
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">message</span>(<span style="color:#e6db74">&#34;debug build&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    TARGET<span style="color:#f92672">=</span> test
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">message</span>(<span style="color:#e6db74">&#34;release build&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>第12行</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>TEMPLATE <span style="color:#f92672">=</span> app
+</span></span></code></pre></div><p>TEMPLATE變數用來設置專案的建置類型<br>
+如果沒有設定這個變數，qmake會預設按應用(就是目前這行的設定)</p>
+<p>第14行</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>SOURCES <span style="color:#f92672">+=</span> main.cpp<span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>
+</span></span><span style="display:flex;"><span>        mainwindow.cpp
+</span></span></code></pre></div><p>SOURCES變數用來設定專案都包含哪些原始檔案，多個原始檔案之間可以用空格隔開<br>
+如果不想變成一整排字串造成閱讀上的困難的話<br>
+可以用反斜線 &quot; \ &quot; 折行</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>SOURCE <span style="color:#f92672">+=</span> main.cpp <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>mainwindow.cpp <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>widget.cpp
+</span></span></code></pre></div><p>還有另外一種撰寫方式，就是利用 &quot; += &ldquo;運算子(很多變數都支援，如前面看到的QT變數)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>QT <span style="color:#f92672">+=</span> gui
+</span></span><span style="display:flex;"><span>QT <span style="color:#f92672">+=</span> core
+</span></span><span style="display:flex;"><span>QT <span style="color:#f92672">+=</span> quick
+</span></span></code></pre></div><p>如果不知道變數是否包含有預設值，比較安全的作法是採用 &ldquo;+=&ldquo;來進行</p>
+<p>第17行</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>HEADERS  <span style="color:#f92672">+=</span> mainwindow.h
+</span></span></code></pre></div><p>HEADERS 變數用來設定專案包含哪些標頭檔，多個標頭檔之間可以用空格隔開，基本用法跟SOURCES一樣</p>
+<p>第21行</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>INCLUDEPATH <span style="color:#f92672">+=</span> C:<span style="color:#ae81ff">\o</span>pencv<span style="color:#ae81ff">\b</span>uild<span style="color:#ae81ff">\i</span>nclude
+</span></span><span style="display:flex;"><span>C:<span style="color:#ae81ff">\o</span>pencv<span style="color:#ae81ff">\b</span>uild<span style="color:#ae81ff">\i</span>nclude<span style="color:#ae81ff">\o</span>pencv2
+</span></span></code></pre></div><p>在開發專案時，經常會用到其他函數庫的標頭檔，或是我們自己的類別庫<br>
+這時候就需要在Qt專案檔案中指定類別庫的標頭檔目錄<br>
+就是使用INCLUDEPATH</p>
+<p>變數用法跟SOURCES類似，可以在一行宣告所有標頭檔路徑，也可以折行，也可以使用&rdquo;+=&rdquo;</p>
+<p>第25行</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>CONFIG<span style="color:#f92672">(</span>release,debug|release<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    LIBS <span style="color:#f92672">+=</span> C:<span style="color:#ae81ff">\o</span>pencv<span style="color:#ae81ff">\b</span>uild<span style="color:#ae81ff">\x</span>64<span style="color:#ae81ff">\v</span>c10<span style="color:#ae81ff">\l</span>ib<span style="color:#ae81ff">\o</span>pencv_core2410.lib
+</span></span><span style="display:flex;"><span>    LIBS <span style="color:#f92672">+=</span> C:<span style="color:#ae81ff">\o</span>pencv<span style="color:#ae81ff">\b</span>uild<span style="color:#ae81ff">\x</span>64<span style="color:#ae81ff">\v</span>c10<span style="color:#ae81ff">\l</span>ib<span style="color:#ae81ff">\o</span>pencv_highgui2410.lib
+</span></span><span style="display:flex;"><span>    LIBS <span style="color:#f92672">+=</span> C:<span style="color:#ae81ff">\o</span>pencv<span style="color:#ae81ff">\b</span>uild<span style="color:#ae81ff">\x</span>64<span style="color:#ae81ff">\v</span>c10<span style="color:#ae81ff">\l</span>ib<span style="color:#ae81ff">\o</span>pencv_imgproc2410.lib
+</span></span><span style="display:flex;"><span>    LIBS <span style="color:#f92672">+=</span> C:<span style="color:#ae81ff">\o</span>pencv<span style="color:#ae81ff">\b</span>uild<span style="color:#ae81ff">\x</span>64<span style="color:#ae81ff">\v</span>c10<span style="color:#ae81ff">\l</span>ib<span style="color:#ae81ff">\o</span>pencv_objdetect2410.lib
+</span></span><span style="display:flex;"><span>    LIBS <span style="color:#f92672">+=</span> C:<span style="color:#ae81ff">\o</span>pencv<span style="color:#ae81ff">\b</span>uild<span style="color:#ae81ff">\x</span>64<span style="color:#ae81ff">\v</span>c10<span style="color:#ae81ff">\l</span>ib<span style="color:#ae81ff">\o</span>pencv_contrib2410.lib
+</span></span></code></pre></div><p>這裡就是指定函數庫與函數庫檔案路徑</p>
+<p>OpenCV的lib檔案有分debug跟release版本<br>
+這裡我是使用release版本 所以加上了CONFIG設定資訊<br>
+如果要使用debug版本<br>
+要改成這樣</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>CONFIG<span style="color:#f92672">(</span>debug,debug|release<span style="color:#f92672">)</span>
+</span></span></code></pre></div><p>這裡是書沒提到的</p>
+<p>接下來是講書裡提到的，但是我目前沒有用到</p>
+<p>巨集的定義:</p>
+<p>在Qt專案中，使用DEFINES變數來定義<br>
+用法就跟LIB類似<br>
+EX:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>DEFINES <span style="color:#f92672">+=</span> LIVE_TEST  
+</span></span><span style="display:flex;"><span>DEFINES <span style="color:#f92672">+=</span> DEBUG_CONNECTION  
+</span></span></code></pre></div><p>因為qmake會給DEFINES變數設定一些預設值，因此建議在使用DEFINES變數時，只用 &quot; += &ldquo;設定</p>
+<p>設定資訊:</p>
+<p>CONFIG變數用來設定專案的資訊和編譯選項<br>
+qmake內建了很多選項供CONFIG變數使用</p>
+<ul>
+<li>release，告訴qmake建置Release版本</li>
+<li>debug，告訴qmake建置Debug版本</li>
+<li>debug_and_release，告訴qmake建置Debug和Release版本。(release、debug、debug_and_release哪個是最後一個設定，就使用哪個)</li>
+<li>warn_on，告訴編譯器盡可能詳盡的警告資訊，強烈建議開啟</li>
+<li>warn_off，告訴編譯器別警告資訊</li>
+</ul>
+<p>EX:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#example 1</span>
+</span></span><span style="display:flex;"><span>CONFIG <span style="color:#f92672">+=</span> qt warn_on release
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#example 2</span>
+</span></span><span style="display:flex;"><span>CONFIG -<span style="color:#f92672">=</span>qt
+</span></span></code></pre></div><p>目前就看到這裡了<br>
+C++的深度我還挖得不夠深<br>
+所以還持續的努力中<br>
+也希望大家多推薦Qt的書給我看QQ</p>
+
+		</div>
+	</article>
+</main>
+
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/note/2016/09/image-open-save-in-opencv/image-open-save-in-opencv/">OpenCV影像開啟、儲存</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/note/2016/08/qt-components-intro/qt-components-intro/">認識Qt控件 (Input Widgets) (Display Widgets) (Layouts)</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/note/2016/08/the-solution-of-qt-chinese-garbled/the-solution-of-qt-chinese-garbled/">Qt會中文亂碼問題(解決)</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/note/2016/08/qt-button-intro/qt-button-intro/">認識Qt 控件(QButton)</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/leisure/2016/07/ducky-d2108/ducky-d2108/">絕對不是業配文----Ducky D2108 青軸 入門款機械式鍵盤入手</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/Computer-science/">Computer science</a></li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/HongKong/">HongKong</a></li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/Image-Processing/">Image Processing</a></li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/Programming-language/">Programming language</a></li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/Shopping/">Shopping</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="LinkedIn" rel="noopener noreferrer" href="https://linkedin.com/in/ji-rong-wu-a06601135/" target="_blank">
+				<svg class="widget-social__link-icon icon icon-linkedin" width="24" height="24" viewBox="0 0 352 352"><path d="M0,40v272c0,21.9,18.1,40,40,40h272c21.9,0,40-18.1,40-40V40c0-21.9-18.1-40-40-40H40C18.1,0,0,18.1,0,40z M312,32 c4.6,0,8,3.4,8,8v272c0,4.6-3.4,8-8,8H40c-4.6,0-8-3.4-8-8V40c0-4.6,3.4-8,8-8H312z M59.5,87c0,15.2,12.3,27.5,27.5,27.5 c15.2,0,27.5-12.3,27.5-27.5c0-15.2-12.3-27.5-27.5-27.5C71.8,59.5,59.5,71.8,59.5,87z M187,157h-1v-21h-45v152h47v-75 c0-19.8,3.9-39,28.5-39c24.2,0,24.5,22.4,24.5,40v74h47v-83.5c0-40.9-8.7-72-56.5-72C208.5,132.5,193.3,145.1,187,157z M64,288h47.5 V136H64V288z"/></svg>
+				<span>LinkedIn</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/Alfredisabug" target="_blank">
+				<svg class="widget-social__link-icon icon icon-github" width="24" height="24" viewBox="0 0 384 374"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Email" href="mailto:jirongwu81@gmail.com">
+				<svg class="widget-social__link-icon icon icon-mail" width="24" height="24" viewBox="0 0 416 288"><path d="m0 16v256 16h16 384 16v-16-256-16h-16-384-16zm347 16-139 92.5-139-92.5zm-148 125.5 9 5.5 9-5.5 167-111.5v210h-352v-210z"/></svg>
+				<span>jirongwu81@gmail.com</span>
+			</a>
+		</div>
+
+		
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2024 佶佶如律令.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>

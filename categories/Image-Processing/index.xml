@@ -6,21 +6,35 @@
     <description>Recent content in Image Processing on 佶佶如律令</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 14 Jun 2016 14:12:48 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 01 Feb 2024 14:50:01 +0800</lastBuildDate>
     <atom:link href="https://blog.asjijiasdecree.com/categories/Image-Processing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OpenCV影像開啟、儲存</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2016/09/image-open-save-in-opencv/image-open-save-in-opencv/</link>
+      <pubDate>Thu, 01 Feb 2024 14:50:01 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2016/09/image-open-save-in-opencv/image-open-save-in-opencv/</guid>
+      <description>Publish Date : 2024-02-01 14:50 在做影像處理的時候 常常是連續的影像處理 這時候除了開啟影像檔之外 也要寫入影像 剛讀研究所的時候 都只會用IPL存影像檔 所以網路上看到的程</description>
+    </item>
+    <item>
+      <title>影像處理-紋理的切割與分類筆記</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2016/07/image-processing-text-cut-and-class-note/image-processing-text-cut-and-class-note/</link>
+      <pubDate>Thu, 07 Jul 2016 14:04:00 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2016/07/image-processing-text-cut-and-class-note/image-processing-text-cut-and-class-note/</guid>
+      <description>Publish Date : 2016-07-07 14:04 實驗室接下來的研究方向 將會使用到左右眼的影像合成立體影像 但去除了使用Kinect的深度圖資訊 確切原因我也不是很懂 但BOSS都這麼說</description>
+    </item>
     <item>
       <title>我的第一個Qt專案(加上opencv低階處理完成</title>
       <link>https://blog.asjijiasdecree.com/post/note/2016/06/my-first-qt-project-with-opencv/my-first-qt-projcet-with-opencv/</link>
       <pubDate>Tue, 14 Jun 2016 14:12:48 +0800</pubDate>
       <guid>https://blog.asjijiasdecree.com/post/note/2016/06/my-first-qt-project-with-opencv/my-first-qt-projcet-with-opencv/</guid>
-      <description>Publish Date : 2016-06-14 14:12:48 &amp;#43;0800 CST 這學期修的課程 &amp;ldquo;影像辨識技術&amp;rdquo; 有用到opencv處理影像 但是老師對於我們每一次換圖片處理時 就要修改一次</description>
+      <description>Publish Date : 2016-06-14 14:12 這學期修的課程 &amp;ldquo;影像辨識技術&amp;rdquo; 有用到opencv處理影像 但是老師對於我們每一次換圖片處理時 就要修改一次程式</description>
     </item>
     <item>
       <title>OpenCV 簡介</title>
       <link>https://blog.asjijiasdecree.com/post/note/2016/03/opencv-introduce/opencv-introduce/</link>
       <pubDate>Mon, 28 Mar 2016 00:22:00 +0800</pubDate>
       <guid>https://blog.asjijiasdecree.com/post/note/2016/03/opencv-introduce/opencv-introduce/</guid>
-      <description>Publish Date : 2016-03-28 00:22:00 &amp;#43;0800 CST 上一篇說到我會重新開始學習OpenCV 並且學習使用Mat的資料結構 現在就讓我重新認識OpenCV include 的函式檔中 cv – 核心函數庫 在O</description>
+      <description>Publish Date : 2016-03-28 00:22 上一篇說到我會重新開始學習OpenCV 並且學習使用Mat的資料結構 現在就讓我重新認識OpenCV include 的函式檔中 cv – 核心函數庫 在Ope</description>
     </item>
   </channel>
 </rss>
