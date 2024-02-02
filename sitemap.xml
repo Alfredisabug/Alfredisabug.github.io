@@ -23,6 +23,9 @@
     <loc>https://blog.asjijiasdecree.com/aboutme/</loc>
     <lastmod>2024-01-24T14:43:38+08:00</lastmod>
   </url><url>
+    <loc>https://blog.asjijiasdecree.com/tags/C/</loc>
+    <lastmod>2017-05-22T10:46:47+08:00</lastmod>
+  </url><url>
     <loc>https://blog.asjijiasdecree.com/categories/</loc>
     <lastmod>2017-05-22T10:46:47+08:00</lastmod>
   </url><url>
@@ -32,10 +35,16 @@
     <loc>https://blog.asjijiasdecree.com/sections/note/</loc>
     <lastmod>2017-05-22T10:46:47+08:00</lastmod>
   </url><url>
+    <loc>https://blog.asjijiasdecree.com/tags/OpenCV/</loc>
+    <lastmod>2017-05-22T10:46:47+08:00</lastmod>
+  </url><url>
     <loc>https://blog.asjijiasdecree.com/categories/Programming-language/</loc>
     <lastmod>2017-05-22T10:46:47+08:00</lastmod>
   </url><url>
     <loc>https://blog.asjijiasdecree.com/sections/</loc>
+    <lastmod>2017-05-22T10:46:47+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.asjijiasdecree.com/tags/</loc>
     <lastmod>2017-05-22T10:46:47+08:00</lastmod>
   </url><url>
     <loc>https://blog.asjijiasdecree.com/post/note/2017/05/image-extend-border/image-extend-border/</loc>
@@ -44,11 +53,17 @@
     <loc>https://blog.asjijiasdecree.com/categories/Computer-science/</loc>
     <lastmod>2017-04-07T14:30:21+08:00</lastmod>
   </url><url>
+    <loc>https://blog.asjijiasdecree.com/tags/OSX/</loc>
+    <lastmod>2017-04-07T14:30:21+08:00</lastmod>
+  </url><url>
     <loc>https://blog.asjijiasdecree.com/post/note/2017/04/hackintosh-make-usb-boot/hackintosh-make-usb-boot/</loc>
     <lastmod>2017-04-07T14:30:21+08:00</lastmod>
   </url><url>
     <loc>https://blog.asjijiasdecree.com/post/note/2017/03/opencv-color-train-edge-det/opencv-color-train-edge-det/</loc>
     <lastmod>2017-03-31T15:25:54+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.asjijiasdecree.com/tags/windows-api/</loc>
+    <lastmod>2016-10-03T09:15:42+08:00</lastmod>
   </url><url>
     <loc>https://blog.asjijiasdecree.com/post/note/2016/10/data-type-of-windows/data-type-of-windows/</loc>
     <lastmod>2016-10-03T09:15:42+08:00</lastmod>
@@ -59,6 +74,9 @@
     <loc>https://blog.asjijiasdecree.com/post/note/2016/09/image-open-save-in-opencv/image-open-save-in-opencv/</loc>
     <lastmod>2016-09-20T13:28:01+08:00</lastmod>
   </url><url>
+    <loc>https://blog.asjijiasdecree.com/tags/Qt/</loc>
+    <lastmod>2016-08-13T15:48:19+08:00</lastmod>
+  </url><url>
     <loc>https://blog.asjijiasdecree.com/post/note/2016/08/qt-components-intro/qt-components-intro/</loc>
     <lastmod>2016-08-13T15:48:19+08:00</lastmod>
   </url><url>
@@ -67,6 +85,12 @@
   </url><url>
     <loc>https://blog.asjijiasdecree.com/post/note/2016/08/qt-button-intro/qt-button-intro/</loc>
     <lastmod>2016-08-10T17:40:00+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.asjijiasdecree.com/tags/Ducky/</loc>
+    <lastmod>2016-07-25T14:36:29+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.asjijiasdecree.com/tags/keyboard/</loc>
+    <lastmod>2016-07-25T14:36:29+08:00</lastmod>
   </url><url>
     <loc>https://blog.asjijiasdecree.com/sections/lessure/</loc>
     <lastmod>2016-07-25T14:36:29+08:00</lastmod>
@@ -104,6 +128,12 @@
     <loc>https://blog.asjijiasdecree.com/post/travel/2016/06/conference-hongkong-1/conference-hongkong-1/</loc>
     <lastmod>2016-06-14T00:06:00+08:00</lastmod>
   </url><url>
+    <loc>https://blog.asjijiasdecree.com/tags/markov-random-fields/</loc>
+    <lastmod>2016-05-21T22:47:00+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.asjijiasdecree.com/tags/Probability-theory/</loc>
+    <lastmod>2016-05-21T22:47:00+08:00</lastmod>
+  </url><url>
     <loc>https://blog.asjijiasdecree.com/post/note/2016/05/markov-random-fields-intro/markov-random-fields-intr/</loc>
     <lastmod>2016-05-21T22:47:00+08:00</lastmod>
   </url><url>
@@ -112,7 +142,5 @@
   </url><url>
     <loc>https://blog.asjijiasdecree.com/post/note/2016/03/opencv-learn-from-mat-struct/opencv-learn-from-mat-struct/</loc>
     <lastmod>2016-03-23T16:29:00+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.asjijiasdecree.com/tags/</loc>
   </url>
 </urlset>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>windows api on 佶佶如律令</title>
+    <link>https://blog.asjijiasdecree.com/tags/windows-api/</link>
+    <description>Recent content in windows api on 佶佶如律令</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Mon, 03 Oct 2016 09:15:42 +0800</lastBuildDate>
+    <atom:link href="https://blog.asjijiasdecree.com/tags/windows-api/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windows 資料類型</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2016/10/data-type-of-windows/data-type-of-windows/</link>
+      <pubDate>Mon, 03 Oct 2016 09:15:42 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2016/10/data-type-of-windows/data-type-of-windows/</guid>
+      <description>Publish Date : 2016-10-03 09:15 Windows API函數、資料結構等都是採用Windows 資料類型。 比如入口參數、返回值等都是 因此學習Windows API程式設計必須要了解W</description>
+    </item>
+  </channel>
+</rss>

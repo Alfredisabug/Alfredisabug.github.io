@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OpenCV on 佶佶如律令</title>
+    <link>https://blog.asjijiasdecree.com/tags/OpenCV/</link>
+    <description>Recent content in OpenCV on 佶佶如律令</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Mon, 22 May 2017 10:46:47 +0800</lastBuildDate>
+    <atom:link href="https://blog.asjijiasdecree.com/tags/OpenCV/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>影像拓展邊界</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2017/05/image-extend-border/image-extend-border/</link>
+      <pubDate>Mon, 22 May 2017 10:46:47 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2017/05/image-extend-border/image-extend-border/</guid>
+      <description>Publish Date : 2017-05-22 10:46 在影像處理中 經常會需要用到濾波器(卷積處理) 但在邊界 中心沒有足夠像素做運算 也就是說濾波器在圖像邊界上時 需要的像素大於原始圖像的邊界</description>
+    </item>
+    <item>
+      <title>OpenCV轉換色彩空間及邊緣偵測</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2017/03/opencv-color-train-edge-det/opencv-color-train-edge-det/</link>
+      <pubDate>Fri, 31 Mar 2017 15:25:54 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2017/03/opencv-color-train-edge-det/opencv-color-train-edge-det/</guid>
+      <description>Publish Date : 2017-03-31 15:25 是的 有好一陣子沒有更新了 原因很多 面試阿，碩士研究，出國阿 最近自己也轉換了未來目標 希望自己能變得越來越厲害 在開始之前 須講一下之前的寫</description>
+    </item>
+    <item>
+      <title>圖片相似度----SSIM以及PSNR</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2016/09/ssim-and-psnr/ssim-and-psnr/</link>
+      <pubDate>Tue, 27 Sep 2016 13:19:33 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2016/09/ssim-and-psnr/ssim-and-psnr/</guid>
+      <description>Publish Date : 2016-09-27 13:19 對於兩張圖片到底有沒有相似 相似度多少 客觀的評量方法有很多種 MSE、SNR、PSNR、SSIM等等 而今天要講的是PSNR 跟 SSIM 至於為什</description>
+    </item>
+    <item>
+      <title>OpenCV影像開啟、儲存</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2016/09/image-open-save-in-opencv/image-open-save-in-opencv/</link>
+      <pubDate>Tue, 20 Sep 2016 13:28:01 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2016/09/image-open-save-in-opencv/image-open-save-in-opencv/</guid>
+      <description>Publish Date : 2016-09-20 13:28 在做影像處理的時候 常常是連續的影像處理 這時候除了開啟影像檔之外 也要寫入影像 剛讀研究所的時候 都只會用IPL存影像檔 所以網路上看到的程</description>
+    </item>
+    <item>
+      <title>我的第一個Qt專案(加上opencv低階處理完成</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2016/06/my-first-qt-project-with-opencv/my-first-qt-projcet-with-opencv/</link>
+      <pubDate>Tue, 14 Jun 2016 14:12:48 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2016/06/my-first-qt-project-with-opencv/my-first-qt-projcet-with-opencv/</guid>
+      <description>Publish Date : 2016-06-14 14:12 這學期修的課程 &amp;ldquo;影像辨識技術&amp;rdquo; 有用到opencv處理影像 但是老師對於我們每一次換圖片處理時 就要修改一次程式</description>
+    </item>
+    <item>
+      <title>OpenCV 簡介</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2016/03/opencv-introduce/opencv-introduce/</link>
+      <pubDate>Mon, 28 Mar 2016 00:22:00 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2016/03/opencv-introduce/opencv-introduce/</guid>
+      <description>Publish Date : 2016-03-28 00:22 上一篇說到我會重新開始學習OpenCV 並且學習使用Mat的資料結構 現在就讓我重新認識OpenCV include 的函式檔中 cv – 核心函數庫 在Ope</description>
+    </item>
+    <item>
+      <title>OpenCV 從mat結構學起</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2016/03/opencv-learn-from-mat-struct/opencv-learn-from-mat-struct/</link>
+      <pubDate>Wed, 23 Mar 2016 16:29:00 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2016/03/opencv-learn-from-mat-struct/opencv-learn-from-mat-struct/</guid>
+      <description>Publish Date : 2016-03-23 16:29 相信對於影像處理的人來說 OpenCV是不陌生的吧~ 現在對於影像處理的open sourece 很多 但筆者我也沒學過其他的 加上又死守著C++ 不會使用</description>
+    </item>
+  </channel>
+</rss>

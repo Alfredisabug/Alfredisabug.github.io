@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>markov random fields on 佶佶如律令</title>
+    <link>https://blog.asjijiasdecree.com/tags/markov-random-fields/</link>
+    <description>Recent content in markov random fields on 佶佶如律令</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Sat, 21 May 2016 22:47:00 +0800</lastBuildDate>
+    <atom:link href="https://blog.asjijiasdecree.com/tags/markov-random-fields/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>馬可夫隨機場</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2016/05/markov-random-fields-intro/markov-random-fields-intr/</link>
+      <pubDate>Sat, 21 May 2016 22:47:00 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2016/05/markov-random-fields-intro/markov-random-fields-intr/</guid>
+      <description>Publish Date : 2016-05-21 22:47 有一陣子沒有更新了 在於很多事情集於一身 沒有時間紀錄 在於影像處理 太多的觀念沒有搞懂 包括很多基礎的知識 來了研究所 就必須要去搞懂其核心 不</description>
+    </item>
+  </channel>
+</rss>
