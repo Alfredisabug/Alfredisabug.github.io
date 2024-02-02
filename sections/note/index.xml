@@ -6,8 +6,43 @@
     <description>Recent content in note on 佶佶如律令</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Mon, 22 May 2017 10:46:47 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 03 May 2018 16:19:43 +0800</lastBuildDate>
     <atom:link href="https://blog.asjijiasdecree.com/sections/note/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PySide無邊框視窗跟拖拉</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2018/05/pyside-widget-without-edge/pyside-widget-without-edge/</link>
+      <pubDate>Thu, 03 May 2018 16:19:43 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2018/05/pyside-widget-without-edge/pyside-widget-without-edge/</guid>
+      <description>Publish Date : 2018-05-03 16:19 有些UI介面是沒有外面邊框的 在PySide中也可以做到 但少了邊框就無法拖拉移動視窗了 所以要自己寫 除了有無法拖拉移動視窗外 也要自己寫</description>
+    </item>
+    <item>
+      <title>VirtualEnv教學</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2018/04/virtualenv-tutorial/virtualenv-tutorial/</link>
+      <pubDate>Wed, 11 Apr 2018 11:11:04 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2018/04/virtualenv-tutorial/virtualenv-tutorial/</guid>
+      <description>Publish Date : 2018-04-11 11:11 開發軟體時 總會需要控制開發環境 不同環境設置 都會導致不同結果 今天要講的是 python 的環境控制 python在開發時，會用到許多不同的modul</description>
+    </item>
+    <item>
+      <title>PySide基礎建置 與 QtDesigner</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2018/03/pyside-env-establish/pyside-env-establish/</link>
+      <pubDate>Mon, 12 Mar 2018 09:59:44 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2018/03/pyside-env-establish/pyside-env-establish/</guid>
+      <description>Publish Date : 2018-03-12 09:59 在安裝完Python之後 基本上都會有包含pip了 直接在終端機(Windows 用 cmd 或是power shell)打上 $pip install PySide 如果不知道有沒</description>
+    </item>
+    <item>
+      <title>PySide 簡介</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2018/03/pyside-intro/pyside-intro/</link>
+      <pubDate>Sat, 10 Mar 2018 13:57:43 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2018/03/pyside-intro/pyside-intro/</guid>
+      <description>Publish Date : 2018-03-10 13:57 其實以為這輩子是C/C++的人了 但沒想到進公司後居然要會python 而且還要會一點UI 剛好python跟之前自學過的Qt有連結 不用</description>
+    </item>
+    <item>
+      <title>Mat.type之小記錄</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2017/07/mat-type-note/mat-typd-note/</link>
+      <pubDate>Sun, 30 Jul 2017 23:16:23 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2017/07/mat-type-note/mat-typd-note/</guid>
+      <description>Publish Date : 2017-07-30 23:16 這篇主要是紀錄在寫程式時 如果不知道Mat 的資料型態 可以先讓他回傳值 利用Mat.type回傳的資料 不過通常工程師在編寫時 都會知道自己</description>
+    </item>
     <item>
       <title>影像拓展邊界</title>
       <link>https://blog.asjijiasdecree.com/post/note/2017/05/image-extend-border/image-extend-border/</link>

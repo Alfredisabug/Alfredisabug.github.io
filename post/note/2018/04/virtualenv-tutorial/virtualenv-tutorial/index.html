@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>VirtualEnv教學 - 佶佶如律令</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="佶佶如律令" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">佶佶如律令</div>
+					
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">Home</span>
+				
+			</a>
+		</li>
+		<li class="menu__item menu__item--active">
+			<a class="menu__link" href="/post/note/">
+				
+				<span class="menu__text">挖掘手扎</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/travel/">
+				
+				<span class="menu__text">探險足跡</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/leisure/">
+				
+				<span class="menu__text">悠悠揚揚</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/aboutme/">
+				
+				<span class="menu__text">About Me</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/history/">
+				
+				<span class="menu__text">History</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">VirtualEnv教學</h1>
+			
+		</header>
+		<div class="content post__content clearfix">
+			
+<style type='text/css'>
+.pub_label_color {
+    color: #BDBDBF;
+}
+</style>
+
+
+<div>
+	<p class="pub_label_color">Publish Date :  2018-04-11 11:11 </p>
+</div>
+
+<p>開發軟體時<br>
+總會需要控制開發環境<br>
+不同環境設置<br>
+都會導致不同結果<br>
+今天要講的是<br>
+python 的環境控制<br>
+python在開發時，會用到許多不同的module<br>
+這些不同的module在不同專案也許會用到不同版本<br>
+而同一個module在同一電腦上又不能安裝兩個版本<br>
+這時候就需要一個環境讓我們設定拉<br>
+VirtualEnv是一個好用的工具，這裡以windows作為範例</p>
+<p>VirtualEnv可以<br>
+創造虛擬（獨立）Python 環境的工具:<br>
+隔離函數庫需求不同的專案，讓它們不會互相影響。在建立並啟動虛擬環境後，透過 pip 安裝的套件會被放在虛擬環境中，專案就可以擁有一個獨立的環境。</p>
+<ol>
+<li>在沒有權限的情況下安裝新套件</li>
+<li>不同專案可以使用不同版本的相同套件</li>
+<li>套件版本升級時不會影響其他專案</li>
+</ol>
+<p>使用前先確認python 及 pip 已加入環境變數<br>
+並用pip 下載 virtualenv</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$pip install virtualenv
+</span></span></code></pre></div><p>安裝完成後，即可直接建立虛擬環境<br>
+$virtualenv 你要建立的環境名稱<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../%e5%9c%96%e7%89%871.png" width="100%" height="100%"></img>
+</div>
+<br>
+接著會幫你安裝pip等套件，安裝完之後就可以使用拉。<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../%e5%9c%96%e7%89%872.png" width="100%" height="100%"></img>
+</div>
+<br>
+安裝完成後，會於你選擇的資料夾下有個建立虛擬環境名稱的資料夾，按下去找出Scripts資料夾下的active。於此資料夾下開啟cmd視窗並active就可以啟用，注意不能用powershell!<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../%e5%9c%96%e7%89%873.png" width="100%" height="100%"></img>
+</div>
+<br>
+啟動之後前面會有(測試環境名稱)，到這裡就已經成功拉，可使用python **.py進行編譯。
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../%e5%9c%96%e7%89%874.png" width="100%" height="100%"></img>
+</div>
+<br>
+使用deactive離開虛擬環境<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../%e5%9c%96%e7%89%875.png" width="100%" height="100%"></img>
+</div>
+</p>
+<p>另外可搭配pycharm 使用<br>
+pycharm建立project時可以選擇VirtualEnv<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../%e5%9c%96%e7%89%876.png" width="100%" height="100%"></img>
+</div>
+<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../%e5%9c%96%e7%89%877.png" width="100%" height="100%"></img>
+</div>
+<br>
+或是PyCharm在已建立專案中用VirtualEnv:<br>
+File-&gt;Settings&gt;Project-&gt;Project Inerpreter 右邊鋸齒狀按鈕<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../%e5%9c%96%e7%89%878.png" width="100%" height="100%"></img>
+</div>
+<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../%e5%9c%96%e7%89%879.png" width="100%" height="100%"></img>
+</div>
+<br>
+Add Local: 選取已建立的VirtualEnv<br>
+Create VirtualEnv: 建立 新的VirtualEnv</p>
+<p>順帶一提，pycharm真的是一個很好用的ide<br>
+如果要在虛擬環境下下載module<br>
+pycharm裡面附帶的terminal就已經直接幫你active好虛擬環境了<br>
+就不用自己再去安裝資料夾下active</p>
+<p>windows下要提醒的是<br>
+不能移動虛擬環境安裝資料夾，移動完就會不能用<br>
+OSX下好像可以用-relocatable重新定位<br>
+但是windows我試了很多方法都不行，還請知道的大神教學一下<br>
+如果要在不同電腦使用一樣的虛擬環境<br>
+就只能用pip freeze的方法了<br>
+使用pip freeze出當前虛擬環境的module<br>
+再去另一台的虛擬環境下載freeze出的module</p>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/Python/" rel="tag">Python</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/note/2018/05/pyside-widget-without-edge/pyside-widget-without-edge/">PySide無邊框視窗跟拖拉</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/note/2018/04/virtualenv-tutorial/virtualenv-tutorial/">VirtualEnv教學</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/note/2018/03/pyside-env-establish/pyside-env-establish/">PySide基礎建置 與 QtDesigner</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/note/2018/03/pyside-intro/pyside-intro/">PySide 簡介</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/note/2018/03/gui-free-image-sites/gui-free-image-sites/">UI 免費圖庫</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/Computer-science/">Computer science</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">3</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/HongKong/">HongKong</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">3</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/Image-Processing/">Image Processing</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">8</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/Programming-language/">Programming language</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">18</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/Shopping/">Shopping</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/C/" title="C">C (13)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/Ducky/" title="Ducky">Ducky (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/GUI/" title="GUI">GUI (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/OSX/" title="OSX">OSX (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/OpenCV/" title="OpenCV">OpenCV (8)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/Probability-theory/" title="Probability theory">Probability theory (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/PySide/" title="PySide">PySide (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/Python/" title="Python">Python (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/Qt/" title="Qt">Qt (6)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/C/" title="C">C (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/keyboard/" title="keyboard">keyboard (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/markov-random-fields/" title="markov random fields">markov random fields (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/windows-api/" title="windows api">windows api (1)</a>
+	</div>
+</div>
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="LinkedIn" rel="noopener noreferrer" href="https://linkedin.com/in/ji-rong-wu-a06601135/" target="_blank">
+				<svg class="widget-social__link-icon icon icon-linkedin" width="24" height="24" viewBox="0 0 352 352"><path d="M0,40v272c0,21.9,18.1,40,40,40h272c21.9,0,40-18.1,40-40V40c0-21.9-18.1-40-40-40H40C18.1,0,0,18.1,0,40z M312,32 c4.6,0,8,3.4,8,8v272c0,4.6-3.4,8-8,8H40c-4.6,0-8-3.4-8-8V40c0-4.6,3.4-8,8-8H312z M59.5,87c0,15.2,12.3,27.5,27.5,27.5 c15.2,0,27.5-12.3,27.5-27.5c0-15.2-12.3-27.5-27.5-27.5C71.8,59.5,59.5,71.8,59.5,87z M187,157h-1v-21h-45v152h47v-75 c0-19.8,3.9-39,28.5-39c24.2,0,24.5,22.4,24.5,40v74h47v-83.5c0-40.9-8.7-72-56.5-72C208.5,132.5,193.3,145.1,187,157z M64,288h47.5 V136H64V288z"/></svg>
+				<span>LinkedIn</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/Alfredisabug" target="_blank">
+				<svg class="widget-social__link-icon icon icon-github" width="24" height="24" viewBox="0 0 384 374"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Email" href="mailto:jirongwu81@gmail.com">
+				<svg class="widget-social__link-icon icon icon-mail" width="24" height="24" viewBox="0 0 416 288"><path d="m0 16v256 16h16 384 16v-16-256-16h-16-384-16zm347 16-139 92.5-139-92.5zm-148 125.5 9 5.5 9-5.5 167-111.5v210h-352v-210z"/></svg>
+				<span>jirongwu81@gmail.com</span>
+			</a>
+		</div>
+
+		
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2024 佶佶如律令.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
+</body>
+</html>

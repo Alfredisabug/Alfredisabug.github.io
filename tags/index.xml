@@ -6,19 +6,40 @@
     <description>Recent content in Tags on 佶佶如律令</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Mon, 22 May 2017 10:46:47 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 03 May 2018 16:19:43 +0800</lastBuildDate>
     <atom:link href="https://blog.asjijiasdecree.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PySide</title>
+      <link>https://blog.asjijiasdecree.com/tags/PySide/</link>
+      <pubDate>Thu, 03 May 2018 16:19:43 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/tags/PySide/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Python</title>
+      <link>https://blog.asjijiasdecree.com/tags/Python/</link>
+      <pubDate>Thu, 03 May 2018 16:19:43 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/tags/Python/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>GUI</title>
+      <link>https://blog.asjijiasdecree.com/tags/GUI/</link>
+      <pubDate>Sat, 10 Mar 2018 13:41:52 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/tags/GUI/</guid>
+      <description></description>
+    </item>
     <item>
       <title>C</title>
       <link>https://blog.asjijiasdecree.com/tags/C/</link>
-      <pubDate>Mon, 22 May 2017 10:46:47 +0800</pubDate>
+      <pubDate>Sun, 30 Jul 2017 23:16:23 +0800</pubDate>
       <guid>https://blog.asjijiasdecree.com/tags/C/</guid>
       <description></description>
     </item>
     <item>
       <title>OpenCV</title>
       <link>https://blog.asjijiasdecree.com/tags/OpenCV/</link>
-      <pubDate>Mon, 22 May 2017 10:46:47 +0800</pubDate>
+      <pubDate>Sun, 30 Jul 2017 23:16:23 +0800</pubDate>
       <guid>https://blog.asjijiasdecree.com/tags/OpenCV/</guid>
       <description></description>
     </item>

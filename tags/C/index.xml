@@ -6,8 +6,15 @@
     <description>Recent content in C on 佶佶如律令</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Mon, 22 May 2017 10:46:47 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 30 Jul 2017 23:16:23 +0800</lastBuildDate>
     <atom:link href="https://blog.asjijiasdecree.com/tags/C/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mat.type之小記錄</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2017/07/mat-type-note/mat-typd-note/</link>
+      <pubDate>Sun, 30 Jul 2017 23:16:23 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2017/07/mat-type-note/mat-typd-note/</guid>
+      <description>Publish Date : 2017-07-30 23:16 這篇主要是紀錄在寫程式時 如果不知道Mat 的資料型態 可以先讓他回傳值 利用Mat.type回傳的資料 不過通常工程師在編寫時 都會知道自己</description>
+    </item>
     <item>
       <title>影像拓展邊界</title>
       <link>https://blog.asjijiasdecree.com/post/note/2017/05/image-extend-border/image-extend-border/</link>
