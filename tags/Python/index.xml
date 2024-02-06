@@ -6,8 +6,15 @@
     <description>Recent content in Python on 佶佶如律令</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 02 Nov 2018 17:03:24 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 24 Apr 2020 17:20:40 +0800</lastBuildDate>
     <atom:link href="https://blog.asjijiasdecree.com/tags/Python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python3 PICkitSerialAnalyzer</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2020/04/python-pksa/python-pksa/</link>
+      <pubDate>Fri, 24 Apr 2020 17:20:40 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2020/04/python-pksa/python-pksa/</guid>
+      <description>Publish Date : 2020-04-24 17:20 工作上需要用到PICkitSerialAnalyzer GUI則是用Python3開發的… 而PICkitSerialAnalyzer</description>
+    </item>
     <item>
       <title>python浮點數的精確運算</title>
       <link>https://blog.asjijiasdecree.com/post/note/2018/11/python-float-precision/python-float-precision/</link>

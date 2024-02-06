@@ -6,8 +6,134 @@
     <description>Recent content in Golang on 佶佶如律令</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 24 Sep 2019 10:07:26 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 08 Jul 2020 23:19:43 +0800</lastBuildDate>
     <atom:link href="https://blog.asjijiasdecree.com/tags/Golang/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LeetCode：876. Middle of the Linked List</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2020/07/leetcode-876/leetcode-876/</link>
+      <pubDate>Wed, 08 Jul 2020 23:19:43 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2020/07/leetcode-876/leetcode-876/</guid>
+      <description>Publish Date : 2020-07-08 23:19 題目： Given a non-empty, singly linked list with head node head, return a middle node of linked list. If there are two middle nodes, return the second middle node. 範例： Input: [1,2,3,4,5] Output: Node 3 from this list (Serialization: [3,4,5]) The returned node has value 3. (The judge&amp;#39;s serialization of this node is [3,4,5]). Note that we returned a ListNode object</description>
+    </item>
+    <item>
+      <title>LeetCode:557. Reverse Words in a String III</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2020/05/leetcode-557/leetcode-557/</link>
+      <pubDate>Wed, 20 May 2020 17:19:05 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2020/05/leetcode-557/leetcode-557/</guid>
+      <description>Publish Date : 2020-05-20 17:19 題目： Given a string, you need to reverse the order of characters in each word within a sentence while still preserving whitespace and initial word order. 範例： Input: &amp;#34;Let&amp;#39;s take LeetCode contest&amp;#34; Output: &amp;#34;s&amp;#39;teL ekat edoCteeL tsetnoc&amp;#34; 解法： 這題就是把句子的單字反過來 在這裡做stri</description>
+    </item>
+    <item>
+      <title>LeetCode:1337. The K Weakest Rows in a Matrix</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2020/05/leetcode-1337/leetcode-1337/</link>
+      <pubDate>Tue, 19 May 2020 15:18:51 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2020/05/leetcode-1337/leetcode-1337/</guid>
+      <description>Publish Date : 2020-05-19 15:18 題目： Given a m * n matrix mat of ones (representing soldiers) and zeros (representing civilians), return the indexes of the k weakest rows in the matrix ordered from the weakest to the strongest.A row i is weaker than row j, if the number of soldiers in row i is less than the number of soldiers in row j, or they have the</description>
+    </item>
+    <item>
+      <title>LeetCode:922. Sort Array By Parity II</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2020/05/leetcode-922/leetcode-922/</link>
+      <pubDate>Mon, 18 May 2020 15:30:15 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2020/05/leetcode-922/leetcode-922/</guid>
+      <description>Publish Date : 2020-05-18 15:30 題目： Given an array A of non-negative integers, half of the integers in A are odd, and half of the integers are even. Sort the array so that whenever A[i] is odd, i is odd; and whenever A[i] is even, i is even. You may return any answer array that satisfies this condition. 範例： Input: [4,2,5,7] Output: [4,5,2,7] Explanation: [4,7,2,5], [2,5,4,7],</description>
+    </item>
+    <item>
+      <title>LeetCode:811. Subdomain Visit Count</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2020/05/leetcode-811/leetcode-811/</link>
+      <pubDate>Tue, 12 May 2020 10:36:25 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2020/05/leetcode-811/leetcode-811/</guid>
+      <description>Publish Date : 2020-05-12 10:36 問題： A website domain like “discuss.leetcode.com” consists of various subdomains. At the top level, we have “com”, at the next level, we have “leetcode.com”</description>
+    </item>
+    <item>
+      <title>LeetCode： 944. Delete Columns to Make Sorted</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2020/05/leetcode-944/leetcode-944/</link>
+      <pubDate>Tue, 12 May 2020 10:32:20 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2020/05/leetcode-944/leetcode-944/</guid>
+      <description>Publish Date : 2020-05-12 10:32 題目： We are given an array A of N lowercase letter strings, all of the same length. Now, we may choose any set of deletion indices, and for each string, we delete all the characters in those indices. For example, if we have an array A = [&amp;#34;abcdef&amp;#34;,&amp;#34;uvwxyz&amp;#34;] and deletion indices {0, 2, 3}, then the final array after deletions is [&amp;#34;bef&amp;#34;, &amp;#34;vyz&amp;#34;],</description>
+    </item>
+    <item>
+      <title>LeetCode: 700 Search in a Binary Search Tree</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2020/03/leetcode-700/leetcode-700/</link>
+      <pubDate>Wed, 18 Mar 2020 15:34:58 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2020/03/leetcode-700/leetcode-700/</guid>
+      <description>Publish Date : 2020-03-18 15:34 題目： Given the root node of a binary search tree (BST) and a value. You need to find the node in the BST that the node’s value equals the given value. Return the subtree rooted with that node. If such node doesn’t exist, you should return NULL. For example, Given the tree:</description>
+    </item>
+    <item>
+      <title>LeetCode：933. Number of Recent Calls</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2020/03/leetcode-933/leetcode-933/</link>
+      <pubDate>Tue, 17 Mar 2020 14:22:08 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2020/03/leetcode-933/leetcode-933/</guid>
+      <description>Publish Date : 2020-03-17 14:22 題目： Write a class RecentCounter to count recent requests. It has only one method: ping(int t), where t represents some time in milliseconds. Return the number of pings that have been made from 3000 milliseconds ago until now. Any ping with time in [t - 3000, t] will count, including the current ping. It is guaranteed that every call to ping uses a</description>
+    </item>
+    <item>
+      <title>LeetCode: 852. Peak Index in a Mountain Array</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2020/03/leetcode-852/leetcode-852/</link>
+      <pubDate>Fri, 13 Mar 2020 09:58:22 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2020/03/leetcode-852/leetcode-852/</guid>
+      <description>Publish Date : 2020-03-13 09:58 題目： Let’s call an array A a mountain if the following properties hold: A.length &amp;gt;= 3 There exists some 0 &amp;lt; i &amp;lt; A.length - 1 such that A[0] &amp;lt; A[1] &amp;lt; ... A[i-1] &amp;lt; A[i] &amp;gt; A[i+1] &amp;gt; ... &amp;gt; A[A.length - 1] Given an array that is definitely a mountain, return any i such that A[0] &amp;lt;</description>
+    </item>
+    <item>
+      <title>Leetcode: 942. DI String Match</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2020/03/leetcode-942/leetcode-942/</link>
+      <pubDate>Tue, 03 Mar 2020 16:54:45 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2020/03/leetcode-942/leetcode-942/</guid>
+      <description>Publish Date : 2020-03-03 16:54 題目： Given a string S that only contains “I” (increase) or “D” (decrease), let N = S.length. Return any permutation A of [0, 1, ..., N] such that for all i = 0, ..., N-1: * If S[i] == &amp;#34;I&amp;#34;, then A[i] &amp;lt; A[i+1] * If S[i] == &amp;#34;D&amp;#34;, then A[i] &amp;gt; A[i+1] 範例： Input: &amp;#34;IDID&amp;#34; Output:</description>
+    </item>
+    <item>
+      <title>Leetcode：461. Hamming Distance</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2020/03/leetcode-461/leetcode-461/</link>
+      <pubDate>Mon, 02 Mar 2020 13:28:50 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2020/03/leetcode-461/leetcode-461/</guid>
+      <description>Publish Date : 2020-03-02 13:28 題目： The Hamming distance between two integers is the number of positions at which the corresponding bits are different. Given two integers x and y, calculate the Hamming distance. 範例： Input: x = 1, y = 4Output: 2Explanation:1 (0 0 0 1)4 (0 1 0 0) ↑ ↑The above arrows point to positions where the corresponding bits are</description>
+    </item>
+    <item>
+      <title>Leetcode：977. Squares of a Sorted Array</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2020/02/leetcode-977/leetcode-977/</link>
+      <pubDate>Mon, 24 Feb 2020 14:10:35 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2020/02/leetcode-977/leetcode-977/</guid>
+      <description>Publish Date : 2020-02-24 14:10 題目： Given an array of integers A sorted in non-decreasing order, return an array of the squares of each number, also in sorted non-decreasing order. 範例： Input: [-4,-1,0,3,10]Output: [0,1,9,16,100] Input: [-7,-3,2,3,11]Output: [4,9,9,49,121] 在LeetCode中使用Golang的庫很方便 不用impo</description>
+    </item>
+    <item>
+      <title>LeetCode：617 Merge Two Binary Trees</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2020/02/leetcode-617/leetcode-617/</link>
+      <pubDate>Fri, 21 Feb 2020 14:00:58 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2020/02/leetcode-617/leetcode-617/</guid>
+      <description>Publish Date : 2020-02-21 14:00 題目： Given two binary trees and imagine that when you put one of them to cover the other, some nodes of the two trees are overlapped while the others are not. You need to merge them into a new binary tree. The merge rule is that if two nodes overlap, then sum node values up as the new value of the merged node.</description>
+    </item>
+    <item>
+      <title>LeetCode：938. Range Sum of BST</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2020/02/leetcode-938/leetcode-938/</link>
+      <pubDate>Wed, 19 Feb 2020 15:48:23 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2020/02/leetcode-938/leetcode-938/</guid>
+      <description>Publish Date : 2020-02-19 15:48 Given the root node of a binary search tree, return the sum of values of all nodes with value between L and R (inclusive). The binary search tree is guaranteed to have unique values. Input: root = [10,5,15,3,7,null,18], L = 7, R = 15Output: 32 目前遇到BST類型的題目都是有關遞迴的 /**</description>
+    </item>
+    <item>
+      <title>LeetCode:1266. Minimum Time Visiting All Points</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2020/02/leetcode-1266/leetcode-1266/</link>
+      <pubDate>Mon, 17 Feb 2020 09:44:53 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2020/02/leetcode-1266/leetcode-1266/</guid>
+      <description>Publish Date : 2020-02-17 09:44 題目： On a plane there are n points with integer coordinates points[i] = [xi, yi]. Your task is to find the minimum time in seconds to visit all points. You can move according to the next rules: * In one second always you can either move vertically, horizontally by one unit or diagonally (it means to move one unit vertically and one unit</description>
+    </item>
+    <item>
+      <title>LeetCode:1221 Split a String in Balanced Strings</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2019/12/leetcode-1221/leetcode-1221/</link>
+      <pubDate>Fri, 20 Dec 2019 10:16:39 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2019/12/leetcode-1221/leetcode-1221/</guid>
+      <description>Publish Date : 2019-12-20 10:16 題目： Balanced strings are those who have equal quantity of ‘L’ and ‘R’ characters. Given a balanced string s split it in the maximum amount of balanced strings. Return the maximum amount of splitted balanced strings. example： Input: s = “RLRRLLRLRL”</description>
+    </item>
+    <item>
+      <title>Golang UI fyne.io初探</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2019/12/golang-gui-fyne-io-pretest/golang-gui-fyne-io-pretest/</link>
+      <pubDate>Wed, 18 Dec 2019 11:15:55 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2019/12/golang-gui-fyne-io-pretest/golang-gui-fyne-io-pretest/</guid>
+      <description>Publish Date : 2019-12-18 11:15 Golang對網路來說是門友善的語言 對於UI 其實搭配使用web的方式會比較好 擴展性高，支援多個平台 但桌面型式的UI（GUI）在目前</description>
+    </item>
+    <item>
+      <title>LeetCode：1290. Convert Binary Number in a Linked List to Integer</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2019/12/leetcode-1290/leetcode-1290/</link>
+      <pubDate>Wed, 18 Dec 2019 10:23:46 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2019/12/leetcode-1290/leetcode-1290/</guid>
+      <description>Publish Date : 2019-12-18 10:23 題目： Given head which is a reference node to a singly-linked list. The value of each node in the linked list is either 0 or 1. The linked list holds the binary representation of a number.Return the decimal value of the number in the linked list. Golang的解法： 看Hint1是</description>
+    </item>
     <item>
       <title>Golang爬蟲（台灣股票代碼）</title>
       <link>https://blog.asjijiasdecree.com/post/note/2019/09/golang-tw-stock-number-crawler/golang-tw-stock-number-crawler/</link>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Node-RED on 佶佶如律令</title>
+    <link>https://blog.asjijiasdecree.com/tags/Node-RED/</link>
+    <description>Recent content in Node-RED on 佶佶如律令</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Wed, 19 Feb 2020 10:23:37 +0800</lastBuildDate>
+    <atom:link href="https://blog.asjijiasdecree.com/tags/Node-RED/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Node-RED uibuilder 升級ver. 2.x.x</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2020/02/node-red-update/node-red-update/</link>
+      <pubDate>Wed, 19 Feb 2020 10:23:37 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2020/02/node-red-update/node-red-update/</guid>
+      <description>Publish Date : 2020-02-19 10:23 在舊站時期的時候 有發表了一篇Node-RED + uibuilder + vue顯示網頁的教學 隨著Node-RED更新 uibuilder主版本其實也早就更</description>
+    </item>
+  </channel>
+</rss>

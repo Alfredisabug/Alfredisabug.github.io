@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pythonnet on 佶佶如律令</title>
+    <link>https://blog.asjijiasdecree.com/tags/Pythonnet/</link>
+    <description>Recent content in Pythonnet on 佶佶如律令</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Fri, 24 Apr 2020 17:20:40 +0800</lastBuildDate>
+    <atom:link href="https://blog.asjijiasdecree.com/tags/Pythonnet/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python3 PICkitSerialAnalyzer</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2020/04/python-pksa/python-pksa/</link>
+      <pubDate>Fri, 24 Apr 2020 17:20:40 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2020/04/python-pksa/python-pksa/</guid>
+      <description>Publish Date : 2020-04-24 17:20 工作上需要用到PICkitSerialAnalyzer GUI則是用Python3開發的… 而PICkitSerialAnalyzer</description>
+    </item>
+  </channel>
+</rss>

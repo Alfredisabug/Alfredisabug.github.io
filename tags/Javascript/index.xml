@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Javascript on 佶佶如律令</title>
+    <link>https://blog.asjijiasdecree.com/tags/Javascript/</link>
+    <description>Recent content in Javascript on 佶佶如律令</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Wed, 19 Feb 2020 10:23:37 +0800</lastBuildDate>
+    <atom:link href="https://blog.asjijiasdecree.com/tags/Javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Node-RED uibuilder 升級ver. 2.x.x</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2020/02/node-red-update/node-red-update/</link>
+      <pubDate>Wed, 19 Feb 2020 10:23:37 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2020/02/node-red-update/node-red-update/</guid>
+      <description>Publish Date : 2020-02-19 10:23 在舊站時期的時候 有發表了一篇Node-RED + uibuilder + vue顯示網頁的教學 隨著Node-RED更新 uibuilder主版本其實也早就更</description>
+    </item>
+    <item>
+      <title>electron&#43;vue簡單範例</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2019/11/electron-vue-simple-ex/electron-vue-simple-ex/</link>
+      <pubDate>Tue, 26 Nov 2019 12:04:00 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2019/11/electron-vue-simple-ex/electron-vue-simple-ex/</guid>
+      <description>Publish Date : 2019-11-26 12:04 桌面應用的框架很多 像是C++的Qt等等 有一個只要會前端就會寫的桌面應用框架 且也是跨平台的（這個很重要，讓你在開發程式的時候不用開發</description>
+    </item>
+    <item>
+      <title>Javascript物件</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2019/10/javascript-obj/javascript-obj/</link>
+      <pubDate>Wed, 23 Oct 2019 11:53:23 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2019/10/javascript-obj/javascript-obj/</guid>
+      <description>Publish Date : 2019-10-23 11:53 javascript中物件佔有重要地位 學習到這通常也代表著要進入另一個學習階段 在javascript中，物件是賦予值的名稱之組合 //</description>
+    </item>
+    <item>
+      <title>Javascript函數呼叫</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2019/10/javascript-func-call/javascript-func-call/</link>
+      <pubDate>Wed, 02 Oct 2019 11:52:27 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2019/10/javascript-func-call/javascript-func-call/</guid>
+      <description>Publish Date : 2019-10-02 11:52 理解全域環境以及知道環境是如何創造與執行的之後 接下來要講的是函數了 因為函數與前面所提有很特殊的關係 首先來說執行堆 這裡會提到當我們在</description>
+    </item>
+    <item>
+      <title>Javascript的執行環境</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2019/09/javascript-env/javascript-env/</link>
+      <pubDate>Thu, 26 Sep 2019 14:31:03 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2019/09/javascript-env/javascript-env/</guid>
+      <description>Publish Date : 2019-09-26 14:31 javascript語言特性很特別 因此筆者認為在學會基礎語法後 應該要知道javascript engine的運作方式 不然可能會出現很</description>
+    </item>
+  </channel>
+</rss>

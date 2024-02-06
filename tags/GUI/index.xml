@@ -6,8 +6,15 @@
     <description>Recent content in GUI on 佶佶如律令</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 10 Mar 2018 13:41:52 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 18 Dec 2019 11:15:55 +0800</lastBuildDate>
     <atom:link href="https://blog.asjijiasdecree.com/tags/GUI/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Golang UI fyne.io初探</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2019/12/golang-gui-fyne-io-pretest/golang-gui-fyne-io-pretest/</link>
+      <pubDate>Wed, 18 Dec 2019 11:15:55 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2019/12/golang-gui-fyne-io-pretest/golang-gui-fyne-io-pretest/</guid>
+      <description>Publish Date : 2019-12-18 11:15 Golang對網路來說是門友善的語言 對於UI 其實搭配使用web的方式會比較好 擴展性高，支援多個平台 但桌面型式的UI（GUI）在目前</description>
+    </item>
     <item>
       <title>UI 免費圖庫</title>
       <link>https://blog.asjijiasdecree.com/post/note/2018/03/gui-free-image-sites/gui-free-image-sites/</link>

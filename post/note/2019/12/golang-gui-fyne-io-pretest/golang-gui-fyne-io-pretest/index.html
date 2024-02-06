@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Golang UI fyne.io初探 - 佶佶如律令</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="佶佶如律令" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">佶佶如律令</div>
+					
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">Home</span>
+				
+			</a>
+		</li>
+		<li class="menu__item menu__item--active">
+			<a class="menu__link" href="/post/note/">
+				
+				<span class="menu__text">挖掘手扎</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/travel/">
+				
+				<span class="menu__text">探險足跡</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/leisure/">
+				
+				<span class="menu__text">悠悠揚揚</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/aboutme/">
+				
+				<span class="menu__text">About Me</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/history/">
+				
+				<span class="menu__text">History</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Golang UI fyne.io初探</h1>
+			
+		</header>
+		<div class="content post__content clearfix">
+			
+<style type='text/css'>
+.pub_label_color {
+    color: #BDBDBF;
+}
+</style>
+
+
+<div>
+	<p class="pub_label_color">Publish Date :  2019-12-18 11:15 </p>
+</div>
+
+<p>Golang對網路來說是門友善的語言<br>
+對於UI<br>
+其實搭配使用web的方式會比較好<br>
+擴展性高，支援多個平台</p>
+<p>但桌面型式的UI（GUI）在目前也是不可取代的<br>
+Golang也是有GUI的項目<br>
+但還不像是Qt那樣的方便及資源眾多</p>
+<ul>
+<li><a href="https://github.com/lxn/walk">lxn/walk</a> – 只能用於windows下的UI庫</li>
+<li><a href="https://github.com/therecipe/qt">therecipe/qt</a> – Golang的qt綁定庫</li>
+<li><a href="https://github.com/asticode/go-astilectron">go-astilectron</a> – Golang與electron的交互，基於html、css</li>
+<li><a href="https://github.com/zserge/lorca">zserge/lorca</a> – 一樣是基於html、css的UI，與go-astilection不一樣的是，在打包的時候不會把整個electron包進去，所以程式會小很多</li>
+<li><a href="https://github.com/fyne-io/fyne">fyne-io/fyne</a> – golang原生UI庫，目前還在更新</li>
+</ul>
+<p>以上介紹筆者用過的<br>
+其它可在awesomego裡找看看有無符合看官需求<br>
+lxn/walk不是跨平台的<br>
+go-astilectron跟zserge/lorca都是用html的方式構建<br>
+go-astilectron就是本來electron的後端由nodejs改成golang<br>
+build的時候就跟electron build出來有一樣的缺點，就是很大包<br>
+但lorca則是改成使用使用者安裝的瀏覽器，讓執行檔有效的變小</p>
+<p>如果不想用到html系列的話<br>
+還有therecipe/qt跟fyne-io/fyne可以用<br>
+但therecipe/qt在筆者環境下（ubuntu18.04）<br>
+qt環境一直搞不起來<br>
+設定也很復雜…</p>
+<p>而fyne-io就相對的單純許多<br>
+因是原生支援，不用綁定cgo<br>
+但也是很多缺點<br>
+預設為material design<br>
+控件不能客制化，意謂著不能設計很誇張很漂亮的UI<br>
+目前也不支援UI顯示中文<br>
+開發團隊有努力的在滿足大家的需求<br>
+也持續的更新中<br>
+是筆者想投資的方向之一</p>
+<p>雖然筆者本身會用C++ Qt Framework、pyside<br>
+但C++不好寫，pyside因是python顯得很慢<br>
+所以才會想用golang從中取得平衡</p>
+<p>fyne的控件目前有<a href="https://fyne.io/develop/widgets.html">這麼</a>多種<br>
+對於簡單的應用應該也是夠了<br>
+於fyne/widget中定義<br>
+也有客制化的fyne/canvas<br>
+widget的struct定義中包含2個屬性</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Widget</span> <span style="color:#66d9ef">interface</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">CanvasObject</span> <span style="color:#a6e22e">CreateRenderer</span>() <span style="color:#a6e22e">WidgetRenderer</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>CanvasObject負責這個控件的行為跟狀態<br>
+WidgetRenderer負責控件在畫面上的繪出<br>
+上面有提到<br>
+fyne不太能客制化<br>
+所以Renderer在基礎的我們就不會去碰到</p>
+<p>至於排版的部分<br>
+則是跟Qt一樣用Layout（應該大部份的GUI都是吧？）<br>
+但沒有像Qt design那樣的IDE<br>
+在Widget中放入NewContainerWithLayout<br>
+Widget當父元件，NewContainerWithLayout為他的子元件<br>
+NewContainerWithLayout下面再增加子控件</p>
+<p>除了<a href="https://github.com/fyne-io/examples">官網</a>的範例<br>
+在我的<a href="https://github.com/Alfredisabug/alfredtoolkit">github</a>有試做給自己的GUI（還在開發中）<br>
+也可以參考看看喔<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../AlfredToolkit_WIndow.png" width="50%" height="50%"></img>
+</div>
+<br>
+佶曰：Qt真得很強大</p>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/Golang/" rel="tag">Golang</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/GUI/" rel="tag">GUI</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/note/2020/07/leetcode-876/leetcode-876/">LeetCode：876. Middle of the Linked List</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/note/2020/05/leetcode-557/leetcode-557/">LeetCode:557. Reverse Words in a String III</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/note/2020/05/leetcode-1337/leetcode-1337/">LeetCode:1337. The K Weakest Rows in a Matrix</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/note/2020/05/leetcode-922/leetcode-922/">LeetCode:922. Sort Array By Parity II</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/note/2020/05/leetcode-811/leetcode-811/">LeetCode:811. Subdomain Visit Count</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/Computer-science/">Computer science</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">4</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/HongKong/">HongKong</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">3</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/Image-Processing/">Image Processing</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">8</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/Perspectives/">Perspectives</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/Programming-language/">Programming language</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">50</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/Shopping/">Shopping</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/C/" title="C">C (13)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/Ducky/" title="Ducky">Ducky (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/FTP-Server/" title="FTP Server">FTP Server (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/GUI/" title="GUI">GUI (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/Golang/" title="Golang">Golang (21)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/Javascript/" title="Javascript">Javascript (5)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/LeetCode/" title="LeetCode">LeetCode (17)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/Linux/" title="Linux">Linux (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/Node-RED/" title="Node-RED">Node-RED (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/OSX/" title="OSX">OSX (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/OpenCV/" title="OpenCV">OpenCV (8)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/Probability-theory/" title="Probability theory">Probability theory (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/PySide/" title="PySide">PySide (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/PySide/" title="PySide">PySide (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/Python/" title="Python">Python (10)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/Pythonnet/" title="Pythonnet">Pythonnet (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/Qt/" title="Qt">Qt (6)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/Ubuntu/" title="Ubuntu">Ubuntu (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/Vue/" title="Vue">Vue (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/C/" title="C">C (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/electron/" title="electron">electron (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/keyboard/" title="keyboard">keyboard (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/markov-random-fields/" title="markov random fields">markov random fields (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/windows-api/" title="windows api">windows api (1)</a>
+	</div>
+</div>
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="LinkedIn" rel="noopener noreferrer" href="https://linkedin.com/in/ji-rong-wu-a06601135/" target="_blank">
+				<svg class="widget-social__link-icon icon icon-linkedin" width="24" height="24" viewBox="0 0 352 352"><path d="M0,40v272c0,21.9,18.1,40,40,40h272c21.9,0,40-18.1,40-40V40c0-21.9-18.1-40-40-40H40C18.1,0,0,18.1,0,40z M312,32 c4.6,0,8,3.4,8,8v272c0,4.6-3.4,8-8,8H40c-4.6,0-8-3.4-8-8V40c0-4.6,3.4-8,8-8H312z M59.5,87c0,15.2,12.3,27.5,27.5,27.5 c15.2,0,27.5-12.3,27.5-27.5c0-15.2-12.3-27.5-27.5-27.5C71.8,59.5,59.5,71.8,59.5,87z M187,157h-1v-21h-45v152h47v-75 c0-19.8,3.9-39,28.5-39c24.2,0,24.5,22.4,24.5,40v74h47v-83.5c0-40.9-8.7-72-56.5-72C208.5,132.5,193.3,145.1,187,157z M64,288h47.5 V136H64V288z"/></svg>
+				<span>LinkedIn</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/Alfredisabug" target="_blank">
+				<svg class="widget-social__link-icon icon icon-github" width="24" height="24" viewBox="0 0 384 374"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Email" href="mailto:jirongwu81@gmail.com">
+				<svg class="widget-social__link-icon icon icon-mail" width="24" height="24" viewBox="0 0 416 288"><path d="m0 16v256 16h16 384 16v-16-256-16h-16-384-16zm347 16-139 92.5-139-92.5zm-148 125.5 9 5.5 9-5.5 167-111.5v210h-352v-210z"/></svg>
+				<span>jirongwu81@gmail.com</span>
+			</a>
+		</div>
+
+		
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2024 佶佶如律令.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
+</body>
+</html>

@@ -6,20 +6,69 @@
     <description>Recent content in Tags on 佶佶如律令</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 24 Sep 2019 10:07:26 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 08 Jul 2020 23:19:43 +0800</lastBuildDate>
     <atom:link href="https://blog.asjijiasdecree.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Golang</title>
       <link>https://blog.asjijiasdecree.com/tags/Golang/</link>
-      <pubDate>Tue, 24 Sep 2019 10:07:26 +0800</pubDate>
+      <pubDate>Wed, 08 Jul 2020 23:19:43 +0800</pubDate>
       <guid>https://blog.asjijiasdecree.com/tags/Golang/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>LeetCode</title>
+      <link>https://blog.asjijiasdecree.com/tags/LeetCode/</link>
+      <pubDate>Wed, 08 Jul 2020 23:19:43 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/tags/LeetCode/</guid>
       <description></description>
     </item>
     <item>
       <title>Python</title>
       <link>https://blog.asjijiasdecree.com/tags/Python/</link>
-      <pubDate>Fri, 02 Nov 2018 17:03:24 +0800</pubDate>
+      <pubDate>Fri, 24 Apr 2020 17:20:40 +0800</pubDate>
       <guid>https://blog.asjijiasdecree.com/tags/Python/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Pythonnet</title>
+      <link>https://blog.asjijiasdecree.com/tags/Pythonnet/</link>
+      <pubDate>Fri, 24 Apr 2020 17:20:40 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/tags/Pythonnet/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Javascript</title>
+      <link>https://blog.asjijiasdecree.com/tags/Javascript/</link>
+      <pubDate>Wed, 19 Feb 2020 10:23:37 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/tags/Javascript/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Node-RED</title>
+      <link>https://blog.asjijiasdecree.com/tags/Node-RED/</link>
+      <pubDate>Wed, 19 Feb 2020 10:23:37 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/tags/Node-RED/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>GUI</title>
+      <link>https://blog.asjijiasdecree.com/tags/GUI/</link>
+      <pubDate>Wed, 18 Dec 2019 11:15:55 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/tags/GUI/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>electron</title>
+      <link>https://blog.asjijiasdecree.com/tags/electron/</link>
+      <pubDate>Tue, 26 Nov 2019 12:04:00 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/tags/electron/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Vue</title>
+      <link>https://blog.asjijiasdecree.com/tags/Vue/</link>
+      <pubDate>Tue, 26 Nov 2019 12:04:00 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/tags/Vue/</guid>
       <description></description>
     </item>
     <item>
@@ -48,13 +97,6 @@
       <link>https://blog.asjijiasdecree.com/tags/Ubuntu/</link>
       <pubDate>Tue, 09 Oct 2018 16:23:19 +0800</pubDate>
       <guid>https://blog.asjijiasdecree.com/tags/Ubuntu/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>GUI</title>
-      <link>https://blog.asjijiasdecree.com/tags/GUI/</link>
-      <pubDate>Sat, 10 Mar 2018 13:41:52 +0800</pubDate>
-      <guid>https://blog.asjijiasdecree.com/tags/GUI/</guid>
       <description></description>
     </item>
     <item>
