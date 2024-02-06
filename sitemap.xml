@@ -24,27 +24,78 @@
     <lastmod>2024-01-24T14:43:38+08:00</lastmod>
   </url><url>
     <loc>https://blog.asjijiasdecree.com/categories/</loc>
-    <lastmod>2018-05-03T16:19:43+08:00</lastmod>
+    <lastmod>2019-09-24T10:07:26+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.asjijiasdecree.com/tags/Golang/</loc>
+    <lastmod>2019-09-24T10:07:26+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.asjijiasdecree.com/post/note/2019/09/golang-tw-stock-number-crawler/golang-tw-stock-number-crawler/</loc>
+    <lastmod>2019-09-24T10:07:26+08:00</lastmod>
   </url><url>
     <loc>https://blog.asjijiasdecree.com/sections/note/</loc>
-    <lastmod>2018-05-03T16:19:43+08:00</lastmod>
+    <lastmod>2019-09-24T10:07:26+08:00</lastmod>
   </url><url>
     <loc>https://blog.asjijiasdecree.com/categories/Programming-language/</loc>
-    <lastmod>2018-05-03T16:19:43+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.asjijiasdecree.com/tags/PySide/</loc>
-    <lastmod>2018-05-03T16:19:43+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.asjijiasdecree.com/post/note/2018/05/pyside-widget-without-edge/pyside-widget-without-edge/</loc>
-    <lastmod>2018-05-03T16:19:43+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.asjijiasdecree.com/tags/Python/</loc>
-    <lastmod>2018-05-03T16:19:43+08:00</lastmod>
+    <lastmod>2019-09-24T10:07:26+08:00</lastmod>
   </url><url>
     <loc>https://blog.asjijiasdecree.com/sections/</loc>
-    <lastmod>2018-05-03T16:19:43+08:00</lastmod>
+    <lastmod>2019-09-24T10:07:26+08:00</lastmod>
   </url><url>
     <loc>https://blog.asjijiasdecree.com/tags/</loc>
+    <lastmod>2019-09-24T10:07:26+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.asjijiasdecree.com/post/note/2018/11/golang-channel-use/golang-channel-use/</loc>
+    <lastmod>2018-11-26T11:56:19+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.asjijiasdecree.com/tags/Python/</loc>
+    <lastmod>2018-11-02T17:03:24+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.asjijiasdecree.com/post/note/2018/11/python-float-precision/python-float-precision/</loc>
+    <lastmod>2018-11-02T17:03:24+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.asjijiasdecree.com/tags/PySide/</loc>
+    <lastmod>2018-10-31T07:27:00+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.asjijiasdecree.com/post/note/2018/10/pyside-qlabel-figure/pyside-qlabel-figure/</loc>
+    <lastmod>2018-10-31T07:27:00+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.asjijiasdecree.com/post/note/2018/10/golang-install/golang-install/</loc>
+    <lastmod>2018-10-26T09:17:48+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.asjijiasdecree.com/categories/Computer-science/</loc>
+    <lastmod>2018-10-09T16:23:19+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.asjijiasdecree.com/tags/FTP-Server/</loc>
+    <lastmod>2018-10-09T16:23:19+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.asjijiasdecree.com/tags/Linux/</loc>
+    <lastmod>2018-10-09T16:23:19+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.asjijiasdecree.com/tags/Ubuntu/</loc>
+    <lastmod>2018-10-09T16:23:19+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.asjijiasdecree.com/post/note/2018/10/ubuntu-ftp-server-build/ubuntu-ftp-server-build/</loc>
+    <lastmod>2018-10-09T16:23:19+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.asjijiasdecree.com/sections/lessure/</loc>
+    <lastmod>2018-09-28T09:42:21+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.asjijiasdecree.com/categories/Perspectives/</loc>
+    <lastmod>2018-09-28T09:42:21+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.asjijiasdecree.com/post/leisure/2018/09/x-y-problem/x-y-problem/</loc>
+    <lastmod>2018-09-28T09:42:21+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.asjijiasdecree.com/post/note/2018/07/windows-python-idle-right-btn-menu/windows-python-idle-right-btn-menu/</loc>
+    <lastmod>2018-07-06T09:35:43+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.asjijiasdecree.com/post/note/2018/06/python-dict-and-ordered-dict/python-dict-and-ordered-dict/</loc>
+    <lastmod>2018-06-19T09:55:37+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.asjijiasdecree.com/post/note/2018/05/python-how-to-use-args-kwargs/python-how-to-use-args-kwargs/</loc>
+    <lastmod>2018-05-14T14:35:15+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.asjijiasdecree.com/post/note/2018/05/pyside-widget-without-edge/pyside-widget-without-edge/</loc>
     <lastmod>2018-05-03T16:19:43+08:00</lastmod>
   </url><url>
     <loc>https://blog.asjijiasdecree.com/post/note/2018/04/virtualenv-tutorial/virtualenv-tutorial/</loc>
@@ -55,9 +106,6 @@
   </url><url>
     <loc>https://blog.asjijiasdecree.com/post/note/2018/03/pyside-intro/pyside-intro/</loc>
     <lastmod>2018-03-10T13:57:43+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.asjijiasdecree.com/categories/Computer-science/</loc>
-    <lastmod>2018-03-10T13:41:52+08:00</lastmod>
   </url><url>
     <loc>https://blog.asjijiasdecree.com/tags/GUI/</loc>
     <lastmod>2018-03-10T13:41:52+08:00</lastmod>
@@ -117,9 +165,6 @@
     <lastmod>2016-07-25T14:36:29+08:00</lastmod>
   </url><url>
     <loc>https://blog.asjijiasdecree.com/tags/keyboard/</loc>
-    <lastmod>2016-07-25T14:36:29+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.asjijiasdecree.com/sections/lessure/</loc>
     <lastmod>2016-07-25T14:36:29+08:00</lastmod>
   </url><url>
     <loc>https://blog.asjijiasdecree.com/categories/Shopping/</loc>

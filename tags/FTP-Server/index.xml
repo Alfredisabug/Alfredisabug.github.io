@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>FTP Server on 佶佶如律令</title>
+    <link>https://blog.asjijiasdecree.com/tags/FTP-Server/</link>
+    <description>Recent content in FTP Server on 佶佶如律令</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Tue, 09 Oct 2018 16:23:19 +0800</lastBuildDate>
+    <atom:link href="https://blog.asjijiasdecree.com/tags/FTP-Server/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ubuntu 建立FTP伺服器</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2018/10/ubuntu-ftp-server-build/ubuntu-ftp-server-build/</link>
+      <pubDate>Tue, 09 Oct 2018 16:23:19 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2018/10/ubuntu-ftp-server-build/ubuntu-ftp-server-build/</guid>
+      <description>Publish Date : 2018-10-09 16:23 之後會有架站的需求 所以開始練習了Linux(之前就有些概念了 我先在虛擬機上灌了Ubuntu 要跟windows本機傳資料 根據之前的經</description>
+    </item>
+  </channel>
+</rss>

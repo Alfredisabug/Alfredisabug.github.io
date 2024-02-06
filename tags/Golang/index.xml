@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Golang on 佶佶如律令</title>
+    <link>https://blog.asjijiasdecree.com/tags/Golang/</link>
+    <description>Recent content in Golang on 佶佶如律令</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Tue, 24 Sep 2019 10:07:26 +0800</lastBuildDate>
+    <atom:link href="https://blog.asjijiasdecree.com/tags/Golang/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Golang爬蟲（台灣股票代碼）</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2019/09/golang-tw-stock-number-crawler/golang-tw-stock-number-crawler/</link>
+      <pubDate>Tue, 24 Sep 2019 10:07:26 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2019/09/golang-tw-stock-number-crawler/golang-tw-stock-number-crawler/</guid>
+      <description>Publish Date : 2019-09-24 10:07 一開始要先說爬蟲是什麼呢？ 跟據維基的定義其中一段： 網路爬蟲可以將自己所存取的頁面儲存下來，以便搜尋引擎事後生成索引供用戶搜尋。 可以</description>
+    </item>
+    <item>
+      <title>Golang Channel 的用法</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2018/11/golang-channel-use/golang-channel-use/</link>
+      <pubDate>Mon, 26 Nov 2018 11:56:19 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2018/11/golang-channel-use/golang-channel-use/</guid>
+      <description>Publish Date : 2018-11-26 11:56 golang也看了一段時間 沒什麼大進度 感覺回到了C懷抱 但又方便的多 尤其併發的控制上 其實程式到最後都會走向一條道路上 就是便於修改與維</description>
+    </item>
+    <item>
+      <title>Golang 安裝</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2018/10/golang-install/golang-install/</link>
+      <pubDate>Fri, 26 Oct 2018 09:17:48 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2018/10/golang-install/golang-install/</guid>
+      <description>Publish Date : 2018-10-26 09:17 好像又回到C的懷抱 之前就有聽過Golang大名 畢竟背後有大神Google撐腰 也剛好自己在學習邁向全端的過程中 有個案子剛好需要用到g</description>
+    </item>
+  </channel>
+</rss>

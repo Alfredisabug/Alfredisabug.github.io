@@ -6,8 +6,71 @@
     <description>Recent content in note on 佶佶如律令</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Thu, 03 May 2018 16:19:43 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 24 Sep 2019 10:07:26 +0800</lastBuildDate>
     <atom:link href="https://blog.asjijiasdecree.com/sections/note/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Golang爬蟲（台灣股票代碼）</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2019/09/golang-tw-stock-number-crawler/golang-tw-stock-number-crawler/</link>
+      <pubDate>Tue, 24 Sep 2019 10:07:26 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2019/09/golang-tw-stock-number-crawler/golang-tw-stock-number-crawler/</guid>
+      <description>Publish Date : 2019-09-24 10:07 一開始要先說爬蟲是什麼呢？ 跟據維基的定義其中一段： 網路爬蟲可以將自己所存取的頁面儲存下來，以便搜尋引擎事後生成索引供用戶搜尋。 可以</description>
+    </item>
+    <item>
+      <title>Golang Channel 的用法</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2018/11/golang-channel-use/golang-channel-use/</link>
+      <pubDate>Mon, 26 Nov 2018 11:56:19 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2018/11/golang-channel-use/golang-channel-use/</guid>
+      <description>Publish Date : 2018-11-26 11:56 golang也看了一段時間 沒什麼大進度 感覺回到了C懷抱 但又方便的多 尤其併發的控制上 其實程式到最後都會走向一條道路上 就是便於修改與維</description>
+    </item>
+    <item>
+      <title>python浮點數的精確運算</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2018/11/python-float-precision/python-float-precision/</link>
+      <pubDate>Fri, 02 Nov 2018 17:03:24 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2018/11/python-float-precision/python-float-precision/</guid>
+      <description>Publish Date : 2018-11-02 17:03 我們在計算float這個資料型態時 有時候會發現結果會跟真正我們算出來會有點差異 其實是因為在電腦科學中 浮點 是一種對於實數的近似值表現</description>
+    </item>
+    <item>
+      <title>Pyside 用QLabel加上Pixmap顯示png圖片</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2018/10/pyside-qlabel-figure/pyside-qlabel-figure/</link>
+      <pubDate>Wed, 31 Oct 2018 07:27:00 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2018/10/pyside-qlabel-figure/pyside-qlabel-figure/</guid>
+      <description>Publish Date : 2018-10-31 07:27 今天要來實作一下qt的圖片顯示功能 我會用到 pushbutton: 選取圖片 lineEdit: 顯示選取圖片位址 qlabel: 顯示圖片用 以及今天要學到的 QFileDialog.getO</description>
+    </item>
+    <item>
+      <title>Golang 安裝</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2018/10/golang-install/golang-install/</link>
+      <pubDate>Fri, 26 Oct 2018 09:17:48 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2018/10/golang-install/golang-install/</guid>
+      <description>Publish Date : 2018-10-26 09:17 好像又回到C的懷抱 之前就有聽過Golang大名 畢竟背後有大神Google撐腰 也剛好自己在學習邁向全端的過程中 有個案子剛好需要用到g</description>
+    </item>
+    <item>
+      <title>Ubuntu 建立FTP伺服器</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2018/10/ubuntu-ftp-server-build/ubuntu-ftp-server-build/</link>
+      <pubDate>Tue, 09 Oct 2018 16:23:19 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2018/10/ubuntu-ftp-server-build/ubuntu-ftp-server-build/</guid>
+      <description>Publish Date : 2018-10-09 16:23 之後會有架站的需求 所以開始練習了Linux(之前就有些概念了 我先在虛擬機上灌了Ubuntu 要跟windows本機傳資料 根據之前的經</description>
+    </item>
+    <item>
+      <title>Windows下-Python IDLE右鍵選單</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2018/07/windows-python-idle-right-btn-menu/windows-python-idle-right-btn-menu/</link>
+      <pubDate>Fri, 06 Jul 2018 09:35:43 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2018/07/windows-python-idle-right-btn-menu/windows-python-idle-right-btn-menu/</guid>
+      <description>Publish Date : 2018-07-06 09:35 在灌了python之後 都會附帶一個簡易的IDE 並且在.py文件檔按下右鍵會出現一個Edit with idle的選項 雖然這個idle的功能不</description>
+    </item>
+    <item>
+      <title>python-字典與&#34;有序&#34;字典</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2018/06/python-dict-and-ordered-dict/python-dict-and-ordered-dict/</link>
+      <pubDate>Tue, 19 Jun 2018 09:55:37 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2018/06/python-dict-and-ordered-dict/python-dict-and-ordered-dict/</guid>
+      <description>Publish Date : 2018-06-19 09:55 python中字典是由key及value所組成的一種容器，可儲存任意類型對象 字典的每個鍵值 key=&amp;gt;value 使用冒號 : 分割，每個鍵值對之間用逗號 ,</description>
+    </item>
+    <item>
+      <title>python中 *args與 **kwargs的用法</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2018/05/python-how-to-use-args-kwargs/python-how-to-use-args-kwargs/</link>
+      <pubDate>Mon, 14 May 2018 14:35:15 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2018/05/python-how-to-use-args-kwargs/python-how-to-use-args-kwargs/</guid>
+      <description>Publish Date : 2018-05-14 14:35 向python函式傳遞參數時，分為兩種 位置參數 關鍵詞參數 位置參數就是多個無名參數，照位置排序 比如說有一個foo函式 foo(a,b,c) 則這a,b,c</description>
+    </item>
     <item>
       <title>PySide無邊框視窗跟拖拉</title>
       <link>https://blog.asjijiasdecree.com/post/note/2018/05/pyside-widget-without-edge/pyside-widget-without-edge/</link>
