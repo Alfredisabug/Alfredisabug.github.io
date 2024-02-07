@@ -6,8 +6,57 @@
     <description>Recent content in Programming language on 佶佶如律令</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Wed, 08 Jul 2020 23:19:43 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 16 Sep 2020 14:43:59 +0800</lastBuildDate>
     <atom:link href="https://blog.asjijiasdecree.com/categories/Programming-language/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LeetCode：1022. Sum of Root To Leaf Binary Numbers</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2020/09/leetcode-1022/leetcode-1022/</link>
+      <pubDate>Wed, 16 Sep 2020 14:43:59 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2020/09/leetcode-1022/leetcode-1022/</guid>
+      <description>Publish Date : 2020-09-16 14:43 題目： Given a binary tree, each node has value 0 or 1. Each root-to-leaf path represents a binary number starting with the most significant bit. For example, if the path is 0 -&amp;gt; 1 -&amp;gt; 1 -&amp;gt; 0 -&amp;gt; 1, then this could represent 01101 in binary, which is 13. For all leaves in the tree, consider the numbers represented by the path</description>
+    </item>
+    <item>
+      <title>LeetCode 509： Fibonacci Number</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2020/09/leetcode-509/leetcode-509/</link>
+      <pubDate>Fri, 11 Sep 2020 10:14:03 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2020/09/leetcode-509/leetcode-509/</guid>
+      <description>Publish Date : 2020-09-11 10:14 題目： The Fibonacci numbers, commonly denoted F(n) form a sequence, called the Fibonacci sequence, such that each number is the sum of the two preceding ones, starting from 0 and 1. That is, F(0) = 0, F(1) = 1F(N) = F(N - 1) + F(N - 2), for N &amp;gt; 1. Given N, calculate F(N). Example：</description>
+    </item>
+    <item>
+      <title>LeetCode 1385. Find the Distance Value Between Two Arrays</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2020/09/leetcode-1385/leetcode-1385/</link>
+      <pubDate>Fri, 11 Sep 2020 10:11:48 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2020/09/leetcode-1385/leetcode-1385/</guid>
+      <description>Publish Date : 2020-09-11 10:11 題目： Given two integer arrays arr1 and arr2, and the integer d, return the distance value between the two arrays. The distance value is defined as the number of elements arr1[i] such that there is not any element arr2[j] where |arr1[i]-arr2[j]| &amp;lt;= d. 範例： Input: arr1 = [4,5,8], arr2 = [10,9,1,8], d = 2Output: 2 Explanation: For arr1[0]=4 we have: |4-10|=6</description>
+    </item>
+    <item>
+      <title>Leetcode 965. Univalued Binary Tree</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2020/09/leetcode-965/leetcode-965/</link>
+      <pubDate>Fri, 11 Sep 2020 10:10:33 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2020/09/leetcode-965/leetcode-965/</guid>
+      <description>Publish Date : 2020-09-11 10:10 題目： A binary tree is univalued if every node in the tree has the same value. Return true if and only if the given tree is univalued. Example： Input: [1,1,1,1,1,null,1] Output: true 解法： 這題只是要判斷二元樹中所有val是否相同 一</description>
+    </item>
+    <item>
+      <title>LeetCode 929： Unique Email Addresses</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2020/08/leetcode-929/leetcode-929/</link>
+      <pubDate>Mon, 03 Aug 2020 09:27:25 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2020/08/leetcode-929/leetcode-929/</guid>
+      <description>Publish Date : 2020-08-03 09:27 問題： Every email consists of a local name and a domain name, separated by the @ sign. For example, in alice@leetcode.com, alice is the local name, and leetcode.com is the domain name. Besides lowercase letters, these emails may contain &amp;#39;.&amp;#39;s or &amp;#39;+&amp;#39;s. If you add periods (&amp;#39;.&amp;#39;) between some characters in the local name part of an email address, mail sent there will</description>
+    </item>
+    <item>
+      <title>LeetCode 559： Maximum Depth of N-ary Tree</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2020/07/leetcode-559/leetcode-559/</link>
+      <pubDate>Thu, 30 Jul 2020 14:56:34 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2020/07/leetcode-559/leetcode-559/</guid>
+      <description>Publish Date : 2020-07-30 14:56 題目： Given a n-ary tree, find its maximum depth. The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node. Nary-Tree input serialization is represented in their level order traversal, each group of children is separated by the null value (See examples). 範例： Input: root = [1,null,3,2,4,null,5,6] Output: 3 解</description>
+    </item>
+    <item>
+      <title>C# WPF開發小筆記</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2020/07/c-sharp-dev-note/c-sharp-dev-note/</link>
+      <pubDate>Mon, 20 Jul 2020 15:57:54 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2020/07/c-sharp-dev-note/c-sharp-dev-note/</guid>
+      <description>Publish Date : 2020-07-20 15:57 最近公司增加了新的需求 使用.net core開發WPF 所以就順便學了C# 還記得在大學的時候就學過C#開發視窗程式 對這個語言實在是喜歡</description>
+    </item>
     <item>
       <title>LeetCode：876. Middle of the Linked List</title>
       <link>https://blog.asjijiasdecree.com/post/note/2020/07/leetcode-876/leetcode-876/</link>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>C# on 佶佶如律令</title>
+    <link>https://blog.asjijiasdecree.com/tags/C#/</link>
+    <description>Recent content in C# on 佶佶如律令</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Mon, 20 Jul 2020 15:57:54 +0800</lastBuildDate>
+    <atom:link href="https://blog.asjijiasdecree.com/tags/C#/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C# WPF開發小筆記</title>
+      <link>https://blog.asjijiasdecree.com/post/note/2020/07/c-sharp-dev-note/c-sharp-dev-note/</link>
+      <pubDate>Mon, 20 Jul 2020 15:57:54 +0800</pubDate>
+      <guid>https://blog.asjijiasdecree.com/post/note/2020/07/c-sharp-dev-note/c-sharp-dev-note/</guid>
+      <description>Publish Date : 2020-07-20 15:57 最近公司增加了新的需求 使用.net core開發WPF 所以就順便學了C# 還記得在大學的時候就學過C#開發視窗程式 對這個語言實在是喜歡</description>
+    </item>
+  </channel>
+</rss>
