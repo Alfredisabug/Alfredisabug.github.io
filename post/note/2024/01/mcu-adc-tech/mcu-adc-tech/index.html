@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>韌體 -- ADC 採樣及設定 - 佶佶如律令</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="佶佶如律令" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">佶佶如律令</div>
+					
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">Home</span>
+				
+			</a>
+		</li>
+		<li class="menu__item menu__item--active">
+			<a class="menu__link" href="/post/note/">
+				
+				<span class="menu__text">挖掘手扎</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/travel/">
+				
+				<span class="menu__text">探險足跡</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/leisure/">
+				
+				<span class="menu__text">悠悠揚揚</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/aboutme/">
+				
+				<span class="menu__text">About Me</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/history/">
+				
+				<span class="menu__text">History</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">韌體 -- ADC 採樣及設定</h1>
+			
+		</header>
+		<div class="content post__content clearfix">
+			
+<style type='text/css'>
+.pub_label_color {
+    color: #BDBDBF;
+}
+</style>
+
+
+<div>
+	<p class="pub_label_color">Publish Date :  2024-02-15 09:29 </p>
+</div>
+
+<p>當今韌體可被視為較為簡易的軟體<br>
+以軟體的角度可以這麼說不為過<br>
+但如果是越靠近硬體的韌體<br>
+這樣的說法可能要改變</p>
+<p>我的背景為軟體<br>
+幾乎都沒有碰過硬體相關<br>
+高中的電學單元也幾乎忘光了<br>
+現在則成為一個數位電源的韌體工程師<br>
+進入這領域的韌體<br>
+不是大學時的專題<br>
+也不像是前文說到的&ndash;簡易的軟體</p>
+<p>接觸到更多電路知識<br>
+程式執行過程，生命週期<br>
+記憶體的使用及CPU使用率的分配等等<br>
+很多的智識是在高階程式語言當中<br>
+不會注意到的</p>
+<p>此章是進入韌體(以數位電源來說)重要的一節<br>
+以軟體工程師進入的視角來說<br>
+如何將外面的環境資訊與訊號，讓在MCU運作的程式碼知道？<br>
+像是外面的溫度，電壓，壓力等等<br>
+讓MCU知道後交由程式處理？<br>
+靠的就是ADC</p>
+<p><strong>ADC</strong>(**Analog-to-digital converter, ADC, A/D 或 A to D）**是類比數位轉換器, 用於將類比形式的連續訊號轉換為數位形式的離散訊號的一類設備。
+將 外界的訊號(自然界的訊號為類比)<br>
+轉換為 數位的訊號<br>
+依照MCU不同的位元數轉並編碼為不同的等級訊號<br>
+比如<br>
+8位元的ADC可以將訊號分成256個等級({{ 2^8 }})<br>
+最強訊號在數位當中表示為256，最弱訊號為0<br>
+或是
+12位元的ADC可以將訊號分成4096個等級({{ 2^12 }})<br>
+最強訊號在數位當中表示為4096，最弱訊號為0</p>
+<p>假設最大訊號是3.3伏特的電壓<br>
+以12位元編碼就是
+4096為3.3伏特<br>
+4095為3.29919伏特<br>
+4094為3.29838伏特<br>
+以此往下算<br>
+差值就可看出解析度<br>
+越多位元的ADC能力就會越精細<br>
+但是MCU的價格也就越貴</p>
+<h2 id="adc處理訊號的過程">ADC處理訊號的過程</h2>
+<p>採樣（Sampling）： 對輸入的訊號進行採樣。採樣頻率取樣多少次。越高的採樣頻率可以提供越更精確的訊號<br>
+量化（Quantization）： 採樣訊號被量化為一系列離散的數值。這個過程將連續的訊號分成有限的數量級，這些級別代表不同的數值<br>
+編寫（Encoding）： 採樣和量化的數位值通常以二進制形式進行編寫，以便 MCU 處理<br>
+輸出（Output）： 最終的數值供 MCU 使用</p>
+<h2 id="adc-mcu設定">ADC MCU設定</h2>
+<p><strong>以下說明以TI晶片TMS320F28004x為範例，具體操作請參考各晶片官方文件</strong><br>
+ADC單一模組如下：
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../adc_input_module.png" width="100%" height="100%"></img>
+</div>
+</p>
+<p>TMS320F28004x是12位元的ADC，數位的結果計算方式如圖：<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../adc_result_calc.png" width="100%" height="100%"></img>
+</div>
+<br>
+ADC的輸入如果在<br>
+VREFHI({{ V_reference High }})<br>
+VREFLO({{ V_reference Low }})<br>
+V_reference High/Low 的設定是在MCU的外部接腳上<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../adc_reference-pin.png" width="100%" height="100%"></img>
+</div>
+</p>
+<p>要以ADC的結果換算為實際值：
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../adc_to_real_value.png" width="100%" height="100%"></img>
+</div>
+</p>
+<p>MCU會先經由前文提到的<strong>取樣頻率</strong>來取樣，並進行**sample and hold(S+H)**的方式來取樣<br>
+TMS320F28004x sample rate由ADC的預分頻器藉由系統的時鐘來設定</p>
+<p><strong>The ADC sample and hold circuits (S+H) are clocked by SYSCLK while the ADC conversion
+process is clocked by ADCCLK. ADCCLK is generated by dividing down SYSCLK based on the PRESCALE field in the ADCCTL2 register</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#a6e22e">ADC_setPrescaler</span>(myADC0_BASE, ADC_CLK_DIV_2_0);
+</span></span></code></pre></div><p>MCU中，需要有個trigger的訊號讓S+H啟動，也就是訊號轉換的時機<br>
+在adc_ex2_soc_epwm範例，就是ePWM訊號來trigger的</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">//
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// Start ePWM1, enabling SOCA and putting the counter in up-count mode
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">EPWM_enableADCTrigger</span>(EPWM1_BASE, EPWM_SOC_A);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">EPWM_setTimeBaseCounterMode</span>(EPWM1_BASE, EPWM_COUNTER_MODE_UP);
+</span></span></code></pre></div><p>ADC的轉換是由單個SOC單元來轉換<br>
+TMS320F280049C有三個ADC模組<br>
+每一個模組又各有15個SOC單元<br>
+一個SOC單元可以各別配置ADC輸入pin，要trigger的來源以及S+H的時間</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">// Configures a start-of-conversion (SOC) in the ADC and its interrupt SOC trigger.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 	  	SOC number		: 0
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//	  	Trigger			: ADC_TRIGGER_EPWM1_SOCA
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//	  	Channel			: ADC_CH_ADCIN0
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//	 	Sample Window	: 8 SYSCLK cycles
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//		Interrupt Trigger: ADC_INT_SOC_TRIGGER_NONE
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">ADC_setupSOC</span>(myADC0_BASE, ADC_SOC_NUMBER0, ADC_TRIGGER_EPWM1_SOCA, ADC_CH_ADCIN0, <span style="color:#ae81ff">8U</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ADC_setInterruptSOCTrigger</span>(myADC0_BASE, ADC_SOC_NUMBER0, ADC_INT_SOC_TRIGGER_NONE);
+</span></span></code></pre></div><p>或是更深入的可以設定每個SOC轉換的順序</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">// Sets the priority mode of the SOCs.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">ADC_setSOCPriority</span>(myADC0_BASE, ADC_PRI_ALL_ROUND_ROBIN);
+</span></span></code></pre></div><p>轉換順序的排程方法於技術文件有寫到，這裡不作討論</p>
+<p>ADC可設定中斷，adc_ex2_soc_epwm範例設定如下：<br>
+ADC_SOC_NUMBER0轉換結束時觸發中斷</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">// ADC Interrupt 1 Configuration
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 		SOC/EOC number	: 0
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 		Interrupt Source: enabled
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 		Continuous Mode	: disabled
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">ADC_setInterruptSource</span>(myADC0_BASE, ADC_INT_NUMBER1, ADC_SOC_NUMBER0);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ADC_enableInterrupt</span>(myADC0_BASE, ADC_INT_NUMBER1);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ADC_clearInterruptStatus</span>(myADC0_BASE, ADC_INT_NUMBER1);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ADC_disableContinuousMode</span>(myADC0_BASE, ADC_INT_NUMBER1);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Interrupt Setings for INT_myADC0_1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">Interrupt_register</span>(INT_myADC0_1, <span style="color:#f92672">&amp;</span>adcA1ISR);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Interrupt_enable</span>(INT_myADC0_1);
+</span></span></code></pre></div><p>取的轉換結果時，直接存取ADC result register就可以</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>myADC0Results[index<span style="color:#f92672">++</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">ADC_readResult</span>(ADCARESULT_BASE, ADC_SOC_NUMBER0);
+</span></span></code></pre></div><p>ADC在MCU控制中，是除了通訊之外，能夠取得外界資訊的重要方式<br>
+軟體(韌體)上的設定會影響到</p>
+<ol>
+<li>CPU的計算時間 &ndash; 一直去取得ADC result及計算回真實數據的時間</li>
+<li>硬體的配合 &ndash; 於線路上的S+H的delay時間</li>
+<li>準確度 &ndash; 假設用於控制系統，ADC的回饋的即時性及正確性會影響整個系統的穩定度</li>
+</ol>
+<p>因此在設計ADC的時候<br>
+會依照技術文件上的說明進行<br>
+因為配合到硬體的部份<br>
+訊號從外部到MCU，中間的過程中都需要進行考慮<br>
+也是新手剛進來時，可以體會到硬體影響到韌體上設計</p>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/TI-MCU/" rel="tag">TI MCU</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/FIRMWARE/" rel="tag">FIRMWARE</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/note/2024/01/mcu-adc-tech/mcu-adc-tech/">韌體 -- ADC 採樣及設定</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/note/2020/09/leetcode-1022/leetcode-1022/">LeetCode：1022. Sum of Root To Leaf Binary Numbers</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/note/2020/09/leetcode-509/leetcode-509/">LeetCode 509： Fibonacci Number</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/note/2020/09/leetcode-1385/leetcode-1385/">LeetCode 1385. Find the Distance Value Between Two Arrays</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/note/2020/09/leetcode-965/leetcode-965/">Leetcode 965. Univalued Binary Tree</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/Computer-science/">Computer science</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">5</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/HongKong/">HongKong</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">3</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/Image-Processing/">Image Processing</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">8</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/Perspectives/">Perspectives</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/Programming-language/">Programming language</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">57</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/Shopping/">Shopping</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/C/" title="C">C (13)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/C#/" title="C#">C# (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/Ducky/" title="Ducky">Ducky (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/FIRMWARE/" title="FIRMWARE">FIRMWARE (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/FTP-Server/" title="FTP Server">FTP Server (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/GUI/" title="GUI">GUI (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/Golang/" title="Golang">Golang (27)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/Javascript/" title="Javascript">Javascript (5)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/LeetCode/" title="LeetCode">LeetCode (23)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/Linux/" title="Linux">Linux (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/Node-RED/" title="Node-RED">Node-RED (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/OSX/" title="OSX">OSX (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/OpenCV/" title="OpenCV">OpenCV (8)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/Probability-theory/" title="Probability theory">Probability theory (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/PySide/" title="PySide">PySide (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/PySide/" title="PySide">PySide (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/Python/" title="Python">Python (10)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/Pythonnet/" title="Pythonnet">Pythonnet (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/Qt/" title="Qt">Qt (6)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/TI-MCU/" title="TI MCU">TI MCU (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/Ubuntu/" title="Ubuntu">Ubuntu (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/Vue/" title="Vue">Vue (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/C/" title="C">C (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/electron/" title="electron">electron (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/keyboard/" title="keyboard">keyboard (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/markov-random-fields/" title="markov random fields">markov random fields (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/windows-api/" title="windows api">windows api (1)</a>
+	</div>
+</div>
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="LinkedIn" rel="noopener noreferrer" href="https://linkedin.com/in/ji-rong-wu-a06601135/" target="_blank">
+				<svg class="widget-social__link-icon icon icon-linkedin" width="24" height="24" viewBox="0 0 352 352"><path d="M0,40v272c0,21.9,18.1,40,40,40h272c21.9,0,40-18.1,40-40V40c0-21.9-18.1-40-40-40H40C18.1,0,0,18.1,0,40z M312,32 c4.6,0,8,3.4,8,8v272c0,4.6-3.4,8-8,8H40c-4.6,0-8-3.4-8-8V40c0-4.6,3.4-8,8-8H312z M59.5,87c0,15.2,12.3,27.5,27.5,27.5 c15.2,0,27.5-12.3,27.5-27.5c0-15.2-12.3-27.5-27.5-27.5C71.8,59.5,59.5,71.8,59.5,87z M187,157h-1v-21h-45v152h47v-75 c0-19.8,3.9-39,28.5-39c24.2,0,24.5,22.4,24.5,40v74h47v-83.5c0-40.9-8.7-72-56.5-72C208.5,132.5,193.3,145.1,187,157z M64,288h47.5 V136H64V288z"/></svg>
+				<span>LinkedIn</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/Alfredisabug" target="_blank">
+				<svg class="widget-social__link-icon icon icon-github" width="24" height="24" viewBox="0 0 384 374"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Email" href="mailto:jirongwu81@gmail.com">
+				<svg class="widget-social__link-icon icon icon-mail" width="24" height="24" viewBox="0 0 416 288"><path d="m0 16v256 16h16 384 16v-16-256-16h-16-384-16zm347 16-139 92.5-139-92.5zm-148 125.5 9 5.5 9-5.5 167-111.5v210h-352v-210z"/></svg>
+				<span>jirongwu81@gmail.com</span>
+			</a>
+		</div>
+
+		
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2024 佶佶如律令.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
+</body>
+</html>
