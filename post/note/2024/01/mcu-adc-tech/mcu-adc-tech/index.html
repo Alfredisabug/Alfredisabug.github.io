@@ -132,10 +132,10 @@
 轉換為 數位的訊號<br>
 依照MCU不同的位元數轉並編碼為不同的等級訊號<br>
 比如<br>
-8位元的ADC可以將訊號分成256個等級({{ 2^8 }})<br>
+8位元的ADC可以將訊號分成256個等級()<br>
 最強訊號在數位當中表示為256，最弱訊號為0<br>
 或是
-12位元的ADC可以將訊號分成4096個等級({{ 2^12 }})<br>
+12位元的ADC可以將訊號分成4096個等級(2的12次方)<br>
 最強訊號在數位當中表示為4096，最弱訊號為0</p>
 <p>假設最大訊號是3.3伏特的電壓<br>
 以12位元編碼就是
@@ -178,8 +178,8 @@ ADC單一模組如下：
 </div>
 <br>
 ADC的輸入如果在<br>
-VREFHI({{ V_reference High }})<br>
-VREFLO({{ V_reference Low }})<br>
+VREFHI(V_reference High)<br>
+VREFLO(V_reference Low)<br>
 V_reference High/Low 的設定是在MCU的外部接腳上<br>
 
 <style type='text/css'>
