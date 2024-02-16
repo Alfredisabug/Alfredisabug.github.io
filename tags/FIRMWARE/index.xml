@@ -10,9 +10,9 @@
     <atom:link href="https://blog.asjijiasdecree.com/tags/FIRMWARE/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>韌體 -- ADC 採樣及設定</title>
-      <link>https://blog.asjijiasdecree.com/post/note/2024/01/mcu-adc-tech/mcu-adc-tech/</link>
+      <link>https://blog.asjijiasdecree.com/post/note/2024/02/mcu-adc-tech/mcu-adc-tech/</link>
       <pubDate>Thu, 15 Feb 2024 09:29:23 +0800</pubDate>
-      <guid>https://blog.asjijiasdecree.com/post/note/2024/01/mcu-adc-tech/mcu-adc-tech/</guid>
+      <guid>https://blog.asjijiasdecree.com/post/note/2024/02/mcu-adc-tech/mcu-adc-tech/</guid>
       <description>Publish Date : 2024-02-15 09:29 當今韌體可被視為較為簡易的軟體 以軟體的角度可以這麼說不為過 但如果是越靠近硬體的韌體 這樣的說法可能要改變 我的背景為軟體 幾乎都沒有碰過</description>
     </item>
   </channel>
