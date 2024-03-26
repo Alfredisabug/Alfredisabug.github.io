@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>TI TMS320F28004X GPIO 設定 - 佶佶如律令</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="佶佶如律令" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">佶佶如律令</div>
+					
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">Home</span>
+				
+			</a>
+		</li>
+		<li class="menu__item menu__item--active">
+			<a class="menu__link" href="/post/note/">
+				
+				<span class="menu__text">挖掘手扎</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/travel/">
+				
+				<span class="menu__text">探險足跡</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/leisure/">
+				
+				<span class="menu__text">悠悠揚揚</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/aboutme/">
+				
+				<span class="menu__text">About Me</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/history/">
+				
+				<span class="menu__text">History</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">TI TMS320F28004X GPIO 設定</h1>
+			
+		</header>
+		<div class="content post__content clearfix">
+			
+<style type='text/css'>
+.pub_label_color {
+    color: #BDBDBF;
+}
+</style>
+
+<script>
+MathJax = {
+  tex: {inlineMath: [['$','$']]}
+}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script"></script>
+
+<div>
+	<p class="pub_label_color">Publish Date :  2024-03-25 09:37 </p>
+</div>
+
+<p>韌體的設定中，GPIO及DAC的module設定算是比較簡單的<br>
+這章會主要說明一些GPIO可能會常用到的設定<br>
+並一樣以TI F28004x的晶片進行範例</p>
+<h1 id="gpio是什麼">GPIO是什麼</h1>
+<p><a href="https://zh.wikipedia.org/zh-tw/GPIO">GPIO</a>（英語：General-purpose input/output），通用型之輸入輸出的簡稱<br>
+其接腳可以供使用者由程式控制自由使用，PIN腳依現實考量可作為通用輸入（GPI）或通用輸出（GPO）或通用輸入與輸出（GPIO）<br>
+GPIO是數位訊號，所以只能輸入輸出電位的高低(High/Low)，在實際使用上，常用來:</p>
+<ol>
+<li>輸出高低訊號控制MCU外部IC</li>
+<li>讀取輸入訊號，判斷訊號後處理</li>
+</ol>
+<p>GPIO在MCU上除了設置輸入及輸出外<br>
+還要看電路的特性，來決定要使用不種型態的驅動方式，以下以F28004X的設定來說明</p>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../gpio_map.png" width="100%" height="100%"></img>
+</div>
+
+<h1 id="gpio-pin-與實際腳位">GPIO Pin 與實際腳位</h1>
+<p>在MCU上的引腳(Pin)通常都是MUX的，複用腳位<br>
+意思是在一隻實體MCU引腳，可以透過Register的設定，來改變功能，使其成為GPIO、I2C、SPI等其中一種功能使用</p>
+<hr>
+<p>所有的GPIO Pin一開始預設皆為Input</p>
+<hr>
+<p>設定圖中，引腳的最外部有Pull-Up的功能可以<strong>選用</strong>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../optional-pull-up.png" width="50%" height="50%"></img>
+</div>
+<br>
+Pull-Up功能在沒有外部訊號驅動輸入引腳時，可將輸入引腳保持在已知狀態<br>
+Pin腳如果空接(沒有連接到任何外部電路)，在讀取這個Pin時，有可能會受到雜訊的影響，訊號時High時Low的，造成<strong>floating</strong>狀態<br>
+floating的狀態會造成MCU判斷訊息上的不穩定，處理方式通常是在實體腳位加上以下任一電阻</p>
+<ul>
+<li>上拉電阻(Pull-Up): 從VCC(MCU供電電壓)並聯一個電阻，將電壓準位強制在High</li>
+<li>下拉電阻(Pull-Down): 從GND(MCU 地的準位)並聯一個電阻，將電壓準位強制在Low</li>
+</ul>
+<h1 id="gpio輸入">GPIO輸入</h1>
+<p>輸入的設定較為簡單<br>
+主要GPIO拮取訊號的速度跟要不要反轉訊號<br>
+訊號的速度靠著MCU的系統時脈(System Clock, SYSCLK)來決定<br>
+F28004x有四種可以選</p>
+<ul>
+<li>Sync</li>
+<li>3-sample</li>
+<li>6-sample</li>
+<li>Async<br>
+<strong>Async</strong>在GPIO為input時是沒有用的，這是用來給其它MCU外部設備用的<br>
+<strong>Sync</strong>依靠著SYSCLK同步。由於外部輸入訊號是非同步(Async)的，因此可能需要長達 SYSCLKOUT 的延遲週期才能變更 MCU 的輸入。</li>
+</ul>
+<p>以F28004x來說，MCU運作時脈是100MHz(10㎱)，GPIO輸入改變狀態的話，最慢有可能會等10㎱才知道狀態變更，這是韌體工程上，每次都要注意這些小小的時序，幫助之後編寫程式碼或是除錯<br>
+sample的意思是在一個固定的SYSCLK的時間內，取樣幾次，超過多少門檻，才判定改變GPIO狀態<br>
+example的圖片中已說明
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../input-pin-samples.png" width="100%" height="100%"></img>
+</div>
+</p>
+<h1 id="gpio輸出">GPIO輸出</h1>
+<p>輸出利用Register讓實體腳位電壓為High/Low<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../output-pin-data.png" width="100%" height="100%"></img>
+</div>
+<br>
+圖中F28004x有2個核心(C28x, CLA)可以控制GPIO Data，這部份之後再講</p>
+<h2 id="輸出準位的驅動方式">輸出準位的驅動方式</h2>
+<p>輸出上還有一個open drain logic的模組，那是什麼？<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../output-pin-open-drain-logic.png" width="50%" height="50%"></img>
+</div>
+<br>
+簡短的來說，雖然都是同樣控制High/Low，但是悠關到驅動的電壓及電流</p>
+<h3 id="push-pull">Push-Pull</h3>
+<p>
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../push-pull.png" width="50%" height="50%"></img>
+</div>
+<br>
+Push-pull，也稱為active drive。電路使用兩個晶體管來確定邏輯高低。<br>
+從push-pull電路中可以看出：<br>
+當MCU要輸出High準位時，Vin會為High(電壓Push到高準位)，上方的P MOS會導通，輸出為High<br>
+當MCU要輸出High準位時，Vin會為Low(電壓Pull到低準位)，下方的N MOS會導通，輸出為Low<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../push-pull-dynamic.gif" width="100%" height="100%"></img>
+</div>
+<br>
+高準位是由MCU的VCC來決定，因此可以由MCU自行調整準位的高低</p>
+<h3 id="open-drain">Open-Drain</h3>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../GPIO-OpenDrain.png" width="50%" height="50%"></img>
+</div>
+
+<p>Open-Drain是使用帶有下拉或上拉電阻數位電路，High的準位由外部決定
+當MCU要輸出High準位時，開關器件關閉，GPIO輸出為Vexternal(這裡要看一下MCU內部線路，情況有可能反過來，但以上面的解說圖來說，是這樣運作的)<br>
+
+<style type='text/css'>
+.my_img_center {
+    text-align:center;
+}
+</style>
+
+<div class="my_img_center">
+	<img src="../open-drain-dynamic" width="100%" height="100%"></img>
+</div>
+</p>
+<p>以上2種方式差別是由MCU推動或是從外部推動<br>
+Push-Pull的控制準位可High可Low，Open-Drain只能上拉或是下拉，且是看外部線路能力決定上拉的速度<br>
+Push-Pull常用在控制外部IC，Open-Drain常用在大功率或是跟其它共享線路時使用</p>
+<h1 id="總結">總結</h1>
+<p>GPIO的應用在MCU裡是基本的<br>
+在應用上除了控制線路上的準位外<br>
+我也常拿來當作Debug的訊號使用，測量程式執行週期、處理時間等<br>
+後續有更多進階的應用，比如說GPIO IN變更準位時，MCU可以做一些反應</p>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/TI-MCU/" rel="tag">TI MCU</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/FIRMWARE/" rel="tag">FIRMWARE</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/note/2024/03/TI-TMS320F28004X-GPIO-Config/TI-TMS320F28004X-GPIO-Config/">TI TMS320F28004X GPIO 設定</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/note/2024/02/mcu-adc-tech/mcu-adc-tech/">TI TMS320F28004x - ADC 採樣及設定</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/note/2020/09/leetcode-1022/leetcode-1022/">LeetCode：1022. Sum of Root To Leaf Binary Numbers</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/note/2020/09/leetcode-509/leetcode-509/">LeetCode 509： Fibonacci Number</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/note/2020/09/leetcode-1385/leetcode-1385/">LeetCode 1385. Find the Distance Value Between Two Arrays</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/Computer-science/">Computer science</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">6</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/HongKong/">HongKong</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">3</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/Image-Processing/">Image Processing</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">8</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/Perspectives/">Perspectives</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/Programming-language/">Programming language</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">57</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/Shopping/">Shopping</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/C/" title="C">C (13)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/C#/" title="C#">C# (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/Ducky/" title="Ducky">Ducky (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/FIRMWARE/" title="FIRMWARE">FIRMWARE (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/FTP-Server/" title="FTP Server">FTP Server (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/GUI/" title="GUI">GUI (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/Golang/" title="Golang">Golang (27)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/Javascript/" title="Javascript">Javascript (5)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/LeetCode/" title="LeetCode">LeetCode (23)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/Linux/" title="Linux">Linux (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/Node-RED/" title="Node-RED">Node-RED (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/OSX/" title="OSX">OSX (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/OpenCV/" title="OpenCV">OpenCV (8)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/Probability-theory/" title="Probability theory">Probability theory (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/PySide/" title="PySide">PySide (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/PySide/" title="PySide">PySide (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/Python/" title="Python">Python (10)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/Pythonnet/" title="Pythonnet">Pythonnet (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/Qt/" title="Qt">Qt (6)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/TI-MCU/" title="TI MCU">TI MCU (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/Ubuntu/" title="Ubuntu">Ubuntu (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/Vue/" title="Vue">Vue (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/C/" title="C">C (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/electron/" title="electron">electron (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/keyboard/" title="keyboard">keyboard (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/markov-random-fields/" title="markov random fields">markov random fields (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/windows-api/" title="windows api">windows api (1)</a>
+	</div>
+</div>
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="LinkedIn" rel="noopener noreferrer" href="https://linkedin.com/in/ji-rong-wu-a06601135/" target="_blank">
+				<svg class="widget-social__link-icon icon icon-linkedin" width="24" height="24" viewBox="0 0 352 352"><path d="M0,40v272c0,21.9,18.1,40,40,40h272c21.9,0,40-18.1,40-40V40c0-21.9-18.1-40-40-40H40C18.1,0,0,18.1,0,40z M312,32 c4.6,0,8,3.4,8,8v272c0,4.6-3.4,8-8,8H40c-4.6,0-8-3.4-8-8V40c0-4.6,3.4-8,8-8H312z M59.5,87c0,15.2,12.3,27.5,27.5,27.5 c15.2,0,27.5-12.3,27.5-27.5c0-15.2-12.3-27.5-27.5-27.5C71.8,59.5,59.5,71.8,59.5,87z M187,157h-1v-21h-45v152h47v-75 c0-19.8,3.9-39,28.5-39c24.2,0,24.5,22.4,24.5,40v74h47v-83.5c0-40.9-8.7-72-56.5-72C208.5,132.5,193.3,145.1,187,157z M64,288h47.5 V136H64V288z"/></svg>
+				<span>LinkedIn</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/Alfredisabug" target="_blank">
+				<svg class="widget-social__link-icon icon icon-github" width="24" height="24" viewBox="0 0 384 374"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Email" href="mailto:jirongwu81@gmail.com">
+				<svg class="widget-social__link-icon icon icon-mail" width="24" height="24" viewBox="0 0 416 288"><path d="m0 16v256 16h16 384 16v-16-256-16h-16-384-16zm347 16-139 92.5-139-92.5zm-148 125.5 9 5.5 9-5.5 167-111.5v210h-352v-210z"/></svg>
+				<span>jirongwu81@gmail.com</span>
+			</a>
+		</div>
+
+		
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2024 佶佶如律令.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
+</body>
+</html>
